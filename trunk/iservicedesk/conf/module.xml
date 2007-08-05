@@ -2,7 +2,7 @@
 <module>
     <name>iServiceDesk</name>
     <description>iServiceDesk ITSM Application</description>
-    <priority>1</priority>
+    <priority>99</priority>
     <!--
     <ref-modules>Module_1,Module_2,Module_3,Module_4</ref-modules>
     -->
