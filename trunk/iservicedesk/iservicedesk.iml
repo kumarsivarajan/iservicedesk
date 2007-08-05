@@ -126,7 +126,7 @@
           <attribute name="URI" value="/WEB-INF/classes" />
         </containerElement>
         <building>
-          <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/../../jfox3/framework/WEB-INF/MODULES/iservicedesk" />
+          <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/../../framework/WEB-INF/MODULES/iservicedesk" />
           <setting name="EXPLODED_ENABLED" value="true" />
           <setting name="JAR_URL" value="file://" />
           <setting name="JAR_ENABLED" value="false" />
