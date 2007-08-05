@@ -10,6 +10,8 @@ import org.jfox.mvc.annotation.ActionMethod;
  *
  * //TODO: 支持多语言 successView
  * //TODO: 支持 themes 选择
+ * //TODO: 设置通用变量
+ * //TODO: 检查新到消息
  *
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
