@@ -1,6 +1,7 @@
 package cn.iservicedesk.infrastructure;
 
 import org.jfox.mvc.ActionSupport;
+import org.jfox.mvc.InvocationContext;
 import org.jfox.mvc.annotation.ActionMethod;
 
 /**
@@ -16,6 +17,17 @@ import org.jfox.mvc.annotation.ActionMethod;
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
 public abstract class SuperAction extends ActionSupport {
+
+    protected void preAction(InvocationContext invocationContext) {
+        
+        super.preAction(invocationContext);
+    }
+
+    protected void postAction(InvocationContext invocationContext) {
+        //TODO: 设置多语言
+
+        super.postAction(invocationContext);
+    }
 
     public static void main(String[] args) {
 
