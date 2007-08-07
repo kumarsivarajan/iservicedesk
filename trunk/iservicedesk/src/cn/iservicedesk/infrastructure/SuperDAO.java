@@ -51,8 +51,8 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
     }
 
 
-    public int executeNamedNativeUpdate(String sql, Map<String, Object> paramMap) {
-        Query query = createNamedNativeQuery(sql);
+    public int executeNamedNativeUpdate(String namedQuery, Map<String, Object> paramMap) {
+        Query query = createNamedNativeQuery(namedQuery);
         if (paramMap != null) {
             for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
                 query.setParameter(entry.getKey(), entry.getValue());
@@ -64,29 +64,23 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
     /**
      * 使用一个预定义的 query 语句进行查询，返回 entity list
      *
-     * @param queryName   named query
+     * @param namedQuery   named query
      */
-    public <T extends EntityObject> List<T> processNamedNativeQuery(String queryName, Map<String, ?> paramMap) {
-        Query query = createNamedNativeQuery(queryName);
-        if (paramMap != null) {
-            for (Map.Entry<String, ?> entry : paramMap.entrySet()) {
-                query.setParameter(entry.getKey(), entry.getValue());
-            }
-        }
-        return (List<T>)query.getResultList();
+    public <T extends EntityObject> List<T> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap) {
+        return processNamedNativeQuery(namedQuery, paramMap, 0, Integer.MAX_VALUE);
     }
 
     /**
      * 使用一个预定义的 query 语句进行查询，返回 entity list
      *
-     * @param queryName   named query
+     * @param namedQuery   named query
      * @param paramMap parameter map
      * @param firstResult 第一个值的位置
      * @param maxResult 取值范围
      * @return 返回符合需要的 entity list
      */
-    public <T extends EntityObject> List<T> processNamedNativeQuery(String queryName, Map<String, ?> paramMap, int firstResult, int maxResult) {
-        Query query = createNamedNativeQuery(queryName);
+    public <T extends EntityObject> List<T> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap, int firstResult, int maxResult) {
+        Query query = createNamedNativeQuery(namedQuery);
         if (paramMap != null) {
             for (Map.Entry<String, ?> entry : paramMap.entrySet()) {
                 query.setParameter(entry.getKey(), entry.getValue());
@@ -97,11 +91,11 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
         return (List<T>)query.getResultList();
     }
 
-    public QueryExt createNativeQuery(String sql) {
+    public final QueryExt createNativeQuery(String sql) {
         throw new UnsupportedOperationException("Can not create native query, only named native query supported!");
     }
 
-    public QueryExt createNativeQuery(String sql, Class<?> resultClass) {
+    public final QueryExt createNativeQuery(String sql, Class<?> resultClass) {
         throw new UnsupportedOperationException("Can not create native query, only named native query supported!");
     }
 }
