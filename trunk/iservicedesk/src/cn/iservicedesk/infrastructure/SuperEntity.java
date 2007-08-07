@@ -16,7 +16,10 @@ public abstract class SuperEntity implements EntityObject, Comparable<SuperEntit
     protected long id = -1;
 
     protected long createTime = System.currentTimeMillis();
-    protected long lastModified = System.currentTimeMillis(); 
+    protected String creator;
+    protected long lastModified = System.currentTimeMillis();
+    protected String lastModifier;
+    
     protected boolean removed = false;
 
     public SuperEntity() {
@@ -65,6 +68,22 @@ public abstract class SuperEntity implements EntityObject, Comparable<SuperEntit
 
     public void setLastModified(long lastModified) {
         this.lastModified = lastModified;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getLastModifier() {
+        return lastModifier;
+    }
+
+    public void setLastModifier(String lastModifier) {
+        this.lastModifier = lastModifier;
     }
 
     /**
