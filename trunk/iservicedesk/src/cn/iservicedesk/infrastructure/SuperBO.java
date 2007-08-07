@@ -18,7 +18,7 @@ public abstract class SuperBO implements BusinessObject{
         return sessionContext;
     }
 
-    protected EntityObject newEntity(Class<? extends EntityObject> entityClass){
+    protected IEntityObject newEntity(Class<? extends IEntityObject> entityClass){
         return EntityFactory.newEntityObject(entityClass);
     }
 }
