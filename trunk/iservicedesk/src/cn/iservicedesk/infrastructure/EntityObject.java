@@ -8,7 +8,7 @@ import org.jfox.entity.dao.PKGenerator;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public abstract class EntityObject implements IEntityObject, Comparable<EntityObject>{
+public abstract class EntityObject implements Comparable<EntityObject>{
     /**
      * 每个表必须有ID字段，且作为 Primary Key
      */
