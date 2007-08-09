@@ -39,6 +39,13 @@ public abstract class SuperAction extends ActionSupport {
             PageContext pageContext = invocationContext.getPageContext();
             pageContext.setTargetView(lang + "/" + pageContext.getTargeView());
         }
+
+        if(invocationContext.getPageContext().hasBusinessException() || invocationContext.getPageContext().hasValidateException()) {
+            // log action failed 
+        }
+        else {
+            // log action successful
+        }
     }
 
     public static void main(String[] args) {
