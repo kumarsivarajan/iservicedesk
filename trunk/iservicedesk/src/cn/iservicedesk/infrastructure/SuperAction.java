@@ -2,13 +2,14 @@ package cn.iservicedesk.infrastructure;
 
 import org.jfox.mvc.ActionSupport;
 import org.jfox.mvc.InvocationContext;
-import org.jfox.mvc.annotation.ActionMethod;
+import org.jfox.mvc.PageContext;
+import org.jfox.mvc.SessionContext;
 
 /**
  * 做日志记录、权限判断
- *
+ * <p/>
  * 所有 Action 从这里继承
- *
+ * <p/>
  * //TODO: 支持多语言 successView
  * //TODO: 支持 themes 选择
  * //TODO: 设置通用变量
@@ -19,14 +20,18 @@ import org.jfox.mvc.annotation.ActionMethod;
 public abstract class SuperAction extends ActionSupport {
 
     protected void preAction(InvocationContext invocationContext) {
-        
+
         super.preAction(invocationContext);
     }
 
     protected void postAction(InvocationContext invocationContext) {
-        //TODO: 设置多语言
-
-        super.postAction(invocationContext);
+        SessionContext sessionContext = invocationContext.getSessionContext();
+        // 设置多语言
+        String lang = (String)sessionContext.getAttribute("lang");
+        if (lang != null) {
+            PageContext pageContext = invocationContext.getPageContext();
+            pageContext.setTargetView(lang + "/" + pageContext.getTargeView());
+        }
     }
 
     public static void main(String[] args) {
