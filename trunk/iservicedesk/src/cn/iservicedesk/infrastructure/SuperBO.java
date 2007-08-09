@@ -23,7 +23,10 @@ public abstract class SuperBO implements BusinessObject{
      * @param entityObject entity
      */
     protected boolean inspectReference(EntityObject entityObject){
-        return true;
+        if(entityObject instanceof RefInspectableEntityObject) {
+            return ((RefInspectableEntityObject)entityObject).isReferenced();
+        }
+        return false;
     }
 
     public abstract SuperDAO getDataAccessObject();
