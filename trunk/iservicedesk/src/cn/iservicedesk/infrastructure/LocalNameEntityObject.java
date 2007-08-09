@@ -5,6 +5,8 @@ import java.util.Locale;
 import java.io.ByteArrayInputStream;
 
 /**
+ * 支持多语言的 EntityObject，如：Function, Module
+ *
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
 public abstract class LocalNameEntityObject extends EntityObject{
