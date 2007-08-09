@@ -2,22 +2,27 @@ package cn.iservicedesk.infrastructure;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
 public class I18n {
 
-    public static void main(String[] args) {
-        ResourceBundle enBundle = ResourceBundle.getBundle("iservicedesk", Locale.US);
-        ResourceBundle cnBundle = ResourceBundle.getBundle("iservicedesk", Locale.SIMPLIFIED_CHINESE);
+    private final static String RESOURCE_BUNDLE_NAME = "iservicedesk";
 
-        System.out.println(enBundle.getString("a"));
-        System.out.println(enBundle.getString("b"));
+    private final static Map<Locale, ResourceBundle> locale2ResourceBundle = new HashMap<Locale, ResourceBundle>();
+    static {
+        ResourceBundle en_US_Bundle = ResourceBundle.getBundle(RESOURCE_BUNDLE_NAME, Locale.US);
+        ResourceBundle zh_CN_Bundle = ResourceBundle.getBundle(RESOURCE_BUNDLE_NAME, Locale.SIMPLIFIED_CHINESE);
 
-        System.out.println(cnBundle.getString("a"));
-        System.out.println(cnBundle.getString("b"));
+        locale2ResourceBundle.put(Locale.US, en_US_Bundle);
+        locale2ResourceBundle.put(Locale.SIMPLIFIED_CHINESE, zh_CN_Bundle);
+    }
 
+    public String getString(Locale locale, String resourceName){
+        return locale2ResourceBundle.get(locale).getString(resourceName);
     }
 
 }

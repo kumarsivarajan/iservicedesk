@@ -30,7 +30,7 @@ public abstract class SuperAction extends ActionSupport {
         // 设置主题
         String theme = (String)sessionContext.getAttribute("theme");
         if(theme == null) {
-            sessionContext.setAttribute("theme", "default");
+            sessionContext.setAttribute("theme", "VintageSugar");
         }
 
         // 设置多语言
