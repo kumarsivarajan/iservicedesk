@@ -28,6 +28,10 @@ public class RefInspectableEntityObject extends EntityObject{
         return refs;
     }
 
+    public boolean isReferenced(){
+        return !refsMap.isEmpty();
+    }
+
     public String[] getReferenceIds(String key){
         List<String> refIds = refsMap.get(key);
         return refIds.toArray(new String[refIds.size()]);
