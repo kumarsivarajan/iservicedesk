@@ -11,7 +11,9 @@ import java.util.Map;
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
 public class RefInspectableEntityObject extends EntityObject{
-    
+    // 是否已经初始化 refs
+    private boolean refsInit = false;
+
     protected String refs;
 
     private Map<String, List<String>> refsMap = new HashMap<String, List<String>>();
