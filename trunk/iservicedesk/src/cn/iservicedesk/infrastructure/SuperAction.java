@@ -26,6 +26,13 @@ public abstract class SuperAction extends ActionSupport {
 
     protected void postAction(InvocationContext invocationContext) {
         SessionContext sessionContext = invocationContext.getSessionContext();
+
+        // 设置主题
+        String theme = (String)sessionContext.getAttribute("theme");
+        if(theme == null) {
+            sessionContext.setAttribute("theme", "default");
+        }
+
         // 设置多语言
         String lang = (String)sessionContext.getAttribute("lang");
         if (lang != null) {
