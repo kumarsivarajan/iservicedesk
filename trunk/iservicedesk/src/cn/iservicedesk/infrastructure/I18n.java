@@ -12,7 +12,7 @@ public class I18n {
 
     private final static String RESOURCE_BUNDLE_NAME = "iservicedesk";
 
-    private final static Map<Locale, ResourceBundle> locale2ResourceBundle = new HashMap<Locale, ResourceBundle>();
+    private final static Map<Locale, ResourceBundle> locale2ResourceBundle = new HashMap<Locale, ResourceBundle>(4);
     static {
         ResourceBundle en_US_Bundle = ResourceBundle.getBundle(RESOURCE_BUNDLE_NAME, Locale.US);
         ResourceBundle zh_CN_Bundle = ResourceBundle.getBundle(RESOURCE_BUNDLE_NAME, Locale.SIMPLIFIED_CHINESE);
