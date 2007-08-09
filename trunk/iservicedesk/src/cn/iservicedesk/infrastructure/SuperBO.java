@@ -18,5 +18,13 @@ public abstract class SuperBO implements BusinessObject{
         return sessionContext;
     }
 
+    /**
+     * 检查该EntityObject是否被引用
+     * @param entityObject entity
+     */
+    protected boolean inspectReference(EntityObject entityObject){
+        return true;
+    }
+
     public abstract SuperDAO getDataAccessObject();
 }
