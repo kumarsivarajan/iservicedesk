@@ -6,6 +6,16 @@
     <link href="../themes/VintageSugar/style.css?s=4.5.1e&c=" rel="stylesheet" type="text/css"/>
     <link href="../themes/VintageSugar/navigation.css?s=4.5.1e&c=" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" media="all" href="../themes/VintageSugar/calendar-win2k-cold-1.css?s=4.5.1e&c=">
+    <script type="text/javascript" src="../include/javascript/cookie.js?s=4.5.1e&c="></script><link rel="stylesheet" type="text/css" media="all" href="../themes/VintageSugar/calendar-win2k-cold-1.css?s=4.5.1e&c="><script>jscal_today = 1186673715000; if(typeof app_strings == "undefined") app_strings = new Array();</script><script type="text/javascript" src="../jscalendar/calendar.js?s=4.5.1e&c="></script><script type="text/javascript" src="../jscalendar/lang/calendar-en.js?s=4.5.1e&c="></script><script type="text/javascript" src="../jscalendar/calendar-setup_3.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/YAHOO.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/log.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/dom.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/event.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/animation.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/connection.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/dragdrop.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/container.js?s=4.5.1e&c="></script><script src="../include/javascript/yui/ygDDList.js?s=4.5.1e&c="></script><script type="text/javascript" src="../include/javascript/sugar_3.js?s=4.5.1e&c="></script><script type="text/javascript">var asynchronous_key = "329b834a-a32d-33a6-f72a-46baf2002e44";</script><script type="text/javascript">
+        var time_reg_format = '([0-9]{1,2}):([0-9]{1,2})';
+        var date_reg_format = '([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})';
+        var date_reg_positions = {'Y': 1,'m': 2,'d': 3};
+        var time_separator = ':';
+        var cal_date_format = '%Y-%m-%d';
+        var time_offset = 7200;
+
+    </script><script type="text/javascript" src="../cache/jsLanguage/en_us.js?s=4.5.1e&c=&j=1"></script><script type="text/javascript" src="../cache/jsLanguage/Contacts/en_us.js?s=4.5.1e&c=&j=1"></script>
+    
     <script type="text/javascript" src="../include/javascript/cookie.js?s=4.5.1e&c="></script>
     <script type="text/javascript" src="../jscalendar/calendar.js?s=4.5.1e&c="></script>
     <script type="text/javascript" src="../jscalendar/lang/calendar-en.js?s=4.5.1e&c="></script>
@@ -99,8 +109,11 @@
         <a href="index.php?module=Employees&action=ListView" class="myAreaLink">Employees</a>&nbsp;|&nbsp;
 
         <a href="index.php?module=Users&action=Logout" class="myAreaLink">Logout</a>&nbsp;|&nbsp;
-        <a href="index.php?module=Home&action=About" class="myAreaLink">About</a>
-
+        <a href="index.php?module=Home&action=About" class="myAreaLink">About</a>&nbsp;|&nbsp;
+        Theme&nbsp;<select OnChange='location.href="index.php?module=Home&action=index&usertheme="+this.value' style='width: 120px; font-size: 10px' name='usertheme'>
+        <OPTION value='Sugar'>Sugar</OPTION>
+        <OPTION value='SugarClassic'>Sugar Classic</OPTION>
+        <OPTION selected value='VintageSugar'>Vintage Sugar</OPTION></select>
     </td>
 </tr>
 <tr>
