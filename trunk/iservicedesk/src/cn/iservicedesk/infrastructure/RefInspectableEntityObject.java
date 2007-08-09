@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
-public class RefInspectableEntityObject extends EntityObject{
+public abstract class RefInspectableEntityObject extends EntityObject{
     // 是否已经初始化 refs
     private boolean refsInit = false;
 
