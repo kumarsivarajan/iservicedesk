@@ -243,12 +243,23 @@ function get_module_title ($module, $module_title, $show_help)
 global $sugar_version, $sugar_flavor, $server_unique_key, $current_language, $action;
 global $image_path;
 global $app_strings;
+global $theme;
+
 
 $the_title = "<table width='100%' cellpadding='0' cellspacing='0' border='0' class='moduleTitle'><tr><td valign='top'>\n";
 $module = preg_replace("/ /","",$module);
-if (is_file($image_path.$module.".gif")) {
-	$the_title .= "<IMG src='".$image_path.$module.".gif' width='16' height='16' border='0' style='margin-top: 3px; margin-right: 3px;' alt='".$module."'>&nbsp;</td><td width='100%'>";
+$img_exist=is_file($image_path.$module.".gif");
+if (!$img_exist) {
+	$main_image_path = str_replace($theme,'default',$image_path);
+    $img_exist=is_file($image_path.$module.".gif");
+} else {
+    $main_image_path=$image_path;
 }
+
+if ($img_exist) {
+	$the_title .= "<IMG src='".$main_image_path.$module.".gif' width='16' height='16' border='0' style='margin-top: 3px; margin-right: 3px;' alt='".$module."'>&nbsp;</td><td width='100%'>";
+}
+
 $the_title .= "<h2>".$module_title."</h2></td>\n";
 
 if ($show_help) {

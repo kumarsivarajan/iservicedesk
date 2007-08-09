@@ -1598,7 +1598,7 @@ function fill_form(type) {
 	global_report_def = report_def;
   	report_def.assigned_user_id = document.EditView.assigned_user_id.value;
   
-	report_def_str = JSON.stringify(report_def);
+	report_def_str = JSON.stringifyNoSecurity(report_def);
 	form_obj.report_def.value = report_def_str;
 
 	return true;

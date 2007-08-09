@@ -28,7 +28,16 @@
 function send_back(module, id)
 {
 	var associated_row_data = associated_javascript_data[id];
-	eval("var request_data = " + window.document.forms['popup_query_form'].request_data.value);
+
+	// cn: bug 12274 - stripping false-positive security envelope
+	eval("var temp_request_data = " + window.document.forms['popup_query_form'].request_data.value);
+	if(temp_request_data.jsonObject) {
+		var request_data = temp_request_data.jsonObject;
+	} else {
+		var request_data = temp_request_data; // passed data that is NOT incorrectly encoded via JSON.encode();
+	}
+	// cn: end bug 12274 fix
+
 	var passthru_data = Object();
 	if(typeof(request_data.passthru_data) != 'undefined')
 	{
@@ -93,7 +102,15 @@ function send_back_selected(module, form, field, error_message)
 	
 	eval("var selection_list_array = {" + array_contents.join(",") + "}");
 	
-	eval("var request_data = " + window.document.forms['popup_query_form'].request_data.value);
+	// cn: bug 12274 - stripping false-positive security envelope
+	eval("var temp_request_data = " + window.document.forms['popup_query_form'].request_data.value);
+	if(temp_request_data.jsonObject) {
+		var request_data = temp_request_data.jsonObject;
+	} else {
+		var request_data = temp_request_data; // passed data that is NOT incorrectly encoded via JSON.encode();
+	}
+	// cn: end bug 12274 fix
+
 	var passthru_data = Object();
 	if(typeof(request_data.passthru_data) != 'undefined')
 	{

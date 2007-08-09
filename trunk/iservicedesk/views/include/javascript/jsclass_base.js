@@ -374,7 +374,6 @@ alert(str);
         }
                 
         publ.handleData = function(data){
-
             try{            	
                 var obj = JSON.parse(data);
             }catch(e){;
@@ -394,8 +393,9 @@ alert(str);
                 sync=true;
             }
             var data = new Request(this.request_id++, name, args);
+            // cn: bug 12274 - defend against CSRF
+            data = JSON.stringify(data); // creates security envelope wrapped JSON object
 
-            data = this.jsonParser.objToJson(data);
             if(sync){
                 var rsp = urllib.postURL(this.url, data, [["Content-Type", "text/plain"]]);
                 rsp = this.handleData(rsp.responseText);
@@ -409,7 +409,6 @@ alert(str);
                 var request_id = this.request_id;
                 urllib.postURL(this.url, data, [["Content-Type", "text/plain"]], function(rsp){
                     try{
-  //alert("RESPONSE"+rsp.responseText);
                         rsp = self.handleData(rsp.responseText);
                     }catch(e){
                         //callback(null,e);

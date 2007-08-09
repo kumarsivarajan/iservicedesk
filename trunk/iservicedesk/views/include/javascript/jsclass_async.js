@@ -71,7 +71,7 @@ function SugarVCalClient() {
       this.user_id = user_id;
 
       // get content at url and declare the callback using anon function:
-      urllib.getURL(  GLOBAL_REGISTRY.config['site_url']+'/vcal_server.php?type=vfb&source=outlook&user_id='+user_id,[["Content-Type", "text/plain"]], function (result) { 
+      urllib.getURL('./vcal_server.php?type=vfb&source=outlook&user_id='+user_id,[["Content-Type", "text/plain"]], function (result) { 
                   if (typeof GLOBAL_REGISTRY.freebusy == 'undefined')
                   {
                      GLOBAL_REGISTRY.freebusy = new Object();
@@ -185,9 +185,9 @@ SugarRPCClient.prototype.allowed_methods = ['retrieve','query','save','set_accep
 SugarRPCClient.prototype.init = function() {
 	this._serviceProxy;
 	this._showError= function (e){ 
-		alert("ERROR CONNECTING to: "+ GLOBAL_REGISTRY.config['site_url']+'/json_server.php, ERROR:'+e); 
+		alert("ERROR CONNECTING to: ./json_server.php, ERROR:"+e); 
 	}
-	this.serviceURL = GLOBAL_REGISTRY.config['site_url']+'/json_server.php';
+	this.serviceURL = './json_server.php';
 	this._serviceProxy = new jsonrpc.ServiceProxy(this.serviceURL,this.allowed_methods);
 }
 

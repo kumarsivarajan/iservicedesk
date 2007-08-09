@@ -795,6 +795,17 @@ $app_list_strings = array (
 										'completed'		=> 'Completed',
 										'no curl'		=> 'Not Run: No cURL available',
 	),
+    'scheduler_status_dom' => 
+        array (
+        'Active' => 'Active',
+        'Inactive' => 'Inactive',
+        ),
+
+    'scheduler_period_dom' => 
+        array (
+        'min' => 'Minutes',
+        'hour' => 'Hours',
+        ),
 
 	'forecast_schedule_status_dom' =>
   	array (
@@ -1301,7 +1312,8 @@ $app_list_strings = array (
     'viewed'=>'Viewed Message',
     'removed'=>'Opted Out',
     'lead'=>'Leads Created',
-    'contact'=>'Contacts Created',        
+    'contact'=>'Contacts Created',
+    'blocked'=>'Suppressed by address or domain',        
   ),
 
   'campainglog_target_type_dom' =>
@@ -1782,5 +1794,6 @@ $app_strings = array (
     'LBL_ONLY_IMAGE_ATTACHMENT' => 'Only image type attachment can be embedded',
 	'LBL_TRAINING' => 'Training',
 	'ERR_DATABASE_CONN_DROPPED'=>'Error executing a query. Possibly, your database dropped the connection. Please refresh this page, you may need to restart you web server.',
+	'ERR_MSSQL_DB_CONTEXT' =>'Changed database context to',
 );
 ?>

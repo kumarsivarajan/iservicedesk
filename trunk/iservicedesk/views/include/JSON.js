@@ -109,23 +109,55 @@ var JSON = function () {
         };
     return {
 /*
-    Stringify a JavaScript value, producing a JSON text.
+    Stringify a JavaScript value, adding a security envelope, producing a JSON text.
 */
         stringify: function (v) {
             var f = s[typeof v];
             if (f) {
                 v = f(v);
                 if (typeof v === 'string') {
-                    return v;
+                    // cn: bug 12274 - add a security envelope to protect against CSRF
+					var securityEnvelope = "{asynchronous_key:'" + asynchronous_key +"', jsonObject:" + v + "}";
+					return securityEnvelope;
                 }
             }
             return;
         },
+        
+        destringify: function(str) {
+        	
+        },
+/*
+    Stringify a JavaScript value, NO security envelope, producing a JSON text.
+*/
+        stringifyNoSecurity : function (v) {
+            var f = s[typeof v];
+            if (f) {
+                v = f(v);
+                if (typeof v === 'string') {
+					return v;
+                }
+            }
+            return;
+        },
+        
+        destringify: function(str) {
+        	
+        },
+
 /*
     Parse a JSON text, producing a JavaScript value.
     It returns false if there is a syntax error.
 */
         parse: function (text) {
+			// cn: bug 12274 - the below defend against CSRF (see desc for whitepaper)
+			if(text.substr) {
+		    	if(text.substr(0,11) == "while(1);/*") {
+		    		text = text.substr(11);
+		    		text = text.substr(0, (text.length - 2));
+		    	}
+			}
+
             try {
                 return !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
                         text.replace(/"(\\.|[^"\\])*"/g, ''))) &&
@@ -133,6 +165,23 @@ var JSON = function () {
             } catch (e) {
                 return false;
             }
+        },
+
+		/**
+		 * SUGAR: in response to CSRF, keep a standard copy of the parse function
+		 */
+        parseNoSecurity: function (text) {
+            try {
+                return !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
+                        text.replace(/"(\\.|[^"\\])*"/g, ''))) &&
+                    eval('(' + text + ')');
+            } catch (e) {
+
+
+
+                return false;
+            }
         }
+        
     };
 }();

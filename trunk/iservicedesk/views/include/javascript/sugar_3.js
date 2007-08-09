@@ -245,9 +245,8 @@ function toDecimal(original) {
 
 function isInteger(s) {
 	if(typeof num_grp_sep != 'undefined' && typeof dec_sep != 'undefined')
-		s = unformatNumber(s, num_grp_sep, dec_sep).toString();
+		s = unformatNumberNoParse(s, num_grp_sep, dec_sep).toString();
 
-	var i;
     for (i = 0; i < s.length; i++){
         // Check that current character is number.
         var c = s.charAt(i);
@@ -884,18 +883,16 @@ function call_json_method(module,action,vars,variable_name,callback) {
 	function() {
 		if(global_xmlhttp.readyState==4) {
 			if(global_xmlhttp.status == 200) {
-				try {
-					eval("json_objects['"+variable_name+"'] =" + global_xmlhttp.responseText);
-			    } 
-			    catch(exception) {
-			         alert("ERROR:"+exception+", returned from server:"+global_xmlhttp.responseText);
-				}
-				var args = {responseText:global_xmlhttp.responseText,responseXML:global_xmlhttp.responseXML};
-				callback.call(document,args);
+				// cn: bug 12274 - pass through JSON.parse() to remove security envelope
+				json_objects[variable_name] = JSON.parse(global_xmlhttp.responseText);
+				
+				// cn: bug 12274 - safe from CSRF, render response as expected
+				var respText = JSON.parseNoSecurity(global_xmlhttp.responseText);
+				var args = {responseText:respText, responseXML:global_xmlhttp.responseXML};
+				callback.call(document, args);
 			} 
 			else {
-				alert("There was a problem retrieving the XML data:\n" +
-				global_xmlhttp.statusText);
+				alert("There was a problem retrieving the XML data:\n" + global_xmlhttp.statusText);
 			}
 		}
 	}
@@ -1349,15 +1346,23 @@ sListView = new sugarListView();
 
 // format and unformat numbers
 function unformatNumber(n, num_grp_sep, dec_sep) {
-	if(typeof num_grp_sep == 'undefined' || typeof dec_sep == 'undefined') return n;
-	n = n.toString();
-	if(n.length > 0) {
-		n = n.replace(new RegExp(RegExp.escape(num_grp_sep), 'g'), '').replace(new RegExp(RegExp.escape(dec_sep)), '.');		
-		return parseFloat(n);
+	var x=unformatNumberNoParse(n, num_grp_sep, dec_sep);
+	x=x.toString();
+	if(x.length > 0) {
+		return parseFloat(x);
 	}
 	return '';
 }
 
+function unformatNumberNoParse(n, num_grp_sep, dec_sep) {
+	if(typeof num_grp_sep == 'undefined' || typeof dec_sep == 'undefined') return n;
+	n = n.toString();
+	if(n.length > 0) {
+		n = n.replace(new RegExp(RegExp.escape(num_grp_sep), 'g'), '').replace(new RegExp(RegExp.escape(dec_sep)), '.');		
+		return n;
+	}
+	return '';
+}
 // round parameter can be negative for decimal, precision has to be postive
 function formatNumber(n, num_grp_sep, dec_sep, round, precision) {
   if(typeof num_grp_sep == 'undefined' || typeof dec_sep == 'undefined') return n;
