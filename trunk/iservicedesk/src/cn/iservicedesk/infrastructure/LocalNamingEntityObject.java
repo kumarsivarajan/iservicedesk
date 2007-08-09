@@ -9,7 +9,7 @@ import java.io.ByteArrayInputStream;
  *
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
-public abstract class LocalNameEntityObject extends EntityObject{
+public abstract class LocalNamingEntityObject extends EntityObject{
 
     protected String name;
     //localName 多语言 properties 字符串
