@@ -97,4 +97,9 @@ public abstract class EntityObject implements Comparable<EntityObject>{
         return (thisId < thatId ? -1 : (thisId == thatId ? 0 : 1));
     }
 
+    //TODO:
+    public String getTableName() {
+        return "";
+    }
+
 }
