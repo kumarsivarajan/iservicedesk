@@ -6,34 +6,6 @@
         <ejbRoots>
           <root url="file://$MODULE_DIR$/src" />
         </ejbRoots>
-        <containerElement type="module" name="framework">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="/framework.jar" />
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$APPLICATION_HOME_DIR$/lib/j2ee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$APPLICATION_HOME_DIR$/lib/javaee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$MODULE_DIR$/../../IDEA/lib/j2ee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$MODULE_DIR$/../../IDEA/lib/javaee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" name="jfox-libs" level="project">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="/" />
-        </containerElement>
         <building>
           <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/out/ejbExploded" />
           <setting name="EXPLODED_ENABLED" value="false" />
@@ -81,50 +53,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$" relative="/" />
         </webroots>
-        <containerElement type="facet" facetId="framework/web/Web">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-        </containerElement>
-        <containerElement type="facet" facetId="framework/web/Web2">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-        </containerElement>
-        <containerElement type="module" name="framework">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="/WEB-INF/classes" />
-        </containerElement>
-        <containerElement type="module" name="iServiceDesk">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="/WEB-INF/classes" />
-        </containerElement>
-        <containerElement type="module" name="iservicedesk">
-          <attribute name="method" value="1" />
-          <attribute name="URI" value="/WEB-INF/classes" />
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$APPLICATION_HOME_DIR$/lib/j2ee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$APPLICATION_HOME_DIR$/lib/javaee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$MODULE_DIR$/../../IDEA/lib/j2ee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" level="module">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="&lt;N/A&gt;" />
-          <url>jar://$MODULE_DIR$/../../IDEA/lib/javaee.jar!/</url>
-        </containerElement>
-        <containerElement type="library" name="jfox-libs" level="project">
-          <attribute name="method" value="0" />
-          <attribute name="URI" value="/WEB-INF/classes" />
-        </containerElement>
         <building>
           <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/../../framework/WEB-INF/MODULES/iservicedesk" />
           <setting name="EXPLODED_ENABLED" value="true" />
@@ -134,6 +62,7 @@
           <setting name="BUILD_EXTERNAL_DEPENDENCIES" value="false" />
           <setting name="EXCLUDE_EXPLODED_DIRECTORY" value="false" />
           <setting name="RUN_JASPER_VALIDATION" value="true" />
+          <setting name="BUILD_ONLY_WEB_RESOURCES" value="false" />
         </building>
         <packaging>
           <containerElement type="facet" facetId="framework/web/Web">
