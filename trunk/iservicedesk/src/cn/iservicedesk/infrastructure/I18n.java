@@ -1,6 +1,5 @@
 package cn.iservicedesk.infrastructure;
 
-
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Map;
@@ -22,7 +21,7 @@ public class I18n {
         locale2ResourceBundle.put(Locale.SIMPLIFIED_CHINESE, zh_CN_Bundle);
     }
 
-    public String getString(Locale locale, String resourceName){
+    public static String getString(Locale locale, String resourceName){
         return locale2ResourceBundle.get(locale).getString(resourceName);
     }
 
