@@ -12,14 +12,19 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     /**
      * 每个表必须有ID字段，且作为 Primary Key
      */
-
+    @Column(name="ID")
     protected long id = -1;
 
+    @Column(name="CREATE_TIME")
     protected long createTime = System.currentTimeMillis();
+    @Column(name="CREATOR")
     protected String creator;
+    @Column(name="LAST_MODIFIED")
     protected long lastModified = System.currentTimeMillis();
+    @Column(name="LAST_MODIFIER")
     protected String lastModifier;
-    
+
+    @Column(name="REMOVED")
     protected boolean removed = false;
 
     public EntityObject() {

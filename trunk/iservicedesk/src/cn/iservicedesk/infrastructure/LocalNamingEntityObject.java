@@ -1,8 +1,9 @@
 package cn.iservicedesk.infrastructure;
 
-import java.util.Properties;
-import java.util.Locale;
 import java.io.ByteArrayInputStream;
+import java.util.Locale;
+import java.util.Properties;
+import javax.persistence.Column;
 
 /**
  * 支持多语言的 EntityObject，如：Function, Module
@@ -11,8 +12,10 @@ import java.io.ByteArrayInputStream;
  */
 public abstract class LocalNamingEntityObject extends EntityObject{
 
+    @Column(name="NAME")
     protected String name;
     //localName 多语言 properties 字符串
+    @Column(name="LOCAL_NAME")
     protected String localName = "";
     private Properties localNameProperties = null;
 

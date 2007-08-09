@@ -3,6 +3,7 @@ package cn.iservicedesk.infrastructure;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.persistence.Column;
 
 /**
  * 可以检查引用的 Entity
@@ -14,6 +15,7 @@ public abstract class RefInspectableEntityObject extends EntityObject{
     // 是否已经初始化 refs
     private boolean refsInit = false;
 
+    @Column(name="REFS")
     protected String refs;
 
     private Map<String, List<String>> refsMap = new HashMap<String, List<String>>();
