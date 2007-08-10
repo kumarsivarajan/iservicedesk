@@ -17,6 +17,7 @@ import javax.persistence.Column;
 public abstract class RefInspectableEntityObject extends EntityObject {
     // 是否已经初始化 refs
     private boolean refsInit = false;
+    private boolean refsChanged = false;
 
     @Column(name = "REFS")
     protected String refs;
@@ -30,6 +31,9 @@ public abstract class RefInspectableEntityObject extends EntityObject {
 
     public String getRefs() {
         //TODO: need to recompute refs string
+        if(refsChanged) {
+            
+        }
         return refs;
     }
 
@@ -39,6 +43,25 @@ public abstract class RefInspectableEntityObject extends EntityObject {
 
     //TODO: 
     public synchronized void addReference(String tableName, long entityId) {
+        initReference();
+        List<Long> refIds = refsMap.get(tableName);
+        if (refIds == null) {
+            refIds = new ArrayList<Long>(1);
+            refIds.add(entityId);
+        }
+        refsChanged = true;
+    }
+
+    public synchronized void removeReference(String tableName, long entityId) {
+        initReference();
+        List<Long> refIds = refsMap.get(tableName);
+        if (refIds != null) {
+            refIds.remove(entityId);
+            refsChanged = true;
+        }
+    }
+    
+    private void initReference() {
         if (!refsInit) {
             if (refs != null && refs.trim().length() > 0) {
                 Properties refProperties = new Properties();
@@ -48,24 +71,18 @@ public abstract class RefInspectableEntityObject extends EntityObject {
                 catch (Exception e) {
                     e.printStackTrace();
                 }
-                for(Map.Entry<Object, Object> entry : refProperties.entrySet()){
+                for (Map.Entry<Object, Object> entry : refProperties.entrySet()) {
                     String tabName = entry.getKey().toString();
                     String value = entry.getValue().toString();
                     String[] refIds = value.split(",");
                     List<Long> refIdList = new ArrayList<Long>(refIds.length);
-                    for(String refId : refIds){
+                    for (String refId : refIds) {
                         refIdList.add(Long.parseLong(refId));
                     }
-                    refsMap.put(tabName,refIdList);
+                    refsMap.put(tabName, refIdList);
                 }
             }
             refsInit = true;
-
-            List<Long> refIds = refsMap.get(tableName);
-            if(refIds == null){
-                refIds = new ArrayList<Long>(1);
-            }
-            refIds.add(entityId);
         }
     }
 
