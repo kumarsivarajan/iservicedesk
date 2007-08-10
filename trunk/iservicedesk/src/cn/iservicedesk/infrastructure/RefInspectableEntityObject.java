@@ -26,18 +26,19 @@ public abstract class RefInspectableEntityObject extends EntityObject {
 
     public void setRefs(String refs) {
         this.refs = refs;
-        //TODO: compute refs string 
+        refsInit = false;
+        initReference();
     }
 
     public String getRefs() {
-        //TODO: need to recompute refs string
         if(refsChanged) {
-            
+            //TODO: need to recompute refs string
         }
         return refs;
     }
 
     public boolean isReferenced() {
+        initReference();
         return !refsMap.isEmpty();
     }
 
