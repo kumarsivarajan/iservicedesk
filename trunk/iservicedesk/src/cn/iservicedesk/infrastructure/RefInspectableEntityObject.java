@@ -42,7 +42,6 @@ public abstract class RefInspectableEntityObject extends EntityObject {
         return !refsMap.isEmpty();
     }
 
-    //TODO: 
     public synchronized void addReference(String tableName, long entityId) {
         initReference();
         List<Long> refIds = refsMap.get(tableName);
