@@ -11,10 +11,16 @@ import org.jfox.mvc.annotation.ActionMethod;
 @Service(id="home")
 public class HomeAction extends SuperAction {
 
-    @ActionMethod(name="index",successView = "index_en.html")
-    public void IndexPage(InvocationContext invocationContext) throws Exception{
+    @ActionMethod(name="index",successView = "index.vhtml")
+    public void indexPage(InvocationContext invocationContext) throws Exception{
 
     }
+
+    @ActionMethod(name="today",successView = "today.vhtml")
+    public void todayPage(InvocationContext invocationContext) throws Exception{
+
+    }
+
     
     public static void main(String[] args) {
 

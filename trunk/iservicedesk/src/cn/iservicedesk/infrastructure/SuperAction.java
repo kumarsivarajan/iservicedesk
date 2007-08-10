@@ -18,6 +18,8 @@ import org.jfox.mvc.SessionContext;
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
 public abstract class SuperAction extends ActionSupport {
+    public static final String THEME_KEY = "theme";
+    public static final String LANG_KEY = "lang";
 
     protected void preAction(InvocationContext invocationContext) {
 
@@ -26,15 +28,16 @@ public abstract class SuperAction extends ActionSupport {
 
     protected void postAction(InvocationContext invocationContext) {
         SessionContext sessionContext = invocationContext.getSessionContext();
+        // TODO: set default session
 
         // 设置主题
-        String theme = (String)sessionContext.getAttribute("theme");
+        String theme = (String)sessionContext.getAttribute(THEME_KEY);
         if(theme == null) {
-            sessionContext.setAttribute("theme", "VintageSugar");
+            sessionContext.setAttribute(THEME_KEY, "VintageSugar");
         }
-
+        sessionContext.setAttribute(LANG_KEY,"en_US");
         // 设置多语言
-        String lang = (String)sessionContext.getAttribute("lang");
+        String lang = (String)sessionContext.getAttribute(LANG_KEY);
         if (lang != null) {
             PageContext pageContext = invocationContext.getPageContext();
             pageContext.setTargetView(lang + "/" + pageContext.getTargeView());

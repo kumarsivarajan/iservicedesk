@@ -29,5 +29,5 @@ public abstract class SuperBO implements BusinessObject{
         return false;
     }
 
-    public abstract SuperDAO getDataAccessObject();
+    public abstract DataAccessObject getDataAccessObject();
 }
