@@ -30,9 +30,23 @@ public abstract class RefInspectableEntityObject extends EntityObject {
         initReference();
     }
 
-    public String getRefs() {
+    public synchronized String getRefs() {
         if(refsChanged) {
-            //TODO: need to recompute refs string
+            StringBuffer sb = new StringBuffer();
+            for(Map.Entry<String, List<Long>> entry : refsMap.entrySet()){
+                String tableName = entry.getKey();
+                sb.append(tableName).append("=");
+                List<Long> refIds = entry.getValue();
+                for(int i=0; i< refIds.size(); i++){
+                    if(i>0) {
+                        sb.append(",");
+                    }
+                    sb.append(refIds.get(i));
+                }
+                sb.append("\n");
+            }
+            refs = sb.toString();
+            refsChanged = false;
         }
         return refs;
     }
@@ -42,7 +56,7 @@ public abstract class RefInspectableEntityObject extends EntityObject {
         return !refsMap.isEmpty();
     }
 
-    public synchronized void addReference(String tableName, long entityId) {
+    public void addReference(String tableName, long entityId) {
         initReference();
         List<Long> refIds = refsMap.get(tableName);
         if (refIds == null) {
@@ -52,7 +66,7 @@ public abstract class RefInspectableEntityObject extends EntityObject {
         refsChanged = true;
     }
 
-    public synchronized void removeReference(String tableName, long entityId) {
+    public void removeReference(String tableName, long entityId) {
         initReference();
         List<Long> refIds = refsMap.get(tableName);
         if (refIds != null) {
@@ -61,7 +75,7 @@ public abstract class RefInspectableEntityObject extends EntityObject {
         }
     }
     
-    private void initReference() {
+    private synchronized void initReference() {
         if (!refsInit) {
             if (refs != null && refs.trim().length() > 0) {
                 Properties refProperties = new Properties();
@@ -87,6 +101,7 @@ public abstract class RefInspectableEntityObject extends EntityObject {
     }
 
     public Long[] getReferenceIds(String key) {
+        initReference();
         List<Long> refIds = refsMap.get(key);
         return refIds.toArray(new Long[refIds.size()]);
     }
