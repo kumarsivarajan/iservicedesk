@@ -1,30 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
 <html>
 <head>
-    <link REL="SHORTCUT ICON" HREF="../include/images/sugar_icon.ico">
+    <link REL="SHORTCUT ICON" HREF="include/images/sugar_icon.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>iServiceDesk - Service Desk based on ITIL</title>
-    <style type="text/css">@import url( "../themes/VintageSugar/style.css" ); </style>
-    <link href="../themes/VintageSugar/navigation.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="../include/javascript/cookie.js"></script>
-    <link rel="stylesheet" type="text/css" media="all" href="../themes/VintageSugar/calendar-win2k-cold-1.css">
+<!--
+    <style type="text/css">@import url( "themes/VintageSugar/style.css" ); </style>
+-->
+    <link href="themes/VintageSugar/style.css" rel="stylesheet" type="text/css"/>
+    <link href="themes/VintageSugar/navigation.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="include/javascript/cookie.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="themes/VintageSugar/calendar-win2k-cold-1.css">
     <!--
         <script>jscal_today = 1186683987000;
         if (typeof app_strings == "undefined") app_strings = new Array();</script>
     -->
-    <script type="text/javascript" src="../jscalendar/calendar.js"></script>
-    <script type="text/javascript" src="../jscalendar/lang/calendar-en.js"></script>
-    <script type="text/javascript" src="../jscalendar/calendar-setup_3.js"></script>
-    <script src="../include/javascript/yui/YAHOO.js"></script>
-    <script src="../include/javascript/yui/log.js"></script>
-    <script src="../include/javascript/yui/dom.js"></script>
-    <script src="../include/javascript/yui/event.js"></script>
-    <script src="../include/javascript/yui/animation.js"></script>
-    <script src="../include/javascript/yui/connection.js"></script>
-    <script src="../include/javascript/yui/dragdrop.js"></script>
-    <script src="../include/javascript/yui/container.js"></script>
-    <script src="../include/javascript/yui/ygDDList.js"></script>
-    <script type="text/javascript" src="../include/javascript/sugar_3.js"></script>
+    <script type="text/javascript" src="jscalendar/calendar.js"></script>
+    <script type="text/javascript" src="jscalendar/lang/calendar-en.js"></script>
+    <script type="text/javascript" src="jscalendar/calendar-setup_3.js"></script>
+    <script src="include/javascript/yui/YAHOO.js"></script>
+    <script src="include/javascript/yui/log.js"></script>
+    <script src="include/javascript/yui/dom.js"></script>
+    <script src="include/javascript/yui/event.js"></script>
+    <script src="include/javascript/yui/animation.js"></script>
+    <script src="include/javascript/yui/connection.js"></script>
+    <script src="include/javascript/yui/dragdrop.js"></script>
+    <script src="include/javascript/yui/container.js"></script>
+    <script src="include/javascript/yui/ygDDList.js"></script>
+    <script type="text/javascript" src="include/javascript/sugar_3.js"></script>
     <script type="text/javascript">var asynchronous_key = "7f85c2de-00e8-d399-1033-46bb40303dfb";</script>
     <script type="text/javascript">
         var time_reg_format = '([0-9]{1,2}):([0-9]{1,2})';
@@ -36,11 +39,11 @@
 
     </script>
     <!--
-        <script type="text/javascript" src="../cache/jsLanguage/en_us.js&j=1"></script>
-        <script type="text/javascript" src="../cache/jsLanguage/Contacts/en_us.js&j=1"></script>
+        <script type="text/javascript" src="cache/jsLanguage/en_us.js&j=1"></script>
+        <script type="text/javascript" src="cache/jsLanguage/Contacts/en_us.js&j=1"></script>
     -->
-    <script language="javascript" src="../themes/VintageSugar/menu.js"></script>
-    <script language="javascript" src="../themes/VintageSugar/cookie.js"></script>
+    <script language="javascript" src="themes/VintageSugar/menu.js"></script>
+    <script language="javascript" src="themes/VintageSugar/cookie.js"></script>
 
     <script language="javascript">
 
@@ -51,14 +54,14 @@
 
                 Set_Cookie('showLeftCol', 'true', 30, '/', '', '');
                 var show = Get_Cookie('showLeftCol');
-                document['HideHandle'].src = '../themes/VintageSugar/images/hide.gif';
+                document['HideHandle'].src = 'themes/VintageSugar/images/hide.gif';
             }
             else {
                 this.document.getElementById(id).style.display = 'none';
 
                 Set_Cookie('showLeftCol', 'false', 30, '/', '', '');
                 var show = Get_Cookie('showLeftCol');
-                document['HideHandle'].src = '../themes/VintageSugar/images/show.gif';
+                document['HideHandle'].src = 'themes/VintageSugar/images/show.gif';
 
             }
         }
@@ -98,37 +101,37 @@
 
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
 <tr>
-<td style="background-image : url(../themes/VintageSugar/images/header_bg.gif); background-repeat: repeat-x;">
+<td style="background-image : url(themes/VintageSugar/images/header_bg.gif); background-repeat: repeat-x;">
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-    <td width="80%" height="40" rowspan="2" valign="top"><img src="../themes/VintageSugar/images/company_logo.png" width="212" height="40" alt="Company Logo" border="0" style="margin-left: 12px;margin-bottom: 3px;"></td>
-    <td rowspan="2" align="right" valign="top" style="border: none;"><img src="../themes/VintageSugar/images/myAreaSeparator.gif" width="20" height="20" alt="My Area Links:" border="0"></td>
-    <td height="20" align="right" valign="middle" nowrap class="myAreaBg"><a href="../index.php?module=Users&action=DetailView&record=will_id" class="myAreaLink">My Account</a>&nbsp;|&nbsp;
-        <a href="../index.php?module=Home&action=TrainingPortal" class="myAreaLink">Training</a>&nbsp;|&nbsp;
-        <a href="../index.php?module=Employees&action=ListView" class="myAreaLink">Employees</a>&nbsp;|&nbsp;
+    <td width="80%" height="40" rowspan="2" valign="top"><img src="themes/VintageSugar/images/company_logo.png" width="212" height="40" alt="Company Logo" border="0" style="margin-left: 12px;margin-bottom: 3px;"></td>
+    <td rowspan="2" align="right" valign="top" style="border: none;"><img src="themes/VintageSugar/images/myAreaSeparator.gif" width="20" height="20" alt="My Area Links:" border="0"></td>
+    <td height="20" align="right" valign="middle" nowrap class="myAreaBg"><a href="index.php?module=Users&action=DetailView&record=will_id" class="myAreaLink">My Account</a>&nbsp;|&nbsp;
+        <a href="index.php?module=Home&action=TrainingPortal" class="myAreaLink">Training</a>&nbsp;|&nbsp;
+        <a href="index.php?module=Employees&action=ListView" class="myAreaLink">Employees</a>&nbsp;|&nbsp;
 
-        <a href="../index.php?module=Users&action=Logout" class="myAreaLink">Logout</a>&nbsp;|&nbsp;
-        <a href="../index.php?module=Home&action=About" class="myAreaLink">About</a>
+        <a href="index.php?module=Users&action=Logout" class="myAreaLink">Logout</a>&nbsp;|&nbsp;
+        <a href="index.php?module=Home&action=About" class="myAreaLink">About</a>
 
     </td>
 </tr>
 <tr>
-    <td align="right" height="20"><img src="../include/images/sugarsales_myarea.png" alt="Sugar Suite" width="140" height="15" border="0" style="margin-top: 6px; margin-right: 6px;"></td>
+    <td align="right" height="20"><img src="include/images/sugarsales_myarea.png" alt="Sugar Suite" width="140" height="15" border="0" style="margin-top: 6px; margin-right: 6px;"></td>
 </tr>
 <tr>
 <td colspan="3">
 
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-<td style="padding-left:7px; background-image :url('../themes/VintageSugar/images/emptyTabSpace.gif');">&nbsp;</td>
+<td style="padding-left:7px; background-image :url('themes/VintageSugar/images/emptyTabSpace.gif');">&nbsp;</td>
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Home"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Home&action=index">Home</A></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Home"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Home&action=index">Home</A></td>
 
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Home"></td>
-            <td valign="bottom" style="background-image : url('../themes/VintageSugar/images/emptyTabSpace.gif');"></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Home"></td>
+            <td valign="bottom" style="background-image : url('themes/VintageSugar/images/emptyTabSpace.gif');"></td>
         </tr>
     </table>
 </td>
@@ -136,76 +139,11 @@
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="My Portal"></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="My Portal"></td>
 
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=iFrames&action=index">My Portal</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="My Portal"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
-        </tr>
-
-    </table>
-</td>
-
-<td>
-    <table cellspacing="0" cellpadding="0" border="0" width="100%">
-
-        <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Calendar"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Calendar&action=index">Calendar</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Calendar"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
-        </tr>
-
-    </table>
-</td>
-
-
-<td>
-    <table cellspacing="0" cellpadding="0" border="0" width="100%">
-        <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Activities"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Activities&action=index">Activities</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Activities"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
-        </tr>
-
-    </table>
-</td>
-
-<td>
-    <table cellspacing="0" cellpadding="0" border="0" width="100%">
-        <tr height="25">
-            <td><img src="../themes/VintageSugar/images/currentTab_left.gif" width="5" height="25" border="0" id="currentTab" alt="Contacts"></td>
-            <td class="currentTab" nowrap><a class="currentTabLink" href="../index.php?module=Contacts&action=index">Contacts</A></td>
-            <td class="currentTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Contacts"></td>
-
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
-        </tr>
-
-    </table>
-</td>
-
-<td>
-    <table cellspacing="0" cellpadding="0" border="0" width="100%">
-        <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Accounts"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Accounts&action=index">Accounts</A></td>
-
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Accounts"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
-        </tr>
-
-    </table>
-</td>
-
-<td>
-    <table cellspacing="0" cellpadding="0" border="0" width="100%">
-        <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Leads"></td>
-
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Leads&action=index">Leads</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Leads"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=iFrames&action=index">My Portal</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="My Portal"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
         </tr>
 
     </table>
@@ -215,10 +153,10 @@
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
 
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Opportunities"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Opportunities&action=index">Opportunities</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Opportunities"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Calendar"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Calendar&action=index">Calendar</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Calendar"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
         </tr>
 
     </table>
@@ -228,10 +166,10 @@
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Cases"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Cases&action=index">Cases</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Cases"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Activities"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Activities&action=index">Activities</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Activities"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
         </tr>
 
     </table>
@@ -240,11 +178,11 @@
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Bug Tracker"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Bugs&action=index">Bug Tracker</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Bug Tracker"></td>
+            <td><img src="themes/VintageSugar/images/currentTab_left.gif" width="5" height="25" border="0" id="currentTab" alt="Contacts"></td>
+            <td class="currentTab" nowrap><a class="currentTabLink" href="index.php?module=Contacts&action=index">Contacts</A></td>
+            <td class="currentTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Contacts"></td>
 
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
         </tr>
 
     </table>
@@ -253,11 +191,11 @@
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Documents"></td>
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Documents&action=index">Documents</A></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Accounts"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Accounts&action=index">Accounts</A></td>
 
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Documents"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Accounts"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
         </tr>
 
     </table>
@@ -266,26 +204,91 @@
 <td>
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr height="25">
-            <td><img src="../themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Emails"></td>
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Leads"></td>
 
-            <td class="otherTab" nowrap><a class="otherTabLink" href="../index.php?module=Emails&action=index">Emails</A></td>
-            <td class="otherTabRight"><img src="../include/images/blank.gif" width="2" height="1" border="0" alt="Emails"></td>
-            <td valign="bottom" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"><img src='../themes/VintageSugar/images/more.gif' alt='' align='absmiddle' id='MoreHandle' style=' margin-left:2px; margin-bottom: 4px; cursor: pointer; cursor: hand;' align='absmiddle' onmouseover='tbButtonMouseOver(this.id,66,"",0);'></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Leads&action=index">Leads</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Leads"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+        </tr>
+
+    </table>
+</td>
+
+<td>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+        <tr height="25">
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Opportunities"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Opportunities&action=index">Opportunities</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Opportunities"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+        </tr>
+
+    </table>
+</td>
+
+
+<td>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr height="25">
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Cases"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Cases&action=index">Cases</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Cases"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+        </tr>
+
+    </table>
+</td>
+
+<td>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr height="25">
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Bug Tracker"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Bugs&action=index">Bug Tracker</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Bug Tracker"></td>
+
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+        </tr>
+
+    </table>
+</td>
+
+<td>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr height="25">
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Documents"></td>
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Documents&action=index">Documents</A></td>
+
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Documents"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"></td>
+        </tr>
+
+    </table>
+</td>
+
+<td>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr height="25">
+            <td><img src="themes/VintageSugar/images/otherTab_left.gif" width="5" height="25" border="0" id="otherTab" alt="Emails"></td>
+
+            <td class="otherTab" nowrap><a class="otherTabLink" href="index.php?module=Emails&action=index">Emails</A></td>
+            <td class="otherTabRight"><img src="include/images/blank.gif" width="2" height="1" border="0" alt="Emails"></td>
+            <td valign="bottom" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"><img src='themes/VintageSugar/images/more.gif' alt='' align='absmiddle' id='MoreHandle' style=' margin-left:2px; margin-bottom: 4px; cursor: pointer; cursor: hand;' align='absmiddle' onmouseover='tbButtonMouseOver(this.id,66,"",0);'></td>
         </tr>
 
     </table>
     <div id="MoreMenu" class="menu">
-        <a href="../index.php?module=Campaigns&action=index" class="menuItem" id="CampaignsHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Campaigns</a>
+        <a href="index.php?module=Campaigns&action=index" class="menuItem" id="CampaignsHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Campaigns</a>
 
-        <a href="../index.php?module=Project&action=index" class="menuItem" id="ProjectHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Projects</a>
+        <a href="index.php?module=Project&action=index" class="menuItem" id="ProjectHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Projects</a>
 
-        <a href="../index.php?module=Feeds&action=index" class="menuItem" id="FeedsHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">RSS</a>
+        <a href="index.php?module=Feeds&action=index" class="menuItem" id="FeedsHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">RSS</a>
 
 
-        <a href="../index.php?module=Dashboard&action=index" class="menuItem" id="DashboardHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Dashboard</a>
+        <a href="index.php?module=Dashboard&action=index" class="menuItem" id="DashboardHandle" parentid="MoreMenu" onMouseOver="hiliteItem(this,'yes'); closeSubMenus(this);" onMouseOut="unhiliteItem(this);">Dashboard</a>
     </div>
 </td>
-<td width="100%" style="background-image : url(../themes/VintageSugar/images/emptyTabSpace.gif);"><img src="../include/images/blank.gif" width="1" height="1" border="0" alt=""></td>
+<td width="100%" style="background-image : url(themes/VintageSugar/images/emptyTabSpace.gif);"><img src="include/images/blank.gif" width="1" height="1" border="0" alt=""></td>
 </tr>
 
 </table>
@@ -302,13 +305,13 @@
             <table width="100%" cellspacing="0" cellpadding="0" border="0" height="20">
                 <tr>
                     <td id="welcome" class="welcome" width="100%">Welcome Will</td>
-                    <td class="welcome" style="padding: 0px" align="right" width="20"><img src="../themes/VintageSugar/images/searchSeparator.gif" width="20" height="20" border="0" alt="Search"></td>
+                    <td class="welcome" style="padding: 0px" align="right" width="20"><img src="themes/VintageSugar/images/searchSeparator.gif" width="20" height="20" border="0" alt="Search"></td>
 
                     <td class="search" nowrap style="padding: 0px" align="right">
-                        <img style="filter:alpha(opacity=10);" id="unified_search_advanced_img" src="../themes/VintageSugar/images/searchMore.gif" border="0" alt="Search">&nbsp;<b>Search</b>
+                        <img style="filter:alpha(opacity=10);" id="unified_search_advanced_img" src="themes/VintageSugar/images/searchMore.gif" border="0" alt="Search">&nbsp;<b>Search</b>
 
                     </td>
-                    <td class="search" nowrap>&nbsp; <input type="text" class="searchField" name="query_string" id="query_string" size="20" value="">&nbsp;<input type="image" value="Search" src="../themes/VintageSugar/images/searchButton.gif" alt="" align="top" width="25" height="17" class="searchButton"></td>
+                    <td class="search" nowrap>&nbsp; <input type="text" class="searchField" name="query_string" id="query_string" size="20" value="">&nbsp;<input type="image" value="Search" src="themes/VintageSugar/images/searchButton.gif" alt="" align="top" width="25" height="17" class="searchButton"></td>
                 </tr>
             </table>
         </td>
@@ -321,7 +324,7 @@
 </tr>
 <tr height="20">
     <td class="lastView" nowrap><b>Navigator: Contact >> Create Contact Last Viewed:&nbsp;&nbsp;</b>
-        <a class="lastViewLink" title="[Alt+1]" accessKey="1" href="../index.php?module=Cases&action=DetailView&record=375ca811-4eb7-1926-149c-46a4c6de1466"><img src='../themes/VintageSugar/images/Cases.gif' width='16' height='16' border="0" align="absmiddle" alt="System is Performing Too Fast"></a>&nbsp;<a class="lastViewLink" title="[Alt+1]" accessKey="1" href="../index.php?module=Cases&action=DetailView&record=375ca811-4eb7-1926-149c-46a4c6de1466">System is Perfo</A>&nbsp;
+        <a class="lastViewLink" title="[Alt+1]" accessKey="1" href="index.php?module=Cases&action=DetailView&record=375ca811-4eb7-1926-149c-46a4c6de1466"><img src='themes/VintageSugar/images/Cases.gif' width='16' height='16' border="0" align="absmiddle" alt="System is Performing Too Fast"></a>&nbsp;<a class="lastViewLink" title="[Alt+1]" accessKey="1" href="index.php?module=Cases&action=DetailView&record=375ca811-4eb7-1926-149c-46a4c6de1466">System is Perfo</A>&nbsp;
         <span class="required"><b>INFOMATION: </b> Create Contact successfully.</span>
     </td>
 </tr>
@@ -332,57 +335,57 @@
 <td>
 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
-<td valign="top" style="width: 10px;"><img style="cursor: pointer; cursor: hand;" id="HideHandle" name="HideHandle" src="../themes/VintageSugar/images/show.gif" alt="" onclick='hideLeftCol("leftCol");closeMenus();' onmouseover="showSubMenu('leftCol')"></td>
+<td valign="top" style="width: 10px;"><img style="cursor: pointer; cursor: hand;" id="HideHandle" name="HideHandle" src="themes/VintageSugar/images/show.gif" alt="" onclick='hideLeftCol("leftCol");closeMenus();' onmouseover="showSubMenu('leftCol')"></td>
 <td id="left" valign="top" style="width: 160px;">
 <div id="HideMenu" class="subDmenu">
     <table cellpadding="0" cellspacing="0" border="0" width="180" class="leftColumnModuleHead" onMouseOver="hiliteItem(this,'no');">
         <tr>
-            <th width="5" valign="top"><img src="../themes/VintageSugar/images/moduleTab_left.gif" alt="Shortcuts" width="5" height="23" border="0"></th>
+            <th width="5" valign="top"><img src="themes/VintageSugar/images/moduleTab_left.gif" alt="Shortcuts" width="5" height="23" border="0"></th>
             <th width="100%" class="leftColumnModuleName">Shortcuts</th>
 
-            <th width="7" valign="top"><img src="../themes/VintageSugar/images/moduleTab_right.gif" alt="Shortcuts" width="7" height="23" border="0"></th>
+            <th width="7" valign="top"><img src="themes/VintageSugar/images/moduleTab_right.gif" alt="Shortcuts" width="7" height="23" border="0"></th>
         </tr>
     </table>
 
     <table cellpadding="0" cellspacing="0" border="0" class="subMenu" width="180" onMouseOver="hiliteItem(this,'no');">
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView"><img
-                    src='../themes/VintageSugar/images/CreateContacts.gif' width='16' height='16' alt='Create Contact' border='0' align='absmiddle'></a></td>
-            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView'">&nbsp;<a class="subMenuLink" href="../index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView">Create Contact</A></td>
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView"><img
+                    src='themes/VintageSugar/images/CreateContacts.gif' width='16' height='16' alt='Create Contact' border='0' align='absmiddle'></a></td>
+            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView'">&nbsp;<a class="subMenuLink" href="index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView">Create Contact</A></td>
         </tr>
 
 
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=BusinessCard"><img src='../themes/VintageSugar/images/CreateContacts.gif' width='16' height='16'
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=BusinessCard"><img src='themes/VintageSugar/images/CreateContacts.gif' width='16' height='16'
                                                                                                                                                                                                                                                                                                                                                                                                                            alt='Enter Business Card' border='0' align='absmiddle'></a></td>
-            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=BusinessCard'">&nbsp;<a class="subMenuLink" href="../index.php?module=Contacts&action=BusinessCard">Enter Business Card</A></td>
+            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=BusinessCard'">&nbsp;<a class="subMenuLink" href="index.php?module=Contacts&action=BusinessCard">Enter Business Card</A></td>
         </tr>
 
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=ImportVCard"><img src='../themes/VintageSugar/images/CreateContacts.gif' width='16' height='16'
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=ImportVCard"><img src='themes/VintageSugar/images/CreateContacts.gif' width='16' height='16'
                                                                                                                                                                                                                                                                                                                                                                                                                           alt='Create From vCard' border='0' align='absmiddle'></a></td>
-            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=ImportVCard'">&nbsp;<a class="subMenuLink" href="../index.php?module=Contacts&action=ImportVCard">Create From vCard</A></td>
+            <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=ImportVCard'">&nbsp;<a class="subMenuLink" href="index.php?module=Contacts&action=ImportVCard">Create From vCard</A></td>
         </tr>
 
 
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Contacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Contacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView"><img src='../themes/VintageSugar/images/Contacts.gif' width='16'
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Contacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Contacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView"><img src='themes/VintageSugar/images/Contacts.gif' width='16'
                                                                                                                                                                                                                                                                                                                                                                                                                                                         height='16' alt='Contacts' border='0' align='absmiddle'></a>
             </td>
-            <td nowrap id="Contacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView'">&nbsp;<a class="subMenuLink" href="../index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView">Contacts</A></td>
+            <td nowrap id="Contacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView'">&nbsp;<a class="subMenuLink" href="index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView">Contacts</A></td>
         </tr>
 
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Import_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Import_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index"><img src='../themes/VintageSugar/images/Import.gif' width='16'
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Import_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Import_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index"><img src='themes/VintageSugar/images/Import.gif' width='16'
                                                                                                                                                                                                                                                                                                                                                                                                                                                        height='16' alt='Import' border='0' align='absmiddle'></a>
             </td>
-            <td nowrap id="Import_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index'">&nbsp;<a class="subMenuLink" href="../index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index">Import</A></td>
+            <td nowrap id="Import_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index'">&nbsp;<a class="subMenuLink" href="index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index">Import</A></td>
         </tr>
 
 
         <tr>
-            <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('_sh').style.background='#ffffff';" onMouseOut="document.getElementById('_sh').style.background='#eeeeee';" class="subMenuLink" href="../#"></a></td>
-            <td nowrap id="_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='#'">&nbsp;<a class="subMenuLink" href="../#"><span style="display: none">wp_shortcut_fill_0</span></A></td>
+            <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('_sh').style.background='#ffffff';" onMouseOut="document.getElementById('_sh').style.background='#eeeeee';" class="subMenuLink" href="#"></a></td>
+            <td nowrap id="_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='#'">&nbsp;<a class="subMenuLink" href="#"><span style="display: none">wp_shortcut_fill_0</span></A></td>
         </tr>
     </table>
 </div>
@@ -393,49 +396,49 @@
                 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="leftColumnModuleHead">
                     <tr>
 
-                        <th width="5" valign="top"><img src="../themes/VintageSugar/images/moduleTab_left.gif" alt="Shortcuts" width="5" height="23" border="0"></th>
+                        <th width="5" valign="top"><img src="themes/VintageSugar/images/moduleTab_left.gif" alt="Shortcuts" width="5" height="23" border="0"></th>
                         <th width="100%" class="leftColumnModuleName">Shortcuts</th>
-                        <th width="7" valign="top"><img src="../themes/VintageSugar/images/moduleTab_right.gif" alt="Shortcuts" width="7" height="23" border="0"></th>
+                        <th width="7" valign="top"><img src="themes/VintageSugar/images/moduleTab_right.gif" alt="Shortcuts" width="7" height="23" border="0"></th>
                     </tr>
                 </table>
                 <table cellpadding="0" cellspacing="0" border="0" class="subMenu" width="100%">
 
                     <tr>
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView"><img
-                                src='../themes/VintageSugar/images/CreateContacts.gif' width='16' height='16' alt='Create Contact' border='0' align='absmiddle'></a></td>
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView"><img
+                                src='themes/VintageSugar/images/CreateContacts.gif' width='16' height='16' alt='Create Contact' border='0' align='absmiddle'></a></td>
                         <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';">Create Contact</span></td>
 
                     </tr>
 
                     <tr>
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=BusinessCard"><img src='../themes/VintageSugar/images/CreateContacts.gif' width='16'
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=BusinessCard"><img src='themes/VintageSugar/images/CreateContacts.gif' width='16'
                                                                                                                                                                                                                                                                                                                                                                                                                                        height='16' alt='Enter Business Card' border='0' align='absmiddle'></a>
                         </td>
                         <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=BusinessCard'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';">Enter Business Card</span></td>
                     </tr>
 
                     <tr>
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=ImportVCard"><img src='../themes/VintageSugar/images/CreateContacts.gif' width='16'
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('CreateContacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('CreateContacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=ImportVCard"><img src='themes/VintageSugar/images/CreateContacts.gif' width='16'
                                                                                                                                                                                                                                                                                                                                                                                                                                       height='16' alt='Create From vCard' border='0' align='absmiddle'></a></td>
 
                         <td nowrap id="CreateContacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=ImportVCard'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';">Create From vCard</span></td>
                     </tr>
 
                     <tr>
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Contacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Contacts_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView"><img
-                                src='../themes/VintageSugar/images/Contacts.gif' width='16' height='16' alt='Contacts' border='0' align='absmiddle'></a></td>
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Contacts_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Contacts_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView"><img
+                                src='themes/VintageSugar/images/Contacts.gif' width='16' height='16' alt='Contacts' border='0' align='absmiddle'></a></td>
                         <td nowrap id="Contacts_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=index&return_module=Contacts&return_action=DetailView'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';">Contacts</span></td>
                     </tr>
 
                     <tr>
 
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Import_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Import_sh').style.background='#eeeeee';" class="subMenuLink" href="../index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index"><img
-                                src='../themes/VintageSugar/images/Import.gif' width='16' height='16' alt='Import' border='0' align='absmiddle'></a></td>
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('Import_sh').style.background='#ffffff';" onMouseOut="document.getElementById('Import_sh').style.background='#eeeeee';" class="subMenuLink" href="index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index"><img
+                                src='themes/VintageSugar/images/Import.gif' width='16' height='16' alt='Import' border='0' align='absmiddle'></a></td>
                         <td nowrap id="Import_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='index.php?module=Contacts&action=Import&step=1&return_module=Contacts&return_action=index'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';">Import</span></td>
                     </tr>
 
                     <tr>
-                        <td class="subMenuTDIcon" width="16" style="background-image: url(../themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('_sh').style.background='#ffffff';" onMouseOut="document.getElementById('_sh').style.background='#eeeeee';" class="subMenuLink" href="../#"></a></td>
+                        <td class="subMenuTDIcon" width="16" style="background-image: url(themes/VintageSugar/images/createBg.gif); background-repeat : repeat-y;"><a onMouseOver="document.getElementById('_sh').style.background='#ffffff';" onMouseOut="document.getElementById('_sh').style.background='#eeeeee';" class="subMenuLink" href="#"></a></td>
                         <td nowrap id="_sh" class="subMenuTD" onMouseOver="this.style.background='#ffffff';this.style.cursor='hand';" onMouseOut="this.style.background='#eeeeee';this.style.cursor='auto';" onclick="location.href='#'">&nbsp;<span class="subMenuLink" onMouseOver="this.style.color='#990033';" onMouseOut="this.style.color='#33485c';"><span style="display: none">wp_shortcut_fill_0</span></span></td>
                     </tr>
 
@@ -448,15 +451,15 @@
 
                     if (show == 'true') {
                         this.document.getElementById('leftCol').style.display = 'inline';
-                        document['HideHandle'].src = '../themes/VintageSugar/images/hide.gif';
+                        document['HideHandle'].src = 'themes/VintageSugar/images/hide.gif';
                     }
                     else {
                         this.document.getElementById('leftCol').style.display = 'none';
-                        document['HideHandle'].src = '../themes/VintageSugar/images/show.gif';
+                        document['HideHandle'].src = 'themes/VintageSugar/images/show.gif';
 
                     }
                 </script>
-                <img src="../themes/VintageSugar/images/blank.gif" alt="" width="160" height="1" border="0"></td>
+                <img src="themes/VintageSugar/images/blank.gif" alt="" width="160" height="1" border="0"></td>
         </tr>
     </table>
 </div>
@@ -467,16 +470,16 @@
 <table width='100%' cellpadding='0' cellspacing='0' border='0' class='moduleTitle'>
     <tr>
         <td valign='top'>
-            <IMG src='../themes/VintageSugar/images/Contacts.gif' width='16' height='16' border='0' style='margin-top: 3px; margin-right: 3px;' alt='Contacts'>&nbsp;</td>
+            <IMG src='themes/VintageSugar/images/Contacts.gif' width='16' height='16' border='0' style='margin-top: 3px; margin-right: 3px;' alt='Contacts'>&nbsp;</td>
         <td width='100%'><h2>Contacts: </h2></td>
         <td valign='top' align='right' nowrap style='padding-top:3px; padding-left: 5px;'>
-            &nbsp;<A href="../javascript:void window.open('index.php?module=Administration&action=SupportPortal&view=documentation&version=4.5.1e&edition=OS&lang=en_us&help_module=Contacts&help_action=EditView&key=aa03ae9a9900b1c6b5a72eb2e2266b29','helpwin','width=600,height=600,status=0,resizable=1,scrollbars=1')" class='utilsLink'><img src='../themes/VintageSugar/images/help.gif' width='13' height='13' alt='Help' border='0' align='absmiddle'></a>
-            &nbsp;<A href="../javascript:void window.open('index.php?module=Administration&action=SupportPortal&view=documentation&version=4.5.1e&edition=OS&lang=en_us&help_module=Contacts&help_action=EditView&key=aa03ae9a9900b1c6b5a72eb2e2266b29','helpwin','width=600,height=600,status=0,resizable=1,scrollbars=1');" class='utilsLink'>Help</A>
+            &nbsp;<A href="javascript:void window.open('index.php?module=Administration&action=SupportPortal&view=documentation&version=4.5.1e&edition=OS&lang=en_us&help_module=Contacts&help_action=EditView&key=aa03ae9a9900b1c6b5a72eb2e2266b29','helpwin','width=600,height=600,status=0,resizable=1,scrollbars=1')" class='utilsLink'><img src='themes/VintageSugar/images/help.gif' width='13' height='13' alt='Help' border='0' align='absmiddle'></a>
+            &nbsp;<A href="javascript:void window.open('index.php?module=Administration&action=SupportPortal&view=documentation&version=4.5.1e&edition=OS&lang=en_us&help_module=Contacts&help_action=EditView&key=aa03ae9a9900b1c6b5a72eb2e2266b29','helpwin','width=600,height=600,status=0,resizable=1,scrollbars=1');" class='utilsLink'>Help</A>
         </td>
     </tr>
 </table>
 
-<script type="text/javascript" src="../include/javascript/popup_parent_helper.js"></script>
+<script type="text/javascript" src="include/javascript/popup_parent_helper.js"></script>
 <form name="EditView" method="POST" action="index.php">
 <input type="hidden" name="module" value="Contacts">
 <input type="hidden" name="record" value="">
@@ -587,7 +590,7 @@
 </tr>
 <tr>
     <td class="dataLabel"><span sugar='slot13'>Birthdate:</span></td>
-    <td class="dataField"><span sugar='slot13b'><input name='birthdate' onblur="parseDate(this, '%Y-%m-%d');" id='jscal_field' type="text" tabindex='1' size='11' maxlength='10' value=""> <img src="../themes/VintageSugar/images/jscalendar.gif" alt="Enter Date" id="jscal_trigger" align="absmiddle"> <span class="dateFormat">yyyy-mm-dd</span></span></td>
+    <td class="dataField"><span sugar='slot13b'><input name='birthdate' onblur="parseDate(this, '%Y-%m-%d');" id='jscal_field' type="text" tabindex='1' size='11' maxlength='10' value=""> <img src="themes/VintageSugar/images/jscalendar.gif" alt="Enter Date" id="jscal_trigger" align="absmiddle"> <span class="dateFormat">yyyy-mm-dd</span></span></td>
 
     <td class="dataLabel"><span sugar='slot14'>Other Email:</span></td>
     <td class="dataField"><span sugar='slot14b'><input name='email2' type="text" tabindex='2' size='35' maxlength='100' value=''></span></td>
@@ -789,9 +792,9 @@
         return true;
     }
 </script>
-<script type="text/javascript" src="../include/JSON.js"></script>
+<script type="text/javascript" src="include/JSON.js"></script>
 <script type="text/javascript">sqsWaitGif = "themes/VintageSugar/images/sqsWait.gif";</script>
-<script type="text/javascript" src="../include/javascript/quicksearch.js"></script>
+<script type="text/javascript" src="include/javascript/quicksearch.js"></script>
 <script type="text/javascript"
         language="javascript">sqs_objects = {"account_name":{"method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"},"assigned_user_name":{"method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name","assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"},"campaign_name":{"method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_name","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"}}</script>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -852,16 +855,16 @@ else {
 </tr>
 
 <tr>
-    <td class="aboveFooter"><img src="../include/images/blank.gif" width="1" height="5" border="0"></td>
+    <td class="aboveFooter"><img src="include/images/blank.gif" width="1" height="5" border="0"></td>
 </tr>
 
 <tr>
     <td align="center" class="footer">
-        <A href="../index.php?module=Home&action=index" class="footerLink">Home</A> | <A href="../index.php?module=iFrames&action=index" class="footerLink">My Portal</A> | <A href="../index.php?module=Calendar&action=index" class="footerLink">Calendar</A> | <A href="../index.php?module=Activities&action=index" class="footerLink">Activities</A> | <A href="../index.php?module=Contacts&action=index" class="footerLink">Contacts</A> | <A href="../index.php?module=Accounts&action=index"
+        <A href="index.php?module=Home&action=index" class="footerLink">Home</A> | <A href="index.php?module=iFrames&action=index" class="footerLink">My Portal</A> | <A href="index.php?module=Calendar&action=index" class="footerLink">Calendar</A> | <A href="index.php?module=Activities&action=index" class="footerLink">Activities</A> | <A href="index.php?module=Contacts&action=index" class="footerLink">Contacts</A> | <A href="index.php?module=Accounts&action=index"
                                                                                                                                                                                                                                                                                                                                                                                                                                                      class="footerLink">Accounts</A> | <A
-            href="../index.php?module=Leads&action=index" class="footerLink">Leads</A> | <A href="../index.php?module=Opportunities&action=index" class="footerLink">Opportunities</A> | <A href="../index.php?module=Cases&action=index" class="footerLink">Cases</A> | <A href="../index.php?module=Bugs&action=index" class="footerLink">Bug Tracker</A> | <A href="../index.php?module=Documents&action=index" class="footerLink">Documents</A> | <A href="../index.php?module=Emails&action=index"
+            href="index.php?module=Leads&action=index" class="footerLink">Leads</A> | <A href="index.php?module=Opportunities&action=index" class="footerLink">Opportunities</A> | <A href="index.php?module=Cases&action=index" class="footerLink">Cases</A> | <A href="index.php?module=Bugs&action=index" class="footerLink">Bug Tracker</A> | <A href="index.php?module=Documents&action=index" class="footerLink">Documents</A> | <A href="index.php?module=Emails&action=index"
                                                                                                                                                                                                                                                                                                                                                                                                                                                          class="footerLink">Emails</A><br> <A
-            href="../index.php?module=Campaigns&action=index" class="footerLink">Campaigns</A> | <A href="../index.php?module=Project&action=index" class="footerLink">Projects</A> | <A href="../index.php?module=Feeds&action=index" class="footerLink">RSS</A> | <A href="../index.php?module=Dashboard&action=index" class="footerLink">Dashboard</A></td>
+            href="index.php?module=Campaigns&action=index" class="footerLink">Campaigns</A> | <A href="index.php?module=Project&action=index" class="footerLink">Projects</A> | <A href="index.php?module=Feeds&action=index" class="footerLink">RSS</A> | <A href="index.php?module=Dashboard&action=index" class="footerLink">Dashboard</A></td>
 
 </tr>
 
@@ -872,7 +875,7 @@ else {
             <table border='0'>
                 <tr>
                     <td width='40%' align='right'>Theme&nbsp;</td>
-                    <td width='60%' align='left'><select OnChange='location.href="../index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView&usertheme="+this.value' style='width: 120px; font-size: 10px' name='usertheme'>
+                    <td width='60%' align='left'><select OnChange='location.href="index.php?module=Contacts&action=EditView&return_module=Contacts&return_action=DetailView&usertheme="+this.value' style='width: 120px; font-size: 10px' name='usertheme'>
                         <OPTION value='Sugar'>Sugar</OPTION>
                         <OPTION value='SugarClassic'>Sugar Classic</OPTION>
                         <OPTION selected value='VintageSugar'>Vintage Sugar</OPTION>
@@ -882,7 +885,7 @@ else {
         </td>
     <tr>
         <td align='center' class='copyRight'>
-            Server response time: 0.11 seconds.<br/>&copy; 2004-2007 <a href="../http://www.sugarcrm.com" target="_blank" class="copyRightLink">SugarCRM Inc.</a> All Rights Reserved.<br/><A href='http://www.sugarforge.org' target='_blank'><img style='margin-top: 2px' border='0' width='106' height='23' src='../include/images/poweredby_sugarcrm.png' alt='Powered By SugarCRM'></a>
+            Server response time: 0.11 seconds.<br/>&copy; 2004-2007 <a href="http://www.sugarcrm.com" target="_blank" class="copyRightLink">SugarCRM Inc.</a> All Rights Reserved.<br/><A href='http://www.sugarforge.org' target='_blank'><img style='margin-top: 2px' border='0' width='106' height='23' src='include/images/poweredby_sugarcrm.png' alt='Powered By SugarCRM'></a>
         </td>
     </tr>
 </table>
