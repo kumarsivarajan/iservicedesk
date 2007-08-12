@@ -91,11 +91,11 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
         return (List<T>)query.getResultList();
     }
 
-    public final QueryExt createNativeQuery(String sql) {
+    public QueryExt createNativeQuery(String sql) {
         throw new UnsupportedOperationException("Can not create native query, only named native query supported!");
     }
 
-    public final QueryExt createNativeQuery(String sql, Class<?> resultClass) {
+    public QueryExt createNativeQuery(String sql, Class<?> resultClass) {
         throw new UnsupportedOperationException("Can not create native query, only named native query supported!");
     }
 }
