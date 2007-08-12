@@ -15,14 +15,26 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     @Column(name="ID")
     protected long id = -1;
 
-    @Column(name="CREATE_TIME")
-    protected long createTime = System.currentTimeMillis();
     @Column(name="CREATOR")
     protected String creator;
-    @Column(name="LAST_MODIFIED")
-    protected long lastModified = System.currentTimeMillis();
+
+    @Column(name="CREATE_TIME")
+    protected long createTime = System.currentTimeMillis();
+
     @Column(name="LAST_MODIFIER")
     protected String lastModifier;
+
+    @Column(name="LAST_MODIFIED")
+    protected long lastModified = System.currentTimeMillis();
+
+    @Column(name="PRIORITY")
+    protected int priority = 0;
+
+    @Column(name="VERSION")
+    protected int version;
+
+    @Column(name="DISABLED")
+    protected int disabled;
 
     @Column(name="REMOVED")
     protected boolean removed = false;
