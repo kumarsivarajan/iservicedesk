@@ -1,7 +1,8 @@
 package cn.iservicedesk.infrastructure;
 
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.jfox.entity.dao.PKGenerator;
 
@@ -155,9 +156,18 @@ public abstract class EntityObject implements Comparable<EntityObject>{
         }
     }
 
-    //TODO:
+    /**
+     * 根据 @Entity 得到 Table Name
+     */
     public String getTableName() {
-        return "";
+        Entity entity = this.getClass().getAnnotation(Entity.class);
+        String tableName = entity.name();
+        if(tableName == null || tableName.trim().length() == 0) {
+            return "unknown";
+        }
+        else {
+            return tableName;
+        }
     }
 
 }
