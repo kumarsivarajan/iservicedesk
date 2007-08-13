@@ -1,7 +1,5 @@
 package cn.iservicedesk.infrastructure;
 
-import java.util.Map;
-import java.util.HashMap;
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
 import javax.ejb.TransactionAttribute;
@@ -26,7 +24,7 @@ public abstract class SuperBO implements BusinessObject{
      * @param entityObject entity
      */
     protected boolean isEntityReferenced(RefInspectableEntityObject entityObject){
-        return ((RefInspectableEntityObject)entityObject).isReferenced();
+        return entityObject.isReferenced();
     }
 
     /**
