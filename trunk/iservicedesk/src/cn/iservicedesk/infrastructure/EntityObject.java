@@ -35,8 +35,6 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     @Column(name="PRIORITY")
     private int priority = 0;
 
-    @Column(name="VERSION")
-    private int version;
 
     /**
      * VALID STATUS, 数据有效状态
@@ -107,18 +105,6 @@ public abstract class EntityObject implements Comparable<EntityObject>{
 
     public void setPriority(int priority) {
         this.priority = priority;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public void increaseVersion(){
-        this.version++;
     }
 
     public long getCreateTime() {
