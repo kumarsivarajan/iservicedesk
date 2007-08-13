@@ -143,12 +143,16 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     /**
      * 用来排序
      *
-     * @param o entity to be compared
+     * @param thatEntity entity to be compared
      */
-    public int compareTo(EntityObject o) {
-        long thisId = this.getId();
-        long thatId = o.getId();
-        return (thisId < thatId ? -1 : (thisId == thatId ? 0 : 1));
+    public int compareTo(EntityObject thatEntity) {
+        int comparePriority = new Integer(this.getPriority()).compareTo(thatEntity.getPriority());
+        if(comparePriority == 0) {
+            return new Long(this.getId()).compareTo(thatEntity.getId());
+        }
+        else {
+            return comparePriority;
+        }
     }
 
     //TODO:
