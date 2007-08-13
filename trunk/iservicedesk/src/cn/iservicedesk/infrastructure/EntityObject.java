@@ -14,29 +14,29 @@ public abstract class EntityObject implements Comparable<EntityObject>{
      * 每个表必须有ID字段，且作为 Primary Key
      */
     @Column(name="ID")
-    protected long id = -1;
+    private long id = -1;
 
     @Column(name="NAME")
-    protected String name;
+    private String name;
 
 
     @Column(name="CREATOR")
-    protected String creator;
+    private String creator;
 
     @Column(name="CREATE_TIME")
-    protected long createTime = System.currentTimeMillis();
+    private long createTime = System.currentTimeMillis();
 
     @Column(name="LAST_MODIFIER")
-    protected String lastModifier;
+    private String lastModifier;
 
     @Column(name="LAST_MODIFIED")
-    protected long lastModified = System.currentTimeMillis();
+    private long lastModified = System.currentTimeMillis();
 
     @Column(name="PRIORITY")
-    protected int priority = 0;
+    private int priority = 0;
 
     @Column(name="VERSION")
-    protected int version;
+    private int version;
 
     /**
      * VALID STATUS, 数据有效状态

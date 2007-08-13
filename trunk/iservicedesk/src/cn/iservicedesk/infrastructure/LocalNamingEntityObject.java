@@ -14,7 +14,7 @@ public abstract class LocalNamingEntityObject extends EntityObject{
 
     //localName 多语言 properties 字符串
     @Column(name="LOCAL_NAME")
-    protected String localName = "";
+    private String localName = "";
     private Properties localNameProperties = null;
 
     public void setLocalName(String localName) {

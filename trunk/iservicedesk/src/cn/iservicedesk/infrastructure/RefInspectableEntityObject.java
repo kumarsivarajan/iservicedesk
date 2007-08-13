@@ -20,7 +20,7 @@ public abstract class RefInspectableEntityObject extends EntityObject {
     private boolean refsChanged = false;
 
     @Column(name = "REFS")
-    protected String refs;
+    private String refs;
 
     private Map<String, List<Long>> refsMap = new HashMap<String, List<Long>>();
 
