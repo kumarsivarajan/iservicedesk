@@ -33,11 +33,18 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     @Column(name="VERSION")
     protected int version;
 
-    @Column(name="DISABLED")
-    protected int disabled;
+    /**
+     * VALID STATUS, 数据有效状态
+     * 0 正常
+     * 1 DISABLED
+     * 2 REMOVED
+     */
+    @Column(name="VSTATUS")
+    protected int vstatus;
 
-    @Column(name="REMOVED")
-    protected boolean removed = false;
+
+    @Column(name="DESCRIPTION")
+    protected String description;
 
     public EntityObject() {
         // 使用PKgen生成id
@@ -57,18 +64,48 @@ public abstract class EntityObject implements Comparable<EntityObject>{
         this.id = id;
     }
 
-    /**
-     * 设置删除标志
-     *
-     * @param removed remove status
-     */
-    public void setRemoved(boolean removed) {
-        this.removed = removed;
+    public int getVstatus() {
+        return vstatus;
     }
 
-    @Column(name = "REMOVED")
-    public boolean isRemoved() {
-        return removed;
+    public void setVstatus(int vstatus) {
+        this.vstatus = vstatus;
+    }
+
+    public boolean isDisabled(){
+        return getVstatus() == 1;
+    }
+
+    public boolean isRemoved(){
+        return getVstatus() == 2;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    public void increaseVersion(){
+        this.version++;
     }
 
     public long getCreateTime() {
