@@ -12,20 +12,10 @@ import javax.persistence.Column;
  */
 public abstract class LocalNamingEntityObject extends EntityObject{
 
-    @Column(name="NAME")
-    protected String name;
     //localName 多语言 properties 字符串
     @Column(name="LOCAL_NAME")
     protected String localName = "";
     private Properties localNameProperties = null;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public void setLocalName(String localName) {
         this.localName = localName;

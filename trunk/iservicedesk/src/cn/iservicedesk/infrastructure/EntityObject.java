@@ -16,6 +16,10 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     @Column(name="ID")
     protected long id = -1;
 
+    @Column(name="NAME")
+    protected String name;
+
+
     @Column(name="CREATOR")
     protected String creator;
 
@@ -63,6 +67,14 @@ public abstract class EntityObject implements Comparable<EntityObject>{
 
     protected void setId(long id) {
         this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getVstatus() {
