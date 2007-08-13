@@ -1500,7 +1500,10 @@ VERSION
 用来解决同时修改数据时的锁定问题，在修改数据之前，比较当前的VERSION和数据库的VERSION是否一致，一致才可以修改，不一致则说明数据已更新，需要重新装载才能修改
 
 REFS
-数据引用字段，格式 key:value;key:value，Entity需要继承RefInspectableEntityObject
+数据引用字段，格式 :
+ACCOUNT=1,2,3,4 
+USER=12,34,56
+Entity需要继承RefInspectableEntityObject
 
 
 CREATE_TIME
@@ -1517,7 +1520,7 @@ LAST_MODIFIER
 
 </a:Text>
 <a:CreationDate>1186899463</a:CreationDate>
-<a:ModificationDate>1186976396</a:ModificationDate>
+<a:ModificationDate>1186976480</a:ModificationDate>
 <a:Rect>((-1001,-22638), (35065,34230))</a:Rect>
 <a:TextStyle>4113</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
