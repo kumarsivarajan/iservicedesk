@@ -29,6 +29,11 @@ public abstract class SuperBO implements BusinessObject{
         return ((RefInspectableEntityObject)entityObject).isReferenced();
     }
 
+    /**
+     * 检查 Version 是否被更新
+     * 使用的 namedQuery 必须为通过 ID 获得 Entity 的 query
+     * 不使用事务，以避免当前事务无法感知数据更新的问题
+     */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public boolean isVersionValid(VersionableEntityObject entity, String namedQuery) {
         VersionableEntityObject storedEntity = getDataAccessObject().getEntityObject(namedQuery,"ID",entity.getId());
