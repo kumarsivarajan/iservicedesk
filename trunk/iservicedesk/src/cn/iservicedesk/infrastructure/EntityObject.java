@@ -163,7 +163,7 @@ public abstract class EntityObject implements Comparable<EntityObject>{
         Entity entity = this.getClass().getAnnotation(Entity.class);
         String tableName = entity.name();
         if(tableName == null || tableName.trim().length() == 0) {
-            return "unknown";
+            return "UNKNOWN";
         }
         else {
             return tableName;
