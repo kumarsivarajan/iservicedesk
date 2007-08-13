@@ -25,11 +25,8 @@ public abstract class SuperBO implements BusinessObject{
      *
      * @param entityObject entity
      */
-    protected boolean isEntityReferenced(EntityObject entityObject){
-        if(entityObject instanceof RefInspectableEntityObject) {
-            return ((RefInspectableEntityObject)entityObject).isReferenced();
-        }
-        return false;
+    protected boolean isEntityReferenced(RefInspectableEntityObject entityObject){
+        return ((RefInspectableEntityObject)entityObject).isReferenced();
     }
 
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
