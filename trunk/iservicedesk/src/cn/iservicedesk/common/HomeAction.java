@@ -16,7 +16,7 @@ public class HomeAction extends SuperAction {
 
     }
 
-    @ActionMethod(name="today",successView = "today.vhtml")
+    @ActionMethod(name="today",successView = "new_contact.vhtml")
     public void todayPage(InvocationContext invocationContext) throws Exception{
 
     }
