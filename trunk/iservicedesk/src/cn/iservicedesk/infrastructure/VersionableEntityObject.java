@@ -6,7 +6,7 @@ import java.util.Properties;
 import javax.persistence.Column;
 
 /**
- * 支持多语言的 EntityObject，如：Function, Module
+ * 支持版本记录，乐观锁的 EntityObject
  *
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
