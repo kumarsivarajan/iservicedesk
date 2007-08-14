@@ -15,15 +15,8 @@ public class Module extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="BIND_ACTION")
     private String bindAction;
 
+    @Column(name="BIT_CODE")
     private int bitCode;
-
-    private int parentBitCode;
-
-    private int moduleId;
-
-    private int isMenu;
-
-    private String divGroup;
 
     public String getBindAction() {
         return bindAction;
@@ -41,39 +34,4 @@ public class Module extends LocalNamingAndRefInspectableEntityObject {
         this.bitCode = bitCode;
     }
 
-    public int getParentBitCode() {
-        return parentBitCode;
-    }
-
-    public void setParentBitCode(int parentBitCode) {
-        this.parentBitCode = parentBitCode;
-    }
-
-    public int getModuleId() {
-        return moduleId;
-    }
-
-    public void setModuleId(int moduleId) {
-        this.moduleId = moduleId;
-    }
-
-    public int getMenu() {
-        return isMenu;
-    }
-
-    public void setMenu(int menu) {
-        isMenu = menu;
-    }
-
-    public boolean isMenu(){
-        return isMenu == 1;
-    }
-
-    public String getDivGroup() {
-        return divGroup;
-    }
-
-    public void setDivGroup(String divGroup) {
-        this.divGroup = divGroup;
-    }
 }

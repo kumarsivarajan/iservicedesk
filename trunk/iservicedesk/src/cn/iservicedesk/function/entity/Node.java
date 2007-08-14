@@ -12,14 +12,73 @@ import cn.iservicedesk.infrastructure.LocalNamingAndRefInspectableEntityObject;
 @Entity(name="NODE")
 public class Node extends LocalNamingAndRefInspectableEntityObject {
 
-    @Column(name="LINK_ACTION")
-    private String linkAction;
+    @Column(name="BIND_ACTION")
+    private String bindAction;
 
-    public String getLinkAction() {
-        return linkAction;
+    @Column(name="BIT_CODE")
+    private int bitCode;
+
+    @Column(name="PARENT_BIT_CODE")
+    private int parentBitCode;
+
+    @Column(name="MODULE_id")
+    private int moduleId;
+
+    @Column(name="IS_MENU")
+    private int isMenu;
+
+    @Column(name="DIV_GROUP")
+    private String divGroup;
+
+    public String getBindAction() {
+        return bindAction;
     }
 
-    public void setLinkAction(String linkAction) {
-        this.linkAction = linkAction;
+    public void setBindAction(String bindAction) {
+        this.bindAction = bindAction;
+    }
+
+    public int getBitCode() {
+        return bitCode;
+    }
+
+    public void setBitCode(int bitCode) {
+        this.bitCode = bitCode;
+    }
+
+    public int getParentBitCode() {
+        return parentBitCode;
+    }
+
+    public void setParentBitCode(int parentBitCode) {
+        this.parentBitCode = parentBitCode;
+    }
+
+    public int getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(int moduleId) {
+        this.moduleId = moduleId;
+    }
+
+    public int getMenu() {
+        return isMenu;
+    }
+
+    public void setMenu(int menu) {
+        isMenu = menu;
+    }
+
+    public boolean isMenu(){
+        return isMenu == 1;
+    }
+
+    public String getDivGroup() {
+        return divGroup;
+    }
+
+    public void setDivGroup(String divGroup) {
+        this.divGroup = divGroup;
     }
 }
