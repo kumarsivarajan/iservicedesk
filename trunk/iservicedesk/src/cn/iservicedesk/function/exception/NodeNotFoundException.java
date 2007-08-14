@@ -5,17 +5,17 @@ import cn.iservicedesk.infrastructure.BusinessException;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public class FunctionRegistrationException extends BusinessException {
+public class NodeNotFoundException extends BusinessException {
 
-    public FunctionRegistrationException(String msg) {
+    public NodeNotFoundException(String msg) {
         super(msg);
     }
 
-    public FunctionRegistrationException(Exception e) {
+    public NodeNotFoundException(Exception e) {
         super(e);
     }
 
-    public FunctionRegistrationException(String msg, Exception e) {
+    public NodeNotFoundException(String msg, Exception e) {
         super(msg, e);
     }
 
