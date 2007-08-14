@@ -2,7 +2,7 @@ package cn.iservicedesk.function.action;
 
 import javax.ejb.EJB;
 
-import cn.iservicedesk.function.bo.FunctionBO;
+import cn.iservicedesk.function.bo.NodeBO;
 import cn.iservicedesk.function.entity.Node;
 import cn.iservicedesk.infrastructure.SuperAction;
 import org.jfox.framework.annotation.Service;
@@ -18,7 +18,7 @@ import org.jfox.mvc.annotation.ActionMethod;
 public class FunctionAction extends SuperAction {
 
     @EJB
-    FunctionBO functionBO;
+    NodeBO nodeBO;
 
     @ActionMethod(name="new", successView = "function/newfunction.vhtml")
     public void newFunction(InvocationContext invocationContext) throws Exception {

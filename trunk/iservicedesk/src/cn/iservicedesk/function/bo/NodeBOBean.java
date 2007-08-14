@@ -14,7 +14,7 @@ import cn.iservicedesk.infrastructure.SuperBO;
  */
 @Stateless
 @Local
-public class FunctionBOBean extends SuperBO implements FunctionBO{
+public class NodeBOBean extends SuperBO implements NodeBO {
 
     @EJB
     NodeDAO nodeDAO;
