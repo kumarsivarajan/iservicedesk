@@ -7,6 +7,6 @@ import cn.iservicedesk.function.entity.Node;
  */
 public interface NodeBO {
 
-    Node getFunctionById(long id);
+    Node getNodeById(long id);
 
 }
