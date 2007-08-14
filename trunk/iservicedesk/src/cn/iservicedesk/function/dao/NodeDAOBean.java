@@ -1,5 +1,6 @@
 package cn.iservicedesk.function.dao;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +59,7 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
     }
 
     public List<Node> getAllFunctions() {
-        return (List<Node>)createNamedNativeQuery(NodeDAOBean.GET_ALL_NODES).getResultList();
+        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_ALL_NODES, Collections.EMPTY_MAP);
     }
 
     public List<Node> getMenusByModuleId(long moduleId) {
