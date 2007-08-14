@@ -1,20 +1,18 @@
 package cn.iservicedesk.infrastructure;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.List;
-import javax.persistence.Query;
+import java.util.Map;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
 public interface DataAccessObject extends org.jfox.entity.dao.DataAccessObject {
 
-    <T extends EntityObject> T getEntityObject(String namedQuery, String placeHolderName, long id);
+    EntityObject  getEntityObject(String namedQuery, String placeHolderName, long id);
 
     int executeNamedNativeUpdate(String sql, Map<String, Object> paramMap);
 
-    <T extends EntityObject> List<T> processNamedNativeQuery(String queryName, Map<String, ?> paramMap);
+    List<? extends EntityObject> processNamedNativeQuery(String queryName, Map<String, ?> paramMap);
 
-    <T extends EntityObject> List<T> processNamedNativeQuery(String queryName, Map<String, ?> paramMap, int firstResult, int maxResult);
+    List<? extends EntityObject> processNamedNativeQuery(String queryName, Map<String, ?> paramMap, int firstResult, int maxResult);
 }

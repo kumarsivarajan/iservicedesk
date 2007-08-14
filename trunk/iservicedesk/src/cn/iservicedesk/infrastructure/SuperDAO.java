@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.jfox.entity.dao.DAOSupport;
 import org.jfox.entity.QueryExt;
+import org.jfox.entity.dao.DAOSupport;
 
 /**
  * //TODO: 支持多数据库SQLTemplate
@@ -38,10 +38,10 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
      * @param id id
      * @return entity instance
      */
-    public <T extends EntityObject> T getEntityObject(String namedQuery, String placeHolderName, long id) {
+    public EntityObject getEntityObject(String namedQuery, String placeHolderName, long id) {
         Map<String, Long> paramMap = new HashMap<String, Long>(1);
         paramMap.put(placeHolderName,id);
-        List<T> entities = processNamedNativeQuery(namedQuery,paramMap);
+        List<? extends EntityObject> entities = processNamedNativeQuery(namedQuery,paramMap);
         if(!entities.isEmpty()) {
             return entities.get(0);
         }
@@ -66,7 +66,7 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
      *
      * @param namedQuery   named query
      */
-    public <T extends EntityObject> List<T> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap) {
+    public List<? extends EntityObject> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap) {
         return processNamedNativeQuery(namedQuery, paramMap, 0, Integer.MAX_VALUE);
     }
 
@@ -79,7 +79,7 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
      * @param maxResult 取值范围
      * @return 返回符合需要的 entity list
      */
-    public <T extends EntityObject> List<T> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap, int firstResult, int maxResult) {
+    public List<? extends EntityObject> processNamedNativeQuery(String namedQuery, Map<String, ?> paramMap, int firstResult, int maxResult) {
         Query query = createNamedNativeQuery(namedQuery);
         if (paramMap != null) {
             for (Map.Entry<String, ?> entry : paramMap.entrySet()) {
@@ -88,7 +88,7 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
         }
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResult);
-        return (List<T>)query.getResultList();
+        return (List<? extends EntityObject>)query.getResultList();
     }
 
     public QueryExt createNativeQuery(String sql) {
