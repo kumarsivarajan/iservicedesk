@@ -1,7 +1,15 @@
-﻿<div style="padding-top: 2px">
-    <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  "> <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
+﻿<div id="button_bar" style="padding-top: 2px; display:none;">
+    <div id="button_bar_A" name="default">
+        <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  "> <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
+    </div>
 </div>
-
+<script>
+    alert("button_bar");
+    var buttonBar = document.getElementById("button_bar");
+    buttonBar.style.display = "block";
+    var group = document.getElementById("button_bar_A");
+    alert(group);
+</script>
 <script>
     YAHOO.util.Event.addListener(window, 'load', SUGAR.util.fillShortcuts, ["Saved Searches<br>\r\n\r\n<select style=\"width: 110px\" name='side_saved_search_select' onChange='SUGAR.savedViews.shortcut_select(this, \"Contacts\");'>\r\n\t\n<OPTION value='_none'>--None--<\/OPTION>\r\n<\/select>\r\n"]);
 </script>
