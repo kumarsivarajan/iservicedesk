@@ -11,14 +11,14 @@ import cn.iservicedesk.infrastructure.LocalNamingEntityObject;
 @Entity(name="NODE")
 public class Node extends LocalNamingEntityObject {
 
-    @Column(name="FUNCTION_URL")
-    private String url;
+    @Column(name="LINK_ACTION")
+    private String linkAction;
 
-    public String getUrl() {
-        return url;
+    public String getLinkAction() {
+        return linkAction;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setLinkAction(String linkAction) {
+        this.linkAction = linkAction;
     }
 }
