@@ -349,8 +349,5 @@
     </tr>
 </table>
 
-<div style="padding-top: 2px">
-    <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  "> <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
-</div>
 </form>
 #parse("include_footer.vhtml")
