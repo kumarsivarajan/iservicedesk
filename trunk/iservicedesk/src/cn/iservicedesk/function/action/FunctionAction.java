@@ -3,7 +3,7 @@ package cn.iservicedesk.function.action;
 import javax.ejb.EJB;
 
 import cn.iservicedesk.function.bo.FunctionBO;
-import cn.iservicedesk.function.entity.Function;
+import cn.iservicedesk.function.entity.Node;
 import cn.iservicedesk.infrastructure.SuperAction;
 import org.jfox.framework.annotation.Service;
 import org.jfox.mvc.Invocation;
@@ -34,11 +34,11 @@ public class FunctionAction extends SuperAction {
     public void getFunction(InvocationContext invocationContext) throws Exception{
         GetFunctionInvocation invocation = (GetFunctionInvocation)invocationContext.getInvocation();
         long functionId = invocation.getId();
-        Function function = new Function();//functionBO.getFunctionById(functionId);
-        function.setName("Add User");
+        Node node = new Node();//functionBO.getFunctionById(functionId);
+        node.setName("Add User");
 
         PageContext pageContext = invocationContext.getPageContext();
-        pageContext.setAttribute("function", function);
+        pageContext.setAttribute("function", node);
     }
 
     public static class GetFunctionInvocation extends Invocation {

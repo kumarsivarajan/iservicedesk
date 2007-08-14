@@ -5,7 +5,7 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 
 import cn.iservicedesk.function.dao.FunctionDAO;
-import cn.iservicedesk.function.entity.Function;
+import cn.iservicedesk.function.entity.Node;
 import cn.iservicedesk.infrastructure.SuperBO;
 import cn.iservicedesk.infrastructure.DataAccessObject;
 
@@ -23,7 +23,7 @@ public class FunctionBOBean extends SuperBO implements FunctionBO{
         return functionDAO;
     }
 
-    public Function getFunctionById(long id) {
+    public Node getFunctionById(long id) {
         return functionDAO.getFunctionById(id);
     }
 

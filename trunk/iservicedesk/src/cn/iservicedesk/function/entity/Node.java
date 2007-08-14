@@ -8,8 +8,8 @@ import cn.iservicedesk.infrastructure.LocalNamingEntityObject;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-@Entity(name="SYS_FUNCTION")
-public class Function extends LocalNamingEntityObject {
+@Entity(name="NODE")
+public class Node extends LocalNamingEntityObject {
 
     @Column(name="FUNCTION_URL")
     private String url;
