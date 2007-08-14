@@ -15,7 +15,7 @@ import javax.persistence.Column;
  *
  * @author <a href="mailto:yang_y@sysnet.com.cn">Young Yang</a>
  */
-public abstract class RefInspectableAndLocalNamingEntityObject extends EntityObject {
+public abstract class LocalNamingAndRefInspectableEntityObject extends EntityObject {
     // 是否已经初始化 refs
     private boolean refsInit = false;
     private boolean refsChanged = false;
