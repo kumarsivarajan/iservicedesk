@@ -11,14 +11,24 @@ import cn.iservicedesk.infrastructure.LocalNamingEntityObject;
 @Entity(name="MODULE")
 public class Module extends LocalNamingEntityObject {
 
-    @Column(name="LINK_ACTION")
-    private String linkAction;
+    @Column(name="BIND_ACTION")
+    private String bindAction;
 
-    public String getLinkAction() {
-        return linkAction;
+    private int bitCode;
+
+    private int parentBitCode;
+
+    private int moduleId;
+
+    private int isMenu;
+
+    private String divGroup;
+
+    public String getBindAction() {
+        return bindAction;
     }
 
-    public void setLinkAction(String linkAction) {
-        this.linkAction = linkAction;
+    public void setBindAction(String bindAction) {
+        this.bindAction = bindAction;
     }
 }
