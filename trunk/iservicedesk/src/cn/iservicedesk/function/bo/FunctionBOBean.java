@@ -4,10 +4,10 @@ import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 
-import cn.iservicedesk.function.dao.FunctionDAO;
+import cn.iservicedesk.function.dao.NodeDAO;
 import cn.iservicedesk.function.entity.Node;
-import cn.iservicedesk.infrastructure.SuperBO;
 import cn.iservicedesk.infrastructure.DataAccessObject;
+import cn.iservicedesk.infrastructure.SuperBO;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
@@ -17,14 +17,14 @@ import cn.iservicedesk.infrastructure.DataAccessObject;
 public class FunctionBOBean extends SuperBO implements FunctionBO{
 
     @EJB
-    FunctionDAO functionDAO;
+    NodeDAO nodeDAO;
 
     public DataAccessObject getDataAccessObject() {
-        return functionDAO;
+        return nodeDAO;
     }
 
     public Node getFunctionById(long id) {
-        return functionDAO.getFunctionById(id);
+        return nodeDAO.getNodeById(id);
     }
 
     public void addFunction(){

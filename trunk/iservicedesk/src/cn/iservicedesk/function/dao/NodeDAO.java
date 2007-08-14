@@ -1,12 +1,12 @@
 package cn.iservicedesk.function.dao;
 
-import cn.iservicedesk.infrastructure.DataAccessObject;
 import cn.iservicedesk.function.entity.Node;
+import cn.iservicedesk.infrastructure.DataAccessObject;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public interface FunctionDAO extends DataAccessObject {
+public interface NodeDAO extends DataAccessObject {
 
-    Node getFunctionById(long id);
+    Node getNodeById(long id);
 }
