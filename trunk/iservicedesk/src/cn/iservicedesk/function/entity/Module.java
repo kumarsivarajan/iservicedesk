@@ -3,7 +3,6 @@ package cn.iservicedesk.function.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import cn.iservicedesk.infrastructure.LocalNamingEntityObject;
 import cn.iservicedesk.infrastructure.LocalNamingAndRefInspectableEntityObject;
 
 /**
@@ -33,5 +32,4 @@ public class Module extends LocalNamingAndRefInspectableEntityObject {
     public void setBitCode(int bitCode) {
         this.bitCode = bitCode;
     }
-
 }
