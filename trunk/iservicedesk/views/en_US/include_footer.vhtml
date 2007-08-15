@@ -12,8 +12,8 @@
 </div>
 <script>
     function positionButton(buttonGroupName) {
-        var buttonGroup = "button_bar_" + buttonGroupName;
-        var buttonBarGroup = "buttons_" + buttonGroupName;
+        var buttonGroup = "button_group_" + buttonGroupName;
+        var buttonBarGroup = "button_bar_" + buttonGroupName;
         var bgDiv = document.getElementById(buttonGroup);
         var buttonBar = document.getElementById(buttonBarGroup);
         bgDiv.innerHTML = buttonBar.innerHTML;
