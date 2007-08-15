@@ -11,7 +11,8 @@
     #end
 </div>
 <script>
-    function positionButton(buttonGroupName) {
+    // 根据 div 定位 button group
+    function pointButton(buttonGroupName) {
         var buttonGroup = "button_group_" + buttonGroupName;
         var buttonBarGroup = "button_bar_" + buttonGroupName;
         var bgDiv = document.getElementById(buttonGroup);
@@ -19,7 +20,7 @@
         bgDiv.innerHTML = buttonBar.innerHTML;
     }
     #foreach($groupName in ${_nodeGroups_}.keySet())
-    positionButton(groupName);
+    pointButton(groupName);
     #end
 </script>
 <script>
