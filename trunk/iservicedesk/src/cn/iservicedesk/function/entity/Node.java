@@ -32,6 +32,9 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="ICON")
     private String icon;
 
+    @Column(name="SHORTCUT")
+    private int shortcut;
+
     public String getBindAction() {
         return bindAction;
     }
@@ -90,5 +93,17 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public int getShortcut() {
+        return shortcut;
+    }
+
+    public void setShortcut(int shortcut) {
+        this.shortcut = shortcut;
+    }
+
+    public boolean isShortcut(){
+        return getShortcut() == 1;
     }
 }

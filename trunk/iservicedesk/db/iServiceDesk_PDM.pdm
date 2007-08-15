@@ -2347,11 +2347,11 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o45">
 <a:ObjectID>032B53D9-6B8C-449C-B2DA-989786A1B7EF</a:ObjectID>
-<a:Name>IS_SHORTCUT</a:Name>
-<a:Code>IS_SHORTCUT</a:Code>
+<a:Name>SHORTCUT</a:Name>
+<a:Code>SHORTCUT</a:Code>
 <a:CreationDate>1187177845</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187177864</a:ModificationDate>
+<a:ModificationDate>1187193413</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>是否在Home中显示快捷方式</a:Comment>
 <a:DataType>numeric(1)</a:DataType>
