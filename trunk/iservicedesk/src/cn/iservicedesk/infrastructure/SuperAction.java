@@ -73,9 +73,11 @@ public abstract class SuperAction extends ActionSupport {
         Map<String, List<Node>> nodeGroups = new HashMap<String, List<Node>>();
 
         List<Node> menus = new ArrayList<Node>();
-        // get nodeMap
-        pageContext.setAttribute("_buttonGroups_", nodeGroups);
+        // get menus
         pageContext.setAttribute("_menus_", menus);
+        // get buttonNodes
+        pageContext.setAttribute("_buttonGroups_", nodeGroups);
+
     }
 
     public static void main(String[] args) {
