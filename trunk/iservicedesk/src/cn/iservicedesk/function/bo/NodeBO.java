@@ -1,5 +1,7 @@
 package cn.iservicedesk.function.bo;
 
+import java.util.List;
+
 import cn.iservicedesk.function.entity.Node;
 
 /**
@@ -10,5 +12,9 @@ public interface NodeBO {
     Node getNodeById(long id);
 
     Node getNodeByBindAction(String bindAction);
+
+    List<Node> getChildrenNodes(long parentNodeId);
+
+    List<Node> getMenuNodesByModuleId(long moduleId);
 
 }

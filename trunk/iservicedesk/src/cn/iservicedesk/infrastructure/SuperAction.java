@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 
+import cn.iservicedesk.function.bo.ModuleBO;
 import cn.iservicedesk.function.bo.NodeBO;
 import cn.iservicedesk.function.entity.Module;
 import cn.iservicedesk.function.entity.Node;
@@ -32,15 +33,19 @@ public abstract class SuperAction extends ActionSupport {
 
     @EJB
     NodeBO nodeBO;
+    @EJB
+    ModuleBO moduleBO;
 
-    //TODO: 初始化的时候得到 currentModule & currentNode，需要根据 node.BindAction 得到 node
     private Module currentModule;
     private Node currentNode;
 
 
     protected void preAction(InvocationContext invocationContext) {
-
         super.preAction(invocationContext);
+        // init currentModule currentNode, 根据 node.BindAction 得到 node
+        String actionMethodName = invocationContext.getFullActionMethodName();
+        currentNode = nodeBO.getNodeByBindAction(actionMethodName);
+        currentModule = moduleBO.getModuleById(currentNode.getModuleId());
     }
 
     protected void postAction(InvocationContext invocationContext) {
@@ -76,29 +81,49 @@ public abstract class SuperAction extends ActionSupport {
      */
     private void buildContextNodes(InvocationContext invocationContext){
         PageContext pageContext = invocationContext.getPageContext();
-        Map<String, List<Node>> nodeGroups = new HashMap<String, List<Node>>();
 
-        List<Node> menus = new ArrayList<Node>();
-        // get menus
-        // TODO: 在 button node 下也可以注册 menu node
-        pageContext.setAttribute("_menus_", menus);
+        Map<String, List<Node>> nodeGroups = new HashMap<String, List<Node>>();
+        List<Node> menuNodes = new ArrayList<Node>();
+
+        // menuNodes in current Module
+        List<Node> moduleMenuNodes = nodeBO.getMenuNodesByModuleId(currentModule.getId());
+        menuNodes.addAll(moduleMenuNodes);
+
+        // child nodes in current node
+        List<Node> childrenNodes = nodeBO.getChildrenNodes(currentNode.getId());
+        for(Node node : childrenNodes){
+            if(node.isMenu()) { // 在 button node 下也可以注册 menu node
+                menuNodes.add(node);
+            }
+            else {
+                String nodeGroup = node.getNodeGroup();
+                List<Node> nodes = nodeGroups.get(nodeGroup);
+                if(nodes == null) {
+                    nodes = new ArrayList<Node>();
+                    nodeGroups.put(nodeGroup, nodes);
+                }
+                nodes.add(node);
+            }
+        }
+
+        pageContext.setAttribute("_menu_nodes_", menuNodes);
         // get buttonNodes
-        pageContext.setAttribute("_buttonGroups_", nodeGroups);
+        pageContext.setAttribute("_button_node_groups_", nodeGroups);
 
     }
 
     /**
      * 调用的节点
      */
-    private Node getInvocationNode(){
-        return null;
+    protected Node getCurrentNode(){
+        return currentNode;
     }
 
     /**
      * 调用所在的模块
      */
-    private Module getInvocationModule() {
-        return null;
+    protected Module getCurrentModule() {
+        return currentModule;
     }
 
     public static void main(String[] args) {

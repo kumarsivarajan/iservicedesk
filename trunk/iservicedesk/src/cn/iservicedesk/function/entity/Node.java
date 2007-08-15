@@ -21,7 +21,7 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     private int parentBitCode;
 
     @Column(name="MODULE_id")
-    private int moduleId;
+    private long moduleId;
 
     @Column(name="IS_MENU")
     private int isMenu;
@@ -56,11 +56,11 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
         this.parentBitCode = parentBitCode;
     }
 
-    public int getModuleId() {
+    public long getModuleId() {
         return moduleId;
     }
 
-    public void setModuleId(int moduleId) {
+    public void setModuleId(long moduleId) {
         this.moduleId = moduleId;
     }
 

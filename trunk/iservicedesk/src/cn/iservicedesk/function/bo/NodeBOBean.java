@@ -1,5 +1,6 @@
 package cn.iservicedesk.function.bo;
 
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
@@ -28,6 +29,14 @@ public class NodeBOBean extends SuperBO implements NodeBO {
     }
 
     public Node getNodeByBindAction(String bindAction) {
+        return null;
+    }
+
+    public List<Node> getChildrenNodes(long parentNodeId) {
+        return null;
+    }
+
+    public List<Node> getMenuNodesByModuleId(long moduleId){
         return null;
     }
 
