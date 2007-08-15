@@ -2,20 +2,25 @@
     #foreach($groupName in ${_nodeGroups_}.keySet())
     <div id="button_group_$groupgName">
         #foreach($buttonNode in $buttonGroups.get($groupName))
-            #if(!$buttonNode.isMenu())
-            <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  ">
-            #end
+        #if(!$buttonNode.isMenu())
+        <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  ">
+        #end
         #end
         <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
     </div>
     #end
 </div>
 <script>
-    alert("button_bar");
-    var buttonBar = document.getElementById("button_bar");
-    buttonBar.style.display = "block";
-    var group = document.getElementById("button_bar_A");
-    alert(group);
+    function positionButton(buttonGroupName) {
+        var buttonGroup = "button_bar_" + buttonGroupName;
+        var buttonBarGroup = "buttons_" + buttonGroupName;
+        var bgDiv = document.getElementById(buttonGroup);
+        var buttonBar = document.getElementById(buttonBarGroup);
+        bgDiv.innerHTML = buttonBar.innerHTML;
+    }
+    #foreach($groupName in ${_nodeGroups_}.keySet())
+    positionButton(groupName);
+    #end
 </script>
 <script>
     YAHOO.util.Event.addListener(window, 'load', SUGAR.util.fillShortcuts, ["Saved Searches<br>\r\n\r\n<select style=\"width: 110px\" name='side_saved_search_select' onChange='SUGAR.savedViews.shortcut_select(this, \"Contacts\");'>\r\n\t\n<OPTION value='_none'>--None--<\/OPTION>\r\n<\/select>\r\n"]);
@@ -45,9 +50,9 @@ else {
 <tr>
     <td align="center" class="footer">
         <A href="index.php?module=Home&action=index" class="footerLink">Home</A> | <A href="index.php?module=iFrames&action=index" class="footerLink">My Portal</A> | <A href="index.php?module=Calendar&action=index" class="footerLink">Calendar</A> | <A href="index.php?module=Activities&action=index" class="footerLink">Activities</A> | <A href="index.php?module=Contacts&action=index" class="footerLink">Contacts</A> | <A href="index.php?module=Accounts&action=index"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                     class="footerLink">Accounts</A> | <A
+                                                                                                                                                                                                                                                                                                                                                                                                                                      class="footerLink">Accounts</A> | <A
             href="index.php?module=Leads&action=index" class="footerLink">Leads</A> | <A href="index.php?module=Opportunities&action=index" class="footerLink">Opportunities</A> | <A href="index.php?module=Cases&action=index" class="footerLink">Cases</A> | <A href="index.php?module=Bugs&action=index" class="footerLink">Bug Tracker</A> | <A href="index.php?module=Documents&action=index" class="footerLink">Documents</A> | <A href="index.php?module=Emails&action=index"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         class="footerLink">Emails</A><br> <A
+                                                                                                                                                                                                                                                                                                                                                                                                                                          class="footerLink">Emails</A><br> <A
             href="index.php?module=Campaigns&action=index" class="footerLink">Campaigns</A> | <A href="index.php?module=Project&action=index" class="footerLink">Projects</A> | <A href="index.php?module=Feeds&action=index" class="footerLink">RSS</A> | <A href="index.php?module=Dashboard&action=index" class="footerLink">Dashboard</A></td>
 
 </tr>
