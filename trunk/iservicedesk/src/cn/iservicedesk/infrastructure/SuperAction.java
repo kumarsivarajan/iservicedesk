@@ -75,6 +75,7 @@ public abstract class SuperAction extends ActionSupport {
 
         List<Node> menus = new ArrayList<Node>();
         // get menus
+        // TODO: 在 button node 下也可以注册 menu node
         pageContext.setAttribute("_menus_", menus);
         // get buttonNodes
         pageContext.setAttribute("_buttonGroups_", nodeGroups);
