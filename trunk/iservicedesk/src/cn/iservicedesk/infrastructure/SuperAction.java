@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.ejb.EJB;
 
 import cn.iservicedesk.function.bo.NodeBO;
+import cn.iservicedesk.function.entity.Module;
 import cn.iservicedesk.function.entity.Node;
 import org.jfox.mvc.ActionSupport;
 import org.jfox.mvc.InvocationContext;
@@ -78,6 +79,20 @@ public abstract class SuperAction extends ActionSupport {
         // get buttonNodes
         pageContext.setAttribute("_buttonGroups_", nodeGroups);
 
+    }
+
+    /**
+     * 调用的节点
+     */
+    private Node getInvocationNode(){
+        return null;
+    }
+
+    /**
+     * 调用所在的模块
+     */
+    private Module getInvocationModule() {
+        return null;
     }
 
     public static void main(String[] args) {
