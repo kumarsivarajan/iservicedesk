@@ -33,6 +33,11 @@ public abstract class SuperAction extends ActionSupport {
     @EJB
     NodeBO nodeBO;
 
+    //TODO: 初始化的时候得到 currentModule & currentNode，需要根据 node.BindAction 得到 node
+    private Module currentModule;
+    private Node currentNode;
+
+
     protected void preAction(InvocationContext invocationContext) {
 
         super.preAction(invocationContext);

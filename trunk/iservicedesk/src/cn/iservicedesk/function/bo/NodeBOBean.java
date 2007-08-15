@@ -27,6 +27,10 @@ public class NodeBOBean extends SuperBO implements NodeBO {
         return nodeDAO.getNodeById(id);
     }
 
+    public Node getNodeByBindAction(String bindAction) {
+        return null;
+    }
+
     public void addFunction(){
         
     }

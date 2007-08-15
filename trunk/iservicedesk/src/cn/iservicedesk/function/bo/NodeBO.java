@@ -9,4 +9,6 @@ public interface NodeBO {
 
     Node getNodeById(long id);
 
+    Node getNodeByBindAction(String bindAction);
+
 }
