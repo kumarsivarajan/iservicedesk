@@ -3,7 +3,6 @@ package cn.iservicedesk.function.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import cn.iservicedesk.infrastructure.LocalNamingEntityObject;
 import cn.iservicedesk.infrastructure.LocalNamingAndRefInspectableEntityObject;
 
 /**
@@ -29,6 +28,9 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
 
     @Column(name="DIV_GROUP")
     private String divGroup;
+
+    @Column(name="ICON")
+    private String icon;
 
     public String getBindAction() {
         return bindAction;
@@ -80,5 +82,13 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
 
     public void setDivGroup(String divGroup) {
         this.divGroup = divGroup;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }
