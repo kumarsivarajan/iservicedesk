@@ -2,7 +2,9 @@
     #foreach($groupName in ${_nodeGroups_}.keySet())
     <div id="button_group_$groupgName">
         #foreach($buttonNode in $buttonGroups.get($groupName))
-        <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  ">
+            #if(!$buttonNode.isMenu())
+            <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  Save  ">
+            #end
         #end
         <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
     </div>

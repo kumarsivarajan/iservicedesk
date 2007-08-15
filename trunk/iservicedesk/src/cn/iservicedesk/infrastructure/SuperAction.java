@@ -1,5 +1,6 @@
 package cn.iservicedesk.infrastructure;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,15 +61,21 @@ public abstract class SuperAction extends ActionSupport {
             // log action successful
         }
 
-        buildNodeGroups(invocationContext);
+        buildContextNodes(invocationContext);
     }
 
-    private void buildNodeGroups(InvocationContext invocationContext){
+    /**
+     * 根据上下文获得页面上的按钮，以及左边菜单
+     * @param invocationContext
+     */
+    private void buildContextNodes(InvocationContext invocationContext){
         PageContext pageContext = invocationContext.getPageContext();
         Map<String, List<Node>> nodeGroups = new HashMap<String, List<Node>>();
-        // get nodeMap
-        pageContext.setAttribute("_nodeGroups_", nodeGroups);
 
+        List<Node> menus = new ArrayList<Node>();
+        // get nodeMap
+        pageContext.setAttribute("_buttonGroups_", nodeGroups);
+        pageContext.setAttribute("_menus_", menus);
     }
 
     public static void main(String[] args) {
