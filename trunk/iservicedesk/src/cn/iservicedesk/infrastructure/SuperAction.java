@@ -1,5 +1,12 @@
 package cn.iservicedesk.infrastructure;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.ejb.EJB;
+
+import cn.iservicedesk.function.bo.NodeBO;
+import cn.iservicedesk.function.entity.Node;
 import org.jfox.mvc.ActionSupport;
 import org.jfox.mvc.InvocationContext;
 import org.jfox.mvc.PageContext;
@@ -20,6 +27,9 @@ import org.jfox.mvc.SessionContext;
 public abstract class SuperAction extends ActionSupport {
     public static final String THEME_KEY = "theme";
     public static final String LANG_KEY = "lang";
+
+    @EJB
+    NodeBO nodeBO;
 
     protected void preAction(InvocationContext invocationContext) {
 
@@ -49,6 +59,16 @@ public abstract class SuperAction extends ActionSupport {
         else {
             // log action successful
         }
+
+        buildNodeGroups(invocationContext);
+    }
+
+    private void buildNodeGroups(InvocationContext invocationContext){
+        PageContext pageContext = invocationContext.getPageContext();
+        Map<String, List<Node>> nodeGroups = new HashMap<String, List<Node>>();
+        // get nodeMap
+        pageContext.setAttribute("_nodeGroups_", nodeGroups);
+
     }
 
     public static void main(String[] args) {
