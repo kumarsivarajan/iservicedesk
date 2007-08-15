@@ -26,8 +26,8 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="IS_MENU")
     private int isMenu;
 
-    @Column(name="DIV_GROUP")
-    private String divGroup;
+    @Column(name="NODE_GROUP")
+    private String nodeGroup;
 
     @Column(name="ICON")
     private String icon;
@@ -76,12 +76,12 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
         return isMenu == 1;
     }
 
-    public String getDivGroup() {
-        return divGroup;
+    public String getNodeGroup() {
+        return nodeGroup;
     }
 
-    public void setDivGroup(String divGroup) {
-        this.divGroup = divGroup;
+    public void setNodeGroup(String nodeGroup) {
+        this.nodeGroup = nodeGroup;
     }
 
     public String getIcon() {

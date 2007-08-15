@@ -2323,11 +2323,11 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o43">
 <a:ObjectID>74EFE629-45AE-4100-AF64-AD9D8C52EB04</a:ObjectID>
-<a:Name>DIV_GROUP</a:Name>
-<a:Code>DIV_GROUP</a:Code>
+<a:Name>NODE_GROUP</a:Name>
+<a:Code>NODE_GROUP</a:Code>
 <a:CreationDate>1187017845</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187017877</a:ModificationDate>
+<a:ModificationDate>1187181358</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>指定一个 DIV 分组名称，用于在 HTML 上定位按钮。
 主要用于按钮的定位</a:Comment>
@@ -2340,10 +2340,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>ICON</a:Code>
 <a:CreationDate>1187170121</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187170137</a:ModificationDate>
+<a:ModificationDate>1187181375</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(64)</a:DataType>
-<a:Length>64</a:Length>
+<a:DataType>varchar(8)</a:DataType>
+<a:Length>8</a:Length>
 </o:Column>
 <o:Column Id="o45">
 <a:ObjectID>032B53D9-6B8C-449C-B2DA-989786A1B7EF</a:ObjectID>
@@ -2525,10 +2525,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>ICON</a:Code>
 <a:CreationDate>1187170137</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187170137</a:ModificationDate>
+<a:ModificationDate>1187181375</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(64)</a:DataType>
-<a:Length>64</a:Length>
+<a:DataType>varchar(8)</a:DataType>
+<a:Length>8</a:Length>
 </o:Column>
 </c:Columns>
 </o:Table>
@@ -2917,7 +2917,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>B020B28B-E5DF-4A74-9BA9-A9F0C3D819BC</a:ObjectID>
 <a:CreationDate>1187170137</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187170137</a:ModificationDate>
+<a:ModificationDate>1187181375</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>209A643E-B8F0-4EE6-BC4C-17C83ED9C252</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
