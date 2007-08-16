@@ -20,18 +20,18 @@ public class NodeAction extends SuperAction {
     @EJB
     NodeBO nodeBO;
 
-    @ActionMethod(name="new", successView = "function/newfunction.vhtml")
+    @ActionMethod(name="new", successView = "function/new_node.vhtml")
     public void newFunction(InvocationContext invocationContext) throws Exception {
 
     }
 
-    @ActionMethod(name="add", successView = "function/listfunction.vhtml")
+    @ActionMethod(name="add", successView = "function/list_node.vhtml")
     public void addFunction(InvocationContext invocationContext) throws Exception {
 
     }
 
-    @ActionMethod(name="get", successView = "function/viewFunction.vhtml", invocationClass = GetFunctionInvocation.class)
-    public void getFunction(InvocationContext invocationContext) throws Exception{
+    @ActionMethod(name="get", successView = "function/view_node.vhtml", invocationClass = GetFunctionInvocation.class)
+    public void getFunction(InvocationContext invocationContext) throws Exception {
         GetFunctionInvocation invocation = (GetFunctionInvocation)invocationContext.getInvocation();
         long functionId = invocation.getId();
         Node node = new Node();//functionBO.getFunctionById(functionId);
@@ -57,5 +57,4 @@ public class NodeAction extends SuperAction {
     public static class NewModuleInvocation extends GetFunctionInvocation {
 
     }
-
 }
