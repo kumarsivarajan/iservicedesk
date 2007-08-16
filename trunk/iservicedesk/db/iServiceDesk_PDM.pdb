@@ -2088,10 +2088,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>DESCRIPTION</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187018112</a:ModificationDate>
+<a:ModificationDate>1187181821</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(256)</a:DataType>
-<a:Length>256</a:Length>
+<a:DataType>varchar(512)</a:DataType>
+<a:Length>512</a:Length>
 </o:Column>
 <o:Column Id="o25">
 <a:ObjectID>4F2D0653-162F-4413-B8A2-F27859815FA1</a:ObjectID>
@@ -2241,10 +2241,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>DESCRIPTION</a:Code>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1186976891</a:ModificationDate>
+<a:ModificationDate>1187181821</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(256)</a:DataType>
-<a:Length>256</a:Length>
+<a:DataType>varchar(512)</a:DataType>
+<a:Length>512</a:Length>
 </o:Column>
 <o:Column Id="o37">
 <a:ObjectID>779FB499-028D-4228-9F02-DB1744BF0707</a:ObjectID>
@@ -2347,11 +2347,11 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o45">
 <a:ObjectID>032B53D9-6B8C-449C-B2DA-989786A1B7EF</a:ObjectID>
-<a:Name>IS_SHORTCUT</a:Name>
-<a:Code>IS_SHORTCUT</a:Code>
+<a:Name>SHORTCUT</a:Name>
+<a:Code>SHORTCUT</a:Code>
 <a:CreationDate>1187177845</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187177864</a:ModificationDate>
+<a:ModificationDate>1187193413</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>是否在Home中显示快捷方式</a:Comment>
 <a:DataType>numeric(1)</a:DataType>
@@ -2477,10 +2477,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>DESCRIPTION</a:Code>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187018112</a:ModificationDate>
+<a:ModificationDate>1187181821</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(256)</a:DataType>
-<a:Length>256</a:Length>
+<a:DataType>varchar(512)</a:DataType>
+<a:Length>512</a:Length>
 </o:Column>
 <o:Column Id="o56">
 <a:ObjectID>B2CABB70-51E9-4C75-9143-0AF8E23C92EC</a:ObjectID>
@@ -2722,7 +2722,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>B0A426D8-F8FD-4409-B53A-0C226B070C4B</a:ObjectID>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1186976891</a:ModificationDate>
+<a:ModificationDate>1187181821</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>8D8BCD45-B4DE-464D-9645-A78F6F956EF4</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2865,7 +2865,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>F4FCAEF4-66BA-4D52-AC88-3CE907D26A1E</a:ObjectID>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187018112</a:ModificationDate>
+<a:ModificationDate>1187181821</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>8D8BCD45-B4DE-464D-9645-A78F6F956EF4</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
