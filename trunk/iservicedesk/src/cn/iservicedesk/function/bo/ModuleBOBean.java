@@ -1,5 +1,8 @@
 package cn.iservicedesk.function.bo;
 
+import javax.ejb.EJB;
+
+import cn.iservicedesk.function.dao.ModuleDAO;
 import cn.iservicedesk.function.entity.Module;
 
 /**
@@ -7,9 +10,11 @@ import cn.iservicedesk.function.entity.Module;
  */
 public class ModuleBOBean implements ModuleBO{
 
+    @EJB
+    ModuleDAO moduleDAO;
 
     public Module getModuleById(long moduleId) {
-        return null;
+        return moduleDAO.getModuleById(moduleId);
     }
 
     public static void main(String[] args) {
