@@ -14,8 +14,8 @@ import org.jfox.mvc.annotation.ActionMethod;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-@Service(id="function")
-public class FunctionAction extends SuperAction {
+@Service(id="node")
+public class NodeAction extends SuperAction {
 
     @EJB
     NodeBO nodeBO;
