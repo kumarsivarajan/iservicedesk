@@ -44,8 +44,9 @@ public abstract class SuperAction extends ActionSupport {
         super.preAction(invocationContext);
         // init currentModule currentNode, 根据 node.BindAction 得到 node
         String actionMethodName = invocationContext.getFullActionMethodName();
-        currentNode = nodeBO.getNodeByBindAction(actionMethodName);
-        currentModule = moduleBO.getModuleById(currentNode.getModuleId());
+        //TODO: uncomment
+//        currentNode = nodeBO.getNodeByBindAction(actionMethodName);
+//        currentModule = moduleBO.getModuleById(currentNode.getModuleId());
     }
 
     protected void postAction(InvocationContext invocationContext) {
@@ -72,7 +73,8 @@ public abstract class SuperAction extends ActionSupport {
             // log action successful
         }
 
-        buildContextNodes(invocationContext);
+        //TODO: uncomment
+//        buildContextNodes(invocationContext);
     }
 
     /**

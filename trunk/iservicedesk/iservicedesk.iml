@@ -154,7 +154,7 @@
       <option name="fileLocation" value="1" />
       <option name="useAlternate" value="false" />
     </LanguageOptions>
-    <LanguageOptions name="$MODULE_DIR$">
+    <LanguageOptions name="$TEMPLATE$">
       <option name="templateOptions">
         <value>
           <option name="block" value="true" />

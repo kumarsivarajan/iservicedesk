@@ -33,8 +33,8 @@ public class NodeAction extends SuperAction {
     @ActionMethod(name="get", successView = "function/view_node.vhtml", invocationClass = GetFunctionInvocation.class)
     public void getFunction(InvocationContext invocationContext) throws Exception {
         GetFunctionInvocation invocation = (GetFunctionInvocation)invocationContext.getInvocation();
-        long functionId = invocation.getId();
-        Node node = new Node();//functionBO.getFunctionById(functionId);
+        long funcId = invocation.getId();
+        Node node = new Node(); // functionBO.getFunctionById(functionId);
         node.setName("Add User");
 
         PageContext pageContext = invocationContext.getPageContext();

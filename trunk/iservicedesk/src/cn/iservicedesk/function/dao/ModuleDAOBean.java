@@ -34,7 +34,4 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
         return (Module)processNamedNativeQuery(GET_MODOULE_BY_ID, params);
     }
     
-    public static void main(String[] args) {
-
-    }
 }

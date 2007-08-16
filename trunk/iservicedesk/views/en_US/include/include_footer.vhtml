@@ -1,5 +1,5 @@
 ﻿<div id="button_bar" style="padding-top: 2px; display:none;">
-    #foreach($groupName in ${_nodeGroups_}.keySet())
+    #foreach($groupName in $_nodeGroups_.keySet())
     <div id="button_group_$groupgName">
         #foreach($buttonNode in $buttonGroups.get($groupName))
         #if(!$buttonNode.isMenu())
@@ -19,7 +19,7 @@
         var buttonBar = document.getElementById(buttonBarGroup);
         bgDiv.innerHTML = buttonBar.innerHTML;
     }
-    #foreach($groupName in ${_nodeGroups_}.keySet())
+    #foreach($groupName in $_nodeGroups_.keySet())
     pointButtonGroup(groupName);
     #end
 </script>
