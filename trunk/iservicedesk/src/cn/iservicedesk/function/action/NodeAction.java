@@ -23,6 +23,8 @@ public class NodeAction extends SuperAction {
     @ActionMethod(name="new", successView = "function/new_node.vhtml")
     public void newFunction(InvocationContext invocationContext) throws Exception {
 
+        System.out.println("!!! Hello, " + invocationContext.getFullActionMethodName());
+
     }
 
     @ActionMethod(name="add", successView = "function/list_node.vhtml")

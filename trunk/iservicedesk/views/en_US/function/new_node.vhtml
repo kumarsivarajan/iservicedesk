@@ -30,7 +30,7 @@
     <th align="left" class="dataLabel" colspan="4"><h4 class="dataLabel">Node Information</h4></th>
 </tr>
 <tr>
-    <td width="15%" class="dataLabel"><span sugar='slot1'>Name:</span></td>
+    <td width="15%" class="dataLabel"><span sugar='slot1'>Node Name:</span></td>
 
     <td width="35%" class="dataField"><span sugar='slot1b'><select tabindex='1' name='salutation'>
         <OPTION selected value=''>--None--</OPTION>
@@ -40,7 +40,7 @@
         <OPTION value='Dr.'>Dr.</OPTION>
         <OPTION value='Prof.'>Prof.</OPTION>
     </select>&nbsp;<input name='first_name' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
-    <td width="15%" class="dataLabel"><span sugar='slot2'>Office Phone:</span></td>
+    <td width="15%" class="dataLabel"><span sugar='slot2'>Bind Action:</span></td>
 
     <td width="35%" class="dataField"><span sugar='slot2b'><input id='phone_work' name='phone_work' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
 </tr>
