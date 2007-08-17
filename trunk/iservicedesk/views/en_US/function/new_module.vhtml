@@ -1,6 +1,6 @@
 ﻿#parse("../include/include_header.vhtml")
 <script type="text/javascript" src="include/javascript/popup_parent_helper.js"></script>
-<form name="EditView" method="POST" action="index.php">
+<form name="EditView" method="POST" action="node.create.do">
 <input type="hidden" name="module" value="Contacts">
 <input type="hidden" name="record" value="">
 <input type="hidden" name="action">
@@ -23,135 +23,38 @@
 </table>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
-<tr>
-<td>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-    <th align="left" class="dataLabel" colspan="4"><h4 class="dataLabel">Module Information</h4></th>
-</tr>
-<tr>
-    <td width="15%" class="dataLabel"><span sugar='slot1'>Module Name:</span></td>
+    <tr>
+        <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th align="left" class="dataLabel" colspan="4"><h4 class="dataLabel">Module Information</h4></th>
+                </tr>
+                <tr>
+                    <td width="15%" class="dataLabel"><span sugar='slot1'>Module Name: <span class="required">*</span></span></td>
+                    <td width="35%" class="dataField"><span sugar='slot1b'><input name='first_name' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
+                    <td width="15%" class="dataLabel"><span sugar='slot2'>Bind Action: <span class="required">*</span></span></td>
+                    <td width="35%" class="dataField"><span sugar='slot2b'><input id='bind_action' name='bindAction' type="text" tabindex='2' size='30' maxlength='64' value=''></span></td>
+                </tr>
+                <tr>
+                    <td class="dataLabel"><span sugar='slot9'>Icon:</span></td>
+                    <td class="dataField"><span sugar='slot9b'><input name='title' type="text" tabindex='1' size='25' maxlength='50' value=''></span></td>
+                    <td class="dataLabel"><span sugar='slot4'>Priority:</span></td>
+                    <td class="dataField"><span sugar='slot4b'><input name='priority' type="text" tabindex='2' size='6' maxlength='25' value='99'></span></td>
+                </tr>
+                <tr>
+                    <td class="dataLabel"><span sugar='slot10'>Status:</span></td>
+                    <td class="dataField"><span sugar='slot10b'><select name='vstatus' tabindex='1'>
+                        <OPTION selected value='0'>Enabled</OPTION>
+                        <OPTION value='1'>Disabled</OPTION>
+                        <OPTION value='2'>Removed</OPTION>
+                    </select></span></td>
+                    <td class="dataLabel"></td>
+                    <td class="dataField"></td>
 
-    <td width="35%" class="dataField"><span sugar='slot1b'><select tabindex='1' name='salutation'>
-        <OPTION selected value=''>--None--</OPTION>
-        <OPTION value='Mr.'>Mr.</OPTION>
-        <OPTION value='Ms.'>Ms.</OPTION>
-        <OPTION value='Mrs.'>Mrs.</OPTION>
-        <OPTION value='Dr.'>Dr.</OPTION>
-        <OPTION value='Prof.'>Prof.</OPTION>
-    </select>&nbsp;<input name='first_name' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
-    <td width="15%" class="dataLabel"><span sugar='slot2'>Bind Action:</span></td>
-
-    <td width="35%" class="dataField"><span sugar='slot2b'><input id='phone_work' name='phone_work' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot3'>Last Name: <span class="required">*</span></span></td>
-    <td class="dataField"><span sugar='slot3b'><input name='last_name' type="text" tabindex='1' size='25' maxlength='25' value=""></span></td>
-    <td class="dataLabel"><span sugar='slot4'>Mobile:</span></td>
-    <td class="dataField"><span sugar='slot4b'><input name='phone_mobile' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
-</tr>
-<tr>
-
-    <td class="dataLabel"><span sugar='slot5'>Account Name:</span></td>
-    <td class="dataField"><span sugar='slot5b'><input class="sqsEnabled" tabindex="1" autocomplete="off" id="account_name" name='account_name' type="text" size='35' value=""><input id='account_id' name='account_id' type="hidden" value=''>
-		<input title="Select [Alt+T]" accessKey="T" type="button" tabindex='1' class="button" value='Select' name=btn1
-               onclick='open_popup("Accounts", 600, 400, "", true, false, {"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"account_id","name":"account_name","billing_address_street":"primary_address_street","billing_address_city":"primary_address_city","billing_address_state":"primary_address_state","billing_address_postalcode":"primary_address_postalcode","billing_address_country":"primary_address_country","phone_office":"phone_work"}}, "single", true);'/></span>
-    </td>
-    <td class="dataLabel"><span sugar='slot6'>Home:</span></td>
-    <td class="dataField"><span sugar='slot6b'><input name='phone_home' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot7'>Lead Source:</span></td>
-
-    <td class="dataField"><span sugar='slot7b'><select name='lead_source' tabindex='1'>
-        <OPTION selected value=''>--None--</OPTION>
-        <OPTION value='Cold Call'>Cold Call</OPTION>
-        <OPTION value='Existing Customer'>Existing Customer</OPTION>
-        <OPTION value='Self Generated'>Self Generated</OPTION>
-        <OPTION value='Employee'>Employee</OPTION>
-        <OPTION value='Partner'>Partner</OPTION>
-        <OPTION value='Public Relations'>Public Relations</OPTION>
-        <OPTION value='Direct Mail'>Direct Mail</OPTION>
-
-        <OPTION value='Conference'>Conference</OPTION>
-        <OPTION value='Trade Show'>Trade Show</OPTION>
-        <OPTION value='Web Site'>Web Site</OPTION>
-        <OPTION value='Word of mouth'>Word of mouth</OPTION>
-        <OPTION value='Email'>Email</OPTION>
-        <OPTION value='Campaign'>Campaign</OPTION>
-        <OPTION value='Other'>Other</OPTION>
-    </select></span></td>
-    <td class="dataLabel"><span sugar='slot8'>Other Phone:</span></td>
-
-    <td class="dataField"><span sugar='slot8b'><input name='phone_other' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
-</tr>
-<tr>
-    <td width="15%" class="dataLabel"><span sugar='slot40'>Campaign:</span></td>
-    <td width="25%" class="dataField"><span sugar='slot40b'>
-	 <input class="sqsEnabled" tabindex="1" autocomplete="off" id='campaign_name' name='campaign_name' type="text" value=""/>
-	 <input id='campaign_id' name='campaign_id' type="hidden" value=""/>
-	 <input title="Select [Alt+T]" accessKey="T" type="button" tabindex='1' class="button" value='Select' name=btn1
-            onclick='open_popup("Campaigns", 600, 400, "", true, false,{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"campaign_id","name":"campaign_name"}});'/></span>
-    </td>
-
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot9'>Title:</span></td>
-    <td class="dataField"><span sugar='slot9b'><input name='title' type="text" tabindex='1' size='25' maxlength='50' value=''></span></td>
-    <td class="dataLabel"><span sugar='slot10'>Fax:</span></td>
-    <td class="dataField"><span sugar='slot10b'><input name='phone_fax' type="text" tabindex='2' size='20' maxlength='25' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot11'>Department:</span></td>
-
-    <td class="dataField"><span sugar='slot11b'><input name='department' type="text" tabindex='1' size='25' maxlength='100' value=''></span></td>
-    <td class="dataLabel"><span sugar='slot12'>Email:</span></td>
-    <td class="dataField"><span sugar='slot12b'><input name='email1' type="text" tabindex='2' size='35' maxlength='100' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot13'>Birthdate:</span></td>
-    <td class="dataField"><span sugar='slot13b'><input name='birthdate' onblur="parseDate(this, '%Y-%m-%d');" id='jscal_field' type="text" tabindex='1' size='11' maxlength='10' value=""> <img src="themes/VintageSugar/images/jscalendar.gif" alt="Enter Date" id="jscal_trigger" align="absmiddle"> <span class="dateFormat">yyyy-mm-dd</span></span></td>
-
-    <td class="dataLabel"><span sugar='slot14'>Other Email:</span></td>
-    <td class="dataField"><span sugar='slot14b'><input name='email2' type="text" tabindex='2' size='35' maxlength='100' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot15'>Reports To:</span></td>
-    <td class="dataField"><span sugar='slot15b'><input type='text' name='report_to_name' id="report_to_name" readonly="readonly" value=''><input type="hidden" name='reports_to_id' id='reports_to_id' value=''>
-		<input type="button" name='button' class="button" title="Select [Alt+T]" accesskey="T" tabindex="1" value='Select'
-               onclick='open_popup("Contacts", 600, 400, "&account_id=&account_name=", true, false, {"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"reports_to_id","name":"report_to_name"}}, "single", true);'/></span></td>
-    <td class="dataLabel"><span sugar='slot16'>Assistant:</span></td>
-
-    <td class="dataField"><span sugar='slot16b'><input name='assistant' type="text" tabindex='2' size='25' maxlength='100' value=''></span></td>
-</tr>
-<tr>
-    <td class="dataLabel"><span sugar='slot17'>Sync to Outlook&reg;:</span></td>
-    <td class="dataField"><span sugar='slot17b'><input name='sync_contact' class="checkbox" type="checkbox" tabindex='1'></span></td>
-    <td class="dataLabel"><span sugar='slot18'>Assistant Phone:</span></td>
-    <td class="dataField"><span sugar='slot18b'><input name='assistant_phone' type="text" tabindex='2' size='25' maxlength='100' value=''></span></td>
-</tr>
-<tr>
-
-    <td class="dataLabel"><span sugar='slot19'>Do Not Call:</span></td>
-    <td class="dataField"><span sugar='slot19b'><input name='do_not_call' class="checkbox" type="checkbox" tabindex='1'></span></td>
-    <td class="dataLabel"><span sugar='slot20'>Email Opt Out:</span></td>
-    <td class="dataField"><span sugar='slot20b'><input name='email_opt_out' class="checkbox" type="checkbox" tabindex='2'></span></td>
-</tr>
-
-
-<tr>
-    <td class="dataLabel"><span sugar='slot23'>Assigned to:</span></td>
-    <td class="dataField"><span sugar='slot23b'><input class="sqsEnabled" tabindex="1" autocomplete="off" id="assigned_user_name" name='assigned_user_name' type="text" value="will"><input id='assigned_user_id' name='assigned_user_id' type="hidden" value="will_id"/>
-	<input title="Select [Alt+T]" accessKey="T" type="button" tabindex='1' class="button" value='Select' name=btn1
-           onclick='open_popup("Users", 600, 400, "&is_group=0", true, false, {"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"assigned_user_id","user_name":"assigned_user_name"}});'/></span>
-
-    </td>
-    <td class="dataLabel"><span sugar='slot24'>Invalid Email:</span></td>
-    <td class="dataField"><span sugar='slot24b'><input type='hidden' name='invalid_email' value='0'><input name='invalid_email' class="checkbox" type="checkbox" tabindex='2' value='1'></span></td>
-</tr>
-</table>
-</td>
-</tr>
+                </tr>
+            </table>
+        </td>
+    </tr>
 </table>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -159,50 +62,24 @@
         <td style="padding-left: 10px;"></td>
     </tr>
 </table>
-
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
     <tr>
         <td>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-
                 <tr>
-                    <th align="left" class="dataLabel" colspan="5"><h4 class="dataLabel">Address Information</h4></th>
+                    <th align="left" class="dataLabel" colspan="2"><h4 class="dataLabel">Internationalization Name</h4></th>
                 </tr>
                 <tr>
-                    <td class="dataLabel" width="15%"><span sugar='slot25'>Primary Address:</span></td>
-                    <td class="dataField" width="30%"><span sugar='slot25b'><textarea id='primary_address_street' name='primary_address_street' rows="2" tabindex='3' cols="30" maxlength='150'></textarea></span></td>
-                    <td class="tabFormAddDel" rowspan='5' width="10%"><input title="Copy primary address to alternate address" class="button" onclick="return copyAddressRight(EditView)" type="button" name="copyright" value="&gt;&gt;"><br><br>
-                        <input title="Copy alternate address to primary address" class="button" onclick="return copyAddressLeft(EditView)" type="button" name="copyleft" value="<<"></td>
-
-                    <td class="dataLabel" width="15%"><span sugar='slot26'>Other Address:</span></td>
-                    <td class="dataField" width="30%"><span sugar='slot26b'><textarea name='alt_address_street' rows="2" tabindex='4' cols="30" maxlength='150'></textarea></span></td>
+                    <td width="20%" class="dataLabel"><span sugar='slot1'>English Name:</span></td>
+                    <td width="80%" class="dataField"><span sugar='slot1b'><input name='en_US' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot27'>City:</span></td>
-                    <td class="dataField"><span sugar='slot27b'><input id='primary_address_city' name='primary_address_city' tabindex='3' size='25' maxlength='100' value=''></span></td>
-                    <td class="dataLabel"><span sugar='slot28'>City:</span></td>
-                    <td class="dataField"><span sugar='slot28b'><input name='alt_address_city' tabindex='4' size='25' maxlength='100' value=''></span></td>
-
+                    <td class="dataLabel"><span sugar='slot1'>Simple Chinese Name:</span></td>
+                    <td class="dataField"><span sugar='slot1b'><input name='zh_CN' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot29'>State:</span></td>
-                    <td class="dataField"><span sugar='slot29b'><input id='primary_address_state' name='primary_address_state' tabindex='3' size='15' maxlength='100' value=''></span></td>
-                    <td class="dataLabel"><span sugar='slot30'>State:</span></td>
-                    <td class="dataField"><span sugar='slot30b'><input name='alt_address_state' tabindex='4' size='15' maxlength='100' value=''></span></td>
-                </tr>
-                <tr>
-                    <td class="dataLabel"><span sugar='slot31'>Postal Code:</span></td>
-
-                    <td class="dataField"><span sugar='slot31b'><input id='primary_address_postalcode' name='primary_address_postalcode' tabindex='3' size='15' maxlength='20' value=''></span></td>
-                    <td class="dataLabel"><span sugar='slot32'>Postal Code:</span></td>
-                    <td class="dataField"><span sugar='slot32b'><input name='alt_address_postalcode' tabindex='4' size='15' maxlength='20' value=''></span></td>
-                </tr>
-                <tr>
-                    <td class="dataLabel"><span sugar='slot33'>Country:</span></td>
-                    <td class="dataField"><span sugar='slot33b'><input id='primary_address_country' name='primary_address_country' tabindex='3' size='10' maxlength='20' value=''></span></td>
-                    <td class="dataLabel"><span sugar='slot34'>Country:</span></td>
-
-                    <td class="dataField"><span sugar='slot34b'><input name='alt_address_country' tabindex='4' size='10' maxlength='20' value=''></span></td>
+                    <td class="dataLabel"><span sugar='slot1'>Traditional Chinese Name:</span></td>
+                    <td class="dataField"><span sugar='slot1b'><input name='zh_TW' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
                 </tr>
             </table>
         </td>
@@ -317,31 +194,6 @@
 <script type="text/javascript" src="include/javascript/quicksearch.js"></script>
 <script type="text/javascript"
         language="javascript">sqs_objects = {"account_name":{"method":"query","modules":["Accounts"],"group":"or","field_list":["name","id","billing_address_street","billing_address_city","billing_address_state","billing_address_postalcode","billing_address_country","phone_office"],"populate_list":["account_name","account_id","primary_address_street","primary_address_city","primary_address_state","primary_address_postalcode","primary_address_country","phone_work"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"},"assigned_user_name":{"method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name","assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"},"campaign_name":{"method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_name","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"}}</script>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr height="10">
-        <td style="padding-left: 10px;"></td>
-    </tr>
-</table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
-    <tr>
-        <td>
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <th align="left" class="dataLabel" colspan="4"><h4 class="dataLabel">Portal Information</h4></th>
-                </tr>
-                <tr>
-                    <td class="dataLabel" width='15%'><span sugar='slot36'>Portal Name:</span></td>
-
-                    <td class="dataField" align='left' width='35%'><span sugar='slot36b'><input name='portal_name' type="text" tabindex='6' size='25' maxlength='100' value=''></span></td>
-                    <td class="dataLabel" width='15%'><span sugar='slot37'>Portal Active:</span></td>
-                    <td class="dataField" align='left'><span sugar='slot37b'><input name='portal_active' class="checkbox" type="checkbox" tabindex='7' size='25' value='1'></span></td>
-                </tr>
-
-
-            </table>
-        </td>
-    </tr>
-</table>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr height="10">
