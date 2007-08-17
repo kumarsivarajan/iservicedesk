@@ -12,12 +12,12 @@ import org.jfox.mvc.annotation.ActionMethod;
 @Service(id="module")
 public class ModuleAction extends SuperAction {
 
-    @ActionMethod(name="new", successView = "function/newmodule.vhtml")
+    @ActionMethod(name="new", successView = "function/new_module.vhtml")
     public void newModule(InvocationContext invocationContext) throws Exception {
 
     }
 
-    @ActionMethod(name="add", successView = "function/listmodule.vhtml")
+    @ActionMethod(name="add", successView = "function/list_module.vhtml")
     public void addModule(InvocationContext invocationContext) throws Exception {
 
     }
