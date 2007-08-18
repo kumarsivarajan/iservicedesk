@@ -1,6 +1,6 @@
 ﻿#parse("../include/include_header.vhtml")
 <script type="text/javascript" src="include/javascript/popup_parent_helper.js"></script>
-<form name="EditView" method="POST" action="node.create.do">
+<form name="EditView" method="POST" action="module.new.do">
 <input type="hidden" name="module" value="Contacts">
 <input type="hidden" name="record" value="">
 <input type="hidden" name="action">
@@ -30,24 +30,24 @@
                     <th align="left" class="dataLabel" colspan="4"><h4 class="dataLabel">Module Information</h4></th>
                 </tr>
                 <tr>
-                    <td width="15%" class="dataLabel"><span sugar='slot1'>Module Name: <span class="required">*</span></span></td>
-                    <td width="35%" class="dataField"><span sugar='slot1b'><input name='first_name' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
-                    <td width="15%" class="dataLabel"><span sugar='slot2'>Bind Action: <span class="required">*</span></span></td>
-                    <td width="35%" class="dataField"><span sugar='slot2b'><input id='bind_action' name='bindAction' type="text" tabindex='2' size='30' maxlength='64' value=''></span></td>
+                    <td width="15%" class="dataLabel">Name: <span class="required">*</span></td>
+                    <td width="35%" class="dataField"><input name='name' tabindex='1' size='25' maxlength='25' type="text" value=""></td>
+                    <td width="15%" class="dataLabel">Bind Action: <span class="required">*</span></td>
+                    <td width="35%" class="dataField"><input id='bind_action' name='bindAction' type="text" tabindex='2' size='30' maxlength='64' value=''></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot9'>Icon:</span></td>
-                    <td class="dataField"><span sugar='slot9b'><input name='title' type="text" tabindex='1' size='25' maxlength='50' value=''></span></td>
-                    <td class="dataLabel"><span sugar='slot4'>Priority:</span></td>
-                    <td class="dataField"><span sugar='slot4b'><input name='priority' type="text" tabindex='2' size='6' maxlength='25' value='99'></span></td>
+                    <td class="dataLabel">Icon:</td>
+                    <td class="dataField"><input name='icon' type="text" tabindex='3' size='25' maxlength='50' value=''></td>
+                    <td class="dataLabel">Priority: <span class="required">*</span></td>
+                    <td class="dataField"><input name='priority' type="text" tabindex='4' size='6' maxlength='25' value='99'></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot10'>Status:</span></td>
-                    <td class="dataField"><span sugar='slot10b'><select name='vstatus' tabindex='1'>
+                    <td class="dataLabel">Status:</td>
+                    <td class="dataField"><select name='vstatus' tabindex='5'>
                         <OPTION selected value='0'>Enabled</OPTION>
                         <OPTION value='1'>Disabled</OPTION>
                         <OPTION value='2'>Removed</OPTION>
-                    </select></span></td>
+                    </select></td>
                     <td class="dataLabel"></td>
                     <td class="dataField"></td>
 
@@ -70,16 +70,16 @@
                     <th align="left" class="dataLabel" colspan="2"><h4 class="dataLabel">Internationalization Name</h4></th>
                 </tr>
                 <tr>
-                    <td width="20%" class="dataLabel"><span sugar='slot1'>English Name:</span></td>
-                    <td width="80%" class="dataField"><span sugar='slot1b'><input name='en_US' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
+                    <td width="25%" class="dataLabel">English Name:</td>
+                    <td width="75%" class="dataField"><input name='localName_en_US' tabindex='6' size='25' maxlength='25' type="text" value=""></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot1'>Simple Chinese Name:</span></td>
-                    <td class="dataField"><span sugar='slot1b'><input name='zh_CN' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
+                    <td class="dataLabel">Simple Chinese Name:</td>
+                    <td class="dataField"><input name='localName_zh_CN' tabindex='6' size='25' maxlength='25' type="text" value=""></td>
                 </tr>
                 <tr>
-                    <td class="dataLabel"><span sugar='slot1'>Traditional Chinese Name:</span></td>
-                    <td class="dataField"><span sugar='slot1b'><input name='zh_TW' tabindex='1' size='25' maxlength='25' type="text" value=""></span></td>
+                    <td class="dataLabel">Traditional Chinese Name:</td>
+                    <td class="dataField"><input name='localName_zh_TW' tabindex='8' size='25' maxlength='25' type="text" value=""></td>
                 </tr>
             </table>
         </td>
@@ -101,8 +101,8 @@
                 </tr>
                 <tr>
 
-                    <td width="15%" valign="top" class="dataLabel"><span sugar='slot35'>Description:</span></td>
-                    <td width="85%" class="dataField"><span sugar='slot35b'><textarea name='description' tabindex='5' cols="60" rows="8"></textarea></span></td>
+                    <td width="15%" valign="top" class="dataLabel">Description:</td>
+                    <td width="85%" class="dataField"><textarea name='description' tabindex='9' cols="60" rows="8"></textarea></td>
                 </tr>
             </table>
         </td>
@@ -200,6 +200,10 @@
         <td style="padding-left: 10px;"></td>
     </tr>
 </table>
+
+<div id="button_bar">
+    <input title="Save [Alt+S]" accessKey="S" class="button" onclick="this.form.action.value='Save';return check_form('EditView');" type="submit" name="button" value="  保存  "> <input title="Cancel [Alt+X]" accessKey="X" class="button" onclick="this.form.action.value='index'; this.form.module.value='Contacts'; this.form.record.value=''" type="submit" name="button" value="  Cancel  ">
+</div>
 
 </form>
 #parse("../include/include_footer.vhtml")
