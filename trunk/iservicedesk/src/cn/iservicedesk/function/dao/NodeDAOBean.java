@@ -45,7 +45,13 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                 name = NodeDAOBean.GET_CHILD_NODES,
                 query = "SELECT * FROM NODE WHERE PARENT_NODE_ID=$PARENT_NODE_ID AND IS_MENU=0",
                 resultClass = Node.class
+        ),
+        @NamedNativeQuery(
+                name = NodeDAOBean.GET_MAX_BITCODE,
+                query = "SELECT MAX(BIT_CODE) FROM FUNC_NODE",
+                resultClass = Integer.class
         )
+
                 }
 )
 public class NodeDAOBean extends SuperDAO implements NodeDAO {
@@ -53,6 +59,7 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
     public final static String GET_ALL_NODES = "getAllNodes";
     public final static String GET_MENUS_BY_MODULE_ID = "getMenusByModuleId";
     public final static String GET_CHILD_NODES = "getChildNodes";
+    public final static String GET_MAX_BITCODE = "getMaxBitCode";
 
     public Node getNodeById(long id) {
         return (Node)getEntityObject(NodeDAOBean.GET_NODE_BY_ID, "ID", id);
@@ -72,5 +79,17 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
         Map<String, Long> params = new HashMap<String, Long>(1);
         params.put("PARENT_NODE_ID", parentNodeId);
         return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENUS_BY_MODULE_ID, params);
+    }
+
+    public int getMaxBitCode(){
+        Integer maxBitCode =  (Integer)createNamedNativeQuery(GET_MAX_BITCODE).getSingleResult();
+        if(maxBitCode == null) {
+            // Node bit code start from 10000;
+            return 10000;
+        }
+        else {
+            return maxBitCode;
+        }
+
     }
 }

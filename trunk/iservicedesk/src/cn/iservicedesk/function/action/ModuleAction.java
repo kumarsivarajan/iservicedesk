@@ -26,7 +26,7 @@ public class ModuleAction extends SuperAction {
     }
 
     @ActionMethod(name="new", successView = "function/new_module.vhtml", invocationClass = NewModuleInvocation.class)
-    public void newModule(InvocationContext invocationContext) throws Exception {
+    public synchronized void newModule(InvocationContext invocationContext) throws Exception {
         NewModuleInvocation invocation = (NewModuleInvocation)invocationContext.getInvocation();
         Module module = new Module();
         module.setBindAction(invocation.getBindAction());

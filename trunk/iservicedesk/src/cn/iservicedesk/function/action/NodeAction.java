@@ -20,8 +20,15 @@ public class NodeAction extends SuperAction {
     @EJB
     NodeBO nodeBO;
 
+    @ActionMethod(name="newview", successView = "function/new_node.vhtml")
+    public  void newViewFunction(InvocationContext invocationContext) throws Exception {
+
+//        System.out.println("!!! Hello, " + invocationContext.getFullActionMethodName());
+
+    }
+
     @ActionMethod(name="new", successView = "function/new_node.vhtml")
-    public void newFunction(InvocationContext invocationContext) throws Exception {
+    public synchronized void newFunction(InvocationContext invocationContext) throws Exception {
 
 //        System.out.println("!!! Hello, " + invocationContext.getFullActionMethodName());
 
