@@ -9,4 +9,8 @@ import cn.iservicedesk.infrastructure.DataAccessObject;
 public interface ModuleDAO extends DataAccessObject {
 
     Module getModuleById(long id);
+
+    void createModule(Module module);
+
+    int getMaxBitCode();
 }

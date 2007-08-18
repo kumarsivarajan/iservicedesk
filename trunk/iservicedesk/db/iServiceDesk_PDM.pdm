@@ -1964,7 +1964,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>TABLE_SUPPORT</a:Code>
 <a:CreationDate>1186975936</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1186976209</a:ModificationDate>
+<a:ModificationDate>1187445443</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <c:Columns>
 <o:Column Id="o14">
@@ -2015,6 +2015,18 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o18">
+<a:ObjectID>9F0D0A22-5025-4765-AEC6-9A53FDCBBEC5</a:ObjectID>
+<a:Name>VSTATUS</a:Name>
+<a:Code>VSTATUS</a:Code>
+<a:CreationDate>1186976151</a:CreationDate>
+<a:Creator>Administrator</a:Creator>
+<a:ModificationDate>1187250631</a:ModificationDate>
+<a:Modifier>Administrator</a:Modifier>
+<a:DataType>decimal(1)</a:DataType>
+<a:Length>1</a:Length>
+<a:Mandatory>1</a:Mandatory>
+</o:Column>
+<o:Column Id="o19">
 <a:ObjectID>6FF28693-1036-42D1-A394-D245414844B2</a:ObjectID>
 <a:Name>VERSION</a:Name>
 <a:Code>VERSION</a:Code>
@@ -2026,7 +2038,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Length>9</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o19">
+<o:Column Id="o20">
 <a:ObjectID>BBCCF5A9-03A5-4B03-B3A1-412B5D677DD2</a:ObjectID>
 <a:Name>CREATE_TIME</a:Name>
 <a:Code>CREATE_TIME</a:Code>
@@ -2037,7 +2049,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:DataType>decimal(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
-<o:Column Id="o20">
+<o:Column Id="o21">
 <a:ObjectID>441B527A-D73C-49FB-8829-87BE826E9A98</a:ObjectID>
 <a:Name>CREATOR</a:Name>
 <a:Code>CREATOR</a:Code>
@@ -2048,7 +2060,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
-<o:Column Id="o21">
+<o:Column Id="o22">
 <a:ObjectID>285C8477-93DA-4E68-B21E-4C51EEED5195</a:ObjectID>
 <a:Name>LAST_MODIFIED</a:Name>
 <a:Code>LAST_MODIFIED</a:Code>
@@ -2059,7 +2071,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:DataType>decimal(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
-<o:Column Id="o22">
+<o:Column Id="o23">
 <a:ObjectID>6043ED44-D145-47B6-88A7-BEE34121EFD6</a:ObjectID>
 <a:Name>LAST_MODIFIER</a:Name>
 <a:Code>LAST_MODIFIER</a:Code>
@@ -2069,18 +2081,6 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
-</o:Column>
-<o:Column Id="o23">
-<a:ObjectID>9F0D0A22-5025-4765-AEC6-9A53FDCBBEC5</a:ObjectID>
-<a:Name>VSTATUS</a:Name>
-<a:Code>VSTATUS</a:Code>
-<a:CreationDate>1186976151</a:CreationDate>
-<a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
-<a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(1)</a:DataType>
-<a:Length>1</a:Length>
-<a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o24">
 <a:ObjectID>8D8BCD45-B4DE-464D-9645-A78F6F956EF4</a:ObjectID>

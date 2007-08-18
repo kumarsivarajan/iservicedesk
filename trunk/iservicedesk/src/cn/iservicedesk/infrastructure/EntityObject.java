@@ -19,18 +19,18 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     @Column(name="NAME")
     private String name;
 
-
+    // 用户的 CODE
     @Column(name="CREATOR")
     private String creator;
 
     @Column(name="CREATE_TIME")
-    private long createTime = System.currentTimeMillis();
+    private long createTime = -1;
 
     @Column(name="LAST_MODIFIER")
     private String lastModifier;
 
     @Column(name="LAST_MODIFIED")
-    private long lastModified = System.currentTimeMillis();
+    private long lastModified = -1;
 
     @Column(name="PRIORITY")
     private int priority = 0;
@@ -52,6 +52,7 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     public EntityObject() {
         // 使用PKgen生成id
         id = PKGenerator.getInstance(0).nextPK();
+        createTime = System.currentTimeMillis();
     }
 
     /**
@@ -116,6 +117,9 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     }
 
     public long getLastModified() {
+        if(lastModified == -1) {
+            lastModified = createTime;
+        }
         return lastModified;
     }
 
@@ -132,6 +136,9 @@ public abstract class EntityObject implements Comparable<EntityObject>{
     }
 
     public String getLastModifier() {
+        if(lastModifier == null) {
+            lastModifier = creator;
+        }
         return lastModifier;
     }
 

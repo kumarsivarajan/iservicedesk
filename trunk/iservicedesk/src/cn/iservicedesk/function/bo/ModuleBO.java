@@ -9,4 +9,5 @@ public interface ModuleBO {
 
     Module getModuleById(long moduleId);
 
+    void createModule(Module module);
 }

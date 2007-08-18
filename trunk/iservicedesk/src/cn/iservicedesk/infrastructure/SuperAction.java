@@ -41,7 +41,7 @@ public abstract class SuperAction extends ActionSupport {
 
 
     protected void preAction(InvocationContext invocationContext) {
-        logger.info("Requst accepted, URI: " + invocationContext.getRequestURI());
+        logger.info("Request accepted, URI: " + invocationContext.getRequestURI());
         super.preAction(invocationContext);
         // init currentModule currentNode, 根据 node.BindAction 得到 node
         String actionMethodName = invocationContext.getFullActionMethodName();
@@ -76,7 +76,7 @@ public abstract class SuperAction extends ActionSupport {
 
         //TODO: uncomment
 //        buildContextNodes(invocationContext);
-        logger.info("Requst done, URI: " + invocationContext.getRequestURI());
+        logger.info("Request done, URI: " + invocationContext.getRequestURI());
     }
 
     /**

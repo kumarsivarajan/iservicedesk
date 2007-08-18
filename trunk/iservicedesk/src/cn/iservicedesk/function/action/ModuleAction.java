@@ -1,5 +1,9 @@
 package cn.iservicedesk.function.action;
 
+import javax.ejb.EJB;
+
+import cn.iservicedesk.function.bo.ModuleBO;
+import cn.iservicedesk.function.entity.Module;
 import cn.iservicedesk.infrastructure.SuperAction;
 import org.jfox.framework.annotation.Service;
 import org.jfox.mvc.Invocation;
@@ -12,6 +16,9 @@ import org.jfox.mvc.annotation.ActionMethod;
 @Service(id="module")
 public class ModuleAction extends SuperAction {
 
+    @EJB
+    ModuleBO moduleBO;
+
     @ActionMethod(name="newview", successView = "function/new_module.vhtml")
     public void newViewModule(InvocationContext invocationContext) throws Exception {
 
@@ -20,8 +27,34 @@ public class ModuleAction extends SuperAction {
 
     @ActionMethod(name="new", successView = "function/new_module.vhtml", invocationClass = NewModuleInvocation.class)
     public void newModule(InvocationContext invocationContext) throws Exception {
-        System.out.println("1234");
         NewModuleInvocation invocation = (NewModuleInvocation)invocationContext.getInvocation();
+        Module module = new Module();
+        module.setBindAction(invocation.getBindAction());
+        module.setIcon(invocation.getIcon());
+        module.setCreator("Administrator");
+        module.setDescription(invocation.getDescription());
+        module.setIcon(invocation.getIcon());
+        String localName = "";
+        if(invocation.getLocalName_en_US() != null && invocation.getLocalName_en_US().trim().length()>0) {
+            localName += "en_US=" + invocation.getLocalName_en_US();
+        }
+        if(invocation.getLocalName_zh_CN() != null && invocation.getLocalName_zh_CN().trim().length()>0) {
+            if(localName.length() > 0) {
+                localName += "\n";
+            }
+            localName += "zh_CN=" + invocation.getLocalName_zh_CN();
+        }
+        if(invocation.getLocalName_zh_TW() != null && invocation.getLocalName_zh_TW().trim().length()>0) {
+            if(localName.length() > 0) {
+                localName += "\n";
+            }
+            localName += "zh_TW=" + invocation.getLocalName_zh_TW();
+        }
+        module.setLocalName(localName);
+        module.setName(invocation.getName());
+        module.setPriority(invocation.getPriority());
+        module.setVstatus(invocation.getVstatus());
+        moduleBO.createModule(module);
     }
     
     public static class NewModuleInvocation extends Invocation {

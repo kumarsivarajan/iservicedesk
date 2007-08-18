@@ -4,9 +4,9 @@ import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Locale;
 import javax.persistence.Column;
 
 /**
@@ -115,6 +115,10 @@ public abstract class LocalNamingAndRefInspectableEntityObject extends EntityObj
 
     public void setLocalName(String localName) {
         this.localName = localName;
+    }
+
+    public String getLocalName(){
+        return localName;
     }
 
     public String getLocalName(Locale locale) {
