@@ -1,5 +1,7 @@
 package cn.iservicedesk.function.dao;
 
+import java.util.List;
+
 import cn.iservicedesk.function.entity.Module;
 import cn.iservicedesk.infrastructure.DataAccessObject;
 
@@ -13,4 +15,6 @@ public interface ModuleDAO extends DataAccessObject {
     void createModule(Module module);
 
     int getMaxBitCode();
+
+    List<Module> getAllModules();
 }

@@ -1,5 +1,6 @@
 package cn.iservicedesk.infrastructure;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import org.jfox.entity.dao.PKGenerator;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public abstract class EntityObject implements Comparable<EntityObject>{
+public abstract class EntityObject implements Comparable<EntityObject>, Serializable {
     /**
      * 每个表必须有ID字段，且作为 Primary Key
      */

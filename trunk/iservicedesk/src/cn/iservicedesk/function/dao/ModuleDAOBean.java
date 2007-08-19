@@ -1,6 +1,7 @@
 package cn.iservicedesk.function.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
@@ -19,7 +20,13 @@ import cn.iservicedesk.infrastructure.SuperDAO;
         {
         @NamedNativeQuery(
                 name = ModuleDAOBean.GET_MODOULE_BY_ID,
-                query = "SELECT * FROM FUNC_MODULE WHERE ID=$ID"
+                query = "SELECT * FROM FUNC_MODULE WHERE ID=$ID",
+                resultClass = Module.class
+        ),
+        @NamedNativeQuery(
+                name = ModuleDAOBean.GET_ALL_MODOULES,
+                query = "SELECT * FROM FUNC_MODULE WHERE VSTATUS=0",
+                resultClass = Module.class
         ),
         @NamedNativeQuery(
                 name = ModuleDAOBean.CREATE_MODULE,
@@ -64,6 +71,7 @@ import cn.iservicedesk.infrastructure.SuperDAO;
 public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
 
     public static final String GET_MODOULE_BY_ID = "getModuleById";
+    public static final String GET_ALL_MODOULES = "getAllModules";
     public final static String CREATE_MODULE = "createModule";
     public final static String GET_MAX_BITCODE = "getMaxBitCode";
 
@@ -89,5 +97,8 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
             return maxBitCode;
         }
     }
-    
+
+    public List<Module> getAllModules() {
+        return (List<Module>)processNamedNativeQuery(GET_ALL_MODOULES, null);
+    }
 }

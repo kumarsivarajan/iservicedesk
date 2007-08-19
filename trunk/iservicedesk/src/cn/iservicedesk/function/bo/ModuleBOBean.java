@@ -1,5 +1,6 @@
 package cn.iservicedesk.function.bo;
 
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
@@ -28,10 +29,13 @@ public class ModuleBOBean extends SuperBO implements ModuleBO{
     }
 
     public void createModule(Module module) {
-        //TODO: getBitCode
-//        module.setBitCode();
+        //getMaxBitCode
         int maxBitCode = moduleDAO.getMaxBitCode();
         module.setBitCode(++maxBitCode);
         moduleDAO.createModule(module);
+    }
+
+    public List<Module> getAllModules() {
+        return moduleDAO.getAllModules();
     }
 }

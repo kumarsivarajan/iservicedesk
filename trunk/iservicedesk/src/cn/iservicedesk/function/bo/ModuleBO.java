@@ -1,5 +1,7 @@
 package cn.iservicedesk.function.bo;
 
+import java.util.List;
+
 import cn.iservicedesk.function.entity.Module;
 
 /**
@@ -10,4 +12,6 @@ public interface ModuleBO {
     Module getModuleById(long moduleId);
 
     void createModule(Module module);
+
+    List<Module> getAllModules();
 }
