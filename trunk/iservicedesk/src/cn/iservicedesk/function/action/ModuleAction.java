@@ -13,19 +13,29 @@ import org.jfox.mvc.annotation.ActionMethod;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-@Service(id="module")
+@Service(id = "module")
 public class ModuleAction extends SuperAction {
 
     @EJB
     ModuleBO moduleBO;
 
-    @ActionMethod(name="newview", successView = "function/new_module.vhtml")
+    @ActionMethod(name = "newview", successView = "function/new_module.vhtml")
     public void newViewModule(InvocationContext invocationContext) throws Exception {
 
-        
+
     }
 
-    @ActionMethod(name="new", successView = "function/new_module.vhtml", invocationClass = NewModuleInvocation.class)
+
+    @ActionMethod(name = "editview", successView = "function/edit_module.vhtml", invocationClass = EditModuleInvocation.class)
+    public void editViewModule(InvocationContext invocationContext) throws Exception {
+        EditModuleInvocation invocation = (EditModuleInvocation)invocationContext.getInvocation();
+        Module module = moduleBO.getModuleById(invocation.getId());
+        invocationContext.getPageContext().setAttribute("module", module);
+
+    }
+
+
+    @ActionMethod(name = "new", successView = "function/new_module.vhtml", invocationClass = NewModuleInvocation.class)
     public synchronized void newModule(InvocationContext invocationContext) throws Exception {
         NewModuleInvocation invocation = (NewModuleInvocation)invocationContext.getInvocation();
         Module module = new Module();
@@ -35,17 +45,17 @@ public class ModuleAction extends SuperAction {
         module.setDescription(invocation.getDescription());
         module.setIcon(invocation.getIcon());
         String localName = "";
-        if(invocation.getLocalName_en_US() != null && invocation.getLocalName_en_US().trim().length()>0) {
+        if (invocation.getLocalName_en_US() != null && invocation.getLocalName_en_US().trim().length() > 0) {
             localName += "en_US=" + invocation.getLocalName_en_US();
         }
-        if(invocation.getLocalName_zh_CN() != null && invocation.getLocalName_zh_CN().trim().length()>0) {
-            if(localName.length() > 0) {
+        if (invocation.getLocalName_zh_CN() != null && invocation.getLocalName_zh_CN().trim().length() > 0) {
+            if (localName.length() > 0) {
                 localName += "\n";
             }
             localName += "zh_CN=" + invocation.getLocalName_zh_CN();
         }
-        if(invocation.getLocalName_zh_TW() != null && invocation.getLocalName_zh_TW().trim().length()>0) {
-            if(localName.length() > 0) {
+        if (invocation.getLocalName_zh_TW() != null && invocation.getLocalName_zh_TW().trim().length() > 0) {
+            if (localName.length() > 0) {
                 localName += "\n";
             }
             localName += "zh_TW=" + invocation.getLocalName_zh_TW();
@@ -56,7 +66,19 @@ public class ModuleAction extends SuperAction {
         module.setVstatus(invocation.getVstatus());
         moduleBO.createModule(module);
     }
-    
+
+    public static class EditModuleInvocation extends Invocation {
+        private long id;
+
+        public long getId() {
+            return id;
+        }
+
+        public void setId(long id) {
+            this.id = id;
+        }
+    }
+
     public static class NewModuleInvocation extends Invocation {
         private String name;
         private String localName_en_US;

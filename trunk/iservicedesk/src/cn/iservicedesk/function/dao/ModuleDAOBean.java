@@ -76,9 +76,7 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
     public final static String GET_MAX_BITCODE = "getMaxBitCode";
 
     public Module getModuleById(long id) {
-        Map<String,Long> params = new HashMap<String, Long>(1);
-        params.put("ID",id);
-        return (Module)processNamedNativeQuery(GET_MODOULE_BY_ID, params);
+        return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
     }
 
     public void createModule(Module module) {
