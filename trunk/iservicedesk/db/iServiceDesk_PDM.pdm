@@ -2008,9 +2008,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>PRIORITY</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533758</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(2)</a:DataType>
+<a:DataType>tinyint(2)</a:DataType>
 <a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
@@ -2020,10 +2020,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>VSTATUS</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533774</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(1)</a:DataType>
-<a:Length>1</a:Length>
+<a:DataType>tinyint(2)</a:DataType>
+<a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o19">
@@ -2032,10 +2032,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>VERSION</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533813</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(9)</a:DataType>
-<a:Length>9</a:Length>
+<a:DataType>int(8)</a:DataType>
+<a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o20">
@@ -2044,9 +2044,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>CREATE_TIME</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o21">
@@ -2066,9 +2066,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>LAST_MODIFIED</a:Code>
 <a:CreationDate>1186976151</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o23">
@@ -2173,9 +2173,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>PRIORITY</a:Code>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533758</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(2)</a:DataType>
+<a:DataType>tinyint(2)</a:DataType>
 <a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
@@ -2185,9 +2185,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>CREATE_TIME</a:Code>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o32">
@@ -2207,9 +2207,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>LAST_MODIFIED</a:Code>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o34">
@@ -2229,10 +2229,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>VSTATUS</a:Code>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533774</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(1)</a:DataType>
-<a:Length>1</a:Length>
+<a:DataType>tinyint(2)</a:DataType>
+<a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o36">
@@ -2263,12 +2263,12 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>BIT_CODE</a:Code>
 <a:CreationDate>1186977199</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250660</a:ModificationDate>
+<a:ModificationDate>1187533896</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>二进制编码的位数
 2,4,8，2的次方</a:Comment>
-<a:DataType>decimal(9)</a:DataType>
-<a:Length>9</a:Length>
+<a:DataType>int(8)</a:DataType>
+<a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o39">
@@ -2277,9 +2277,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>PARENT_ID</a:Code>
 <a:CreationDate>1186977325</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187517501</a:ModificationDate>
+<a:ModificationDate>1187533896</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(19)</a:DataType>
+<a:DataType>bigint(19)</a:DataType>
 <a:Length>19</a:Length>
 </o:Column>
 <o:Column Id="o40">
@@ -2300,10 +2300,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>MODULE_ID</a:Code>
 <a:CreationDate>1186977199</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250660</a:ModificationDate>
+<a:ModificationDate>1187533946</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(9)</a:DataType>
-<a:Length>9</a:Length>
+<a:DataType>bigint(19)</a:DataType>
+<a:Length>19</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o42">
@@ -2312,12 +2312,12 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>IS_MENU</a:Code>
 <a:CreationDate>1187017767</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250660</a:ModificationDate>
+<a:ModificationDate>1187533925</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>是否是菜单，还是按钮
 1=菜单，0=按钮
 菜单显示在 ShortCut 上</a:Comment>
-<a:DataType>decimal(1)</a:DataType>
+<a:DataType>tinyint(1)</a:DataType>
 <a:Length>1</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
@@ -2438,9 +2438,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>PRIORITY</a:Code>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533758</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(2)</a:DataType>
+<a:DataType>tinyint(2)</a:DataType>
 <a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
@@ -2450,9 +2450,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>CREATE_TIME</a:Code>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o53">
@@ -2472,9 +2472,9 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>LAST_MODIFIED</a:Code>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(13)</a:DataType>
+<a:DataType>bigint(13)</a:DataType>
 <a:Length>13</a:Length>
 </o:Column>
 <o:Column Id="o55">
@@ -2494,10 +2494,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>VSTATUS</a:Code>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533774</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>decimal(1)</a:DataType>
-<a:Length>1</a:Length>
+<a:DataType>tinyint(2)</a:DataType>
+<a:Length>2</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o57">
@@ -2528,12 +2528,12 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>BIT_CODE</a:Code>
 <a:CreationDate>1187018709</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250660</a:ModificationDate>
+<a:ModificationDate>1187533896</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:Comment>二进制编码的位数
 2,4,8，2的次方</a:Comment>
-<a:DataType>decimal(9)</a:DataType>
-<a:Length>9</a:Length>
+<a:DataType>int(8)</a:DataType>
+<a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o60">
@@ -2715,7 +2715,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>F9F33233-9DB8-4BC0-94A4-BCC590AD8E47</a:ObjectID>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533758</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>0636E5CB-5226-4BD5-B339-FC62F16223C4</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2728,7 +2728,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>2984A833-2BAE-4E87-AB6C-D91DD8F20E52</a:ObjectID>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>BBCCF5A9-03A5-4B03-B3A1-412B5D677DD2</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2754,7 +2754,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>A04C5155-A9F2-4EE7-AF77-65D154E972A0</a:ObjectID>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>285C8477-93DA-4E68-B21E-4C51EEED5195</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2780,7 +2780,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>4299A6E1-3C39-4A82-8700-BC101DB39BAE</a:ObjectID>
 <a:CreationDate>1186976891</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533774</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>9F0D0A22-5025-4765-AEC6-9A53FDCBBEC5</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2858,7 +2858,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>F17F2B2D-47D7-4146-AEC6-D4164D992F63</a:ObjectID>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533758</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>0636E5CB-5226-4BD5-B339-FC62F16223C4</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2871,7 +2871,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>FC581D4B-98C5-4E2F-8980-E423B0A6EB10</a:ObjectID>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>BBCCF5A9-03A5-4B03-B3A1-412B5D677DD2</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2897,7 +2897,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>260A3F18-A2DE-457F-BA45-4BF65A8716EE</a:ObjectID>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250592</a:ModificationDate>
+<a:ModificationDate>1187533856</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>285C8477-93DA-4E68-B21E-4C51EEED5195</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2923,7 +2923,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>E9447DBD-9EBC-4A39-BADD-B8B38A9F4A57</a:ObjectID>
 <a:CreationDate>1187018112</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250631</a:ModificationDate>
+<a:ModificationDate>1187533774</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>9F0D0A22-5025-4765-AEC6-9A53FDCBBEC5</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
@@ -2962,7 +2962,7 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:ObjectID>AC6C3B5B-C2E5-4B83-BC74-018F00D7F86C</a:ObjectID>
 <a:CreationDate>1187018709</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1187250660</a:ModificationDate>
+<a:ModificationDate>1187533896</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:OriginalID>57B9B9EC-0193-4010-9EF4-42428CC4371B</a:OriginalID>
 <a:OriginalClassID>380BAA41-0042-11D2-BD28-00A02478ECC9</a:OriginalClassID>
