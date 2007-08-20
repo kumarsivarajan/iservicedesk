@@ -85,17 +85,6 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
         executeNamedNativeUpdate(CREATE_MODULE, params);
     }
 
-    public int getMaxBitCode(){
-        Integer maxBitCode =  (Integer)createNamedNativeQuery(GET_MAX_BITCODE).getSingleResult();
-        if(maxBitCode == null) {
-            // Module bit code start from 0, to 9999
-            return 0;
-        }
-        else {
-            return maxBitCode;
-        }
-    }
-
     public List<Module> getAllModules() {
         return (List<Module>)processNamedNativeQuery(GET_ALL_MODOULES, null);
     }

@@ -14,7 +14,5 @@ public interface ModuleDAO extends DataAccessObject {
 
     void createModule(Module module);
 
-    int getMaxBitCode();
-
     List<Module> getAllModules();
 }

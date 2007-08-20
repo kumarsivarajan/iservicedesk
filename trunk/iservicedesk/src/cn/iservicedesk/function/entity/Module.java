@@ -14,9 +14,6 @@ public class Module extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="BIND_ACTION")
     private String bindAction;
 
-    @Column(name="BIT_CODE")
-    private int bitCode;
-
     @Column(name="ICON")
     private String icon;
 
@@ -27,14 +24,6 @@ public class Module extends LocalNamingAndRefInspectableEntityObject {
 
     public void setBindAction(String bindAction) {
         this.bindAction = bindAction;
-    }
-
-    public int getBitCode() {
-        return bitCode;
-    }
-
-    public void setBitCode(int bitCode) {
-        this.bitCode = bitCode;
     }
 
     public String getIcon() {

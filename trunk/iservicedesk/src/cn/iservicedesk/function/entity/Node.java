@@ -14,9 +14,6 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="BIND_ACTION")
     private String bindAction;
 
-    @Column(name="BIT_CODE")
-    private int bitCode;
-
     @Column(name="PARENT_BIT_CODE")
     private int parentBitCode;
 
@@ -41,14 +38,6 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
 
     public void setBindAction(String bindAction) {
         this.bindAction = bindAction;
-    }
-
-    public int getBitCode() {
-        return bitCode;
-    }
-
-    public void setBitCode(int bitCode) {
-        this.bitCode = bitCode;
     }
 
     public int getParentBitCode() {

@@ -22,9 +22,12 @@ public class ModuleAction extends SuperAction {
     @ActionMethod(name = "newview", successView = "function/new_module.vhtml")
     public void newViewModule(InvocationContext invocationContext) throws Exception {
 
-
     }
 
+    @ActionMethod(name = "list", successView = "function/list_module.vhtml")
+    public void listModule(InvocationContext invocationContext) throws Exception {
+
+    }
 
     @ActionMethod(name = "editview", successView = "function/edit_module.vhtml", invocationClass = EditModuleInvocation.class)
     public void editViewModule(InvocationContext invocationContext) throws Exception {

@@ -29,9 +29,6 @@ public class ModuleBOBean extends SuperBO implements ModuleBO{
     }
 
     public void createModule(Module module) {
-        //getMaxBitCode
-        int maxBitCode = moduleDAO.getMaxBitCode();
-        module.setBitCode(++maxBitCode);
         moduleDAO.createModule(module);
     }
 

@@ -49,9 +49,9 @@ public abstract class SuperAction extends ActionSupport {
 //        currentNode = nodeBO.getNodeByBindAction(actionMethodName);
 //        currentModule = moduleBO.getModuleById(currentNode.getModuleId());
 
-        List<Module> allModules = moduleBO.getAllModules();
-        PageContext pageContext = invocationContext.getPageContext();
-        pageContext.setAttribute("_ALL_MODULES_", allModules);
+//        List<Module> allModules = moduleBO.getAllModules();
+//        PageContext pageContext = invocationContext.getPageContext();
+//        pageContext.setAttribute("_ALL_MODULES_", allModules);
     }
 
     protected void postAction(InvocationContext invocationContext) {
