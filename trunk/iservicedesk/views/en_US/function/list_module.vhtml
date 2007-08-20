@@ -192,7 +192,7 @@
 
 </form>
 
-<link rel="stylesheet" type="text/css" href="include/javascript/yui/assets/treeview/tree.css" />
+<link rel="stylesheet" type="text/css" href="include/ytree/TreeView/css/folders/tree.css" />
 <script src="include/ytree/TreeView/TreeView.js"></script>
 <style>
 #treeDiv1 {background: #fff; margin-top:1em; padding:1em; min-height:7em;}
