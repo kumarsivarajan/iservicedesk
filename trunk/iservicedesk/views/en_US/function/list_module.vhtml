@@ -328,7 +328,7 @@ YAHOO.example.treeExample = function() {
 } ();
 
 //once the DOM has loaded, we can go ahead and set up our tree:
-YAHOO.util.Event.onContentReady("treeDiv1", YAHOO.example.treeExample.init, YAHOO.example.treeExample,true)
+YAHOO.util.Event.onDOMReady(YAHOO.example.treeExample.init, YAHOO.example.treeExample,true)
 
 
 </script>        

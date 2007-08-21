@@ -15,19 +15,20 @@
         <script>jscal_today = 1186683987000;
         if (typeof app_strings == "undefined") app_strings = new Array();</script>
     -->
-    <script type="text/javascript" src="jscalendar/calendar.js"></script>
-    <script type="text/javascript" src="jscalendar/lang/calendar-en.js"></script>
-    <script type="text/javascript" src="jscalendar/calendar-setup_3.js"></script>
     <script src="include/javascript/yui/YAHOO.js"></script>
-    <script src="include/javascript/yui/log.js"></script>
     <script src="include/javascript/yui/dom.js"></script>
     <script src="include/javascript/yui/event.js"></script>
+    <script src="include/javascript/yui/logger.js"></script>
+    <script src="include/javascript/yui/log.js"></script>
     <script src="include/javascript/yui/animation.js"></script>
     <script src="include/javascript/yui/connection.js"></script>
     <script src="include/javascript/yui/dragdrop.js"></script>
     <script src="include/javascript/yui/container.js"></script>
     <script src="include/javascript/yui/ygDDList.js"></script>
     <script type="text/javascript" src="include/javascript/sugar_3.js"></script>
+    <script type="text/javascript" src="jscalendar/calendar.js"></script>
+    <script type="text/javascript" src="jscalendar/lang/calendar-en.js"></script>
+    <script type="text/javascript" src="jscalendar/calendar-setup_3.js"></script>
     <script type="text/javascript">var asynchronous_key = "7f85c2de-00e8-d399-1033-46bb40303dfb";</script>
     <script type="text/javascript">
         var time_reg_format = '([0-9]{1,2}):([0-9]{1,2})';
