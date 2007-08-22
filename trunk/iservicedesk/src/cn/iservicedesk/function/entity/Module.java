@@ -8,7 +8,7 @@ import cn.iservicedesk.infrastructure.LocalNamingAndRefInspectableEntityObject;
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-@Entity(name="FUNC_MODULE")
+@Entity(name="T_FUNC_MODULE")
 public class Module extends LocalNamingAndRefInspectableEntityObject {
 
     @Column(name="BIND_ACTION")

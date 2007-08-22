@@ -20,17 +20,17 @@ import cn.iservicedesk.infrastructure.SuperDAO;
         {
         @NamedNativeQuery(
                 name = ModuleDAOBean.GET_MODOULE_BY_ID,
-                query = "SELECT * FROM FUNC_MODULE WHERE ID=$ID",
+                query = "SELECT * FROM T_FUNC_MODULE WHERE ID=$ID",
                 resultClass = Module.class
         ),
         @NamedNativeQuery(
                 name = ModuleDAOBean.GET_ALL_MODOULES,
-                query = "SELECT * FROM FUNC_MODULE WHERE VSTATUS=0",
+                query = "SELECT * FROM T_FUNC_MODULE WHERE VSTATUS=0",
                 resultClass = Module.class
         ),
         @NamedNativeQuery(
                 name = ModuleDAOBean.CREATE_MODULE,
-                query = "INSERT INTO FUNC_MODULE(" +
+                query = "INSERT INTO T_FUNC_MODULE(" +
                         "ID," +
                         "NAME, " +
                         "LOCAL_NAME, " +
@@ -42,7 +42,6 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                         "VSTATUS, " +
                         "DESCRIPTION, " +
                         "REFS, " +
-                        "BIT_CODE, " +
                         "BIND_ACTION, " +
                         "ICON) " +
                         "VALUES (" +
@@ -57,14 +56,8 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                         "$module.getVstatus()," +
                         "$module.getDescription()," +
                         "$module.getRefs()," +
-                        "$module.getBitCode()," +
                         "$module.getBindAction()," +
                         "$module.getIcon())"
-        ),
-        @NamedNativeQuery(
-                name = ModuleDAOBean.GET_MAX_BITCODE,
-                query = "SELECT MAX(BIT_CODE) FROM FUNC_MODULE",
-                resultClass = Integer.class
         )
                 }
 )
@@ -73,7 +66,6 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
     public static final String GET_MODOULE_BY_ID = "getModuleById";
     public static final String GET_ALL_MODOULES = "getAllModules";
     public final static String CREATE_MODULE = "createModule";
-    public final static String GET_MAX_BITCODE = "getMaxBitCode";
 
     public Module getModuleById(long id) {
         return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
