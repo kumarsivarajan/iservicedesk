@@ -1,6 +1,11 @@
 package cn.iservicedesk.infrastructure;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,26 +19,26 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
     /**
      * 每个表必须有ID字段，且作为 Primary Key
      */
-    @Column(name="ID")
+    @Column(name = "ID")
     private long id = -1;
 
-    @Column(name="NAME")
+    @Column(name = "NAME")
     private String name;
 
     // 用户的 CODE
-    @Column(name="CREATOR")
+    @Column(name = "CREATOR")
     private String creator;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private long createTime = -1;
 
-    @Column(name="LAST_MODIFIER")
+    @Column(name = "LAST_MODIFIER")
     private String lastModifier;
 
-    @Column(name="LAST_MODIFIED")
+    @Column(name = "LAST_MODIFIED")
     private long lastModified = -1;
 
-    @Column(name="PRIORITY")
+    @Column(name = "PRIORITY")
     private int priority = 0;
 
 
@@ -43,11 +48,11 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
      * 1 DISABLED
      * 2 REMOVED
      */
-    @Column(name="VSTATUS")
+    @Column(name = "VSTATUS")
     protected int vstatus;
 
 
-    @Column(name="DESCRIPTION")
+    @Column(name = "DESCRIPTION")
     protected String description;
 
     public EntityObject() {
@@ -85,11 +90,11 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         this.vstatus = vstatus;
     }
 
-    public boolean isDisabled(){
+    public boolean isDisabled() {
         return getVstatus() == 1;
     }
 
-    public boolean isRemoved(){
+    public boolean isRemoved() {
         return getVstatus() == 2;
     }
 
@@ -118,7 +123,7 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
     }
 
     public long getLastModified() {
-        if(lastModified == -1) {
+        if (lastModified == -1) {
             lastModified = createTime;
         }
         return lastModified;
@@ -137,7 +142,7 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
     }
 
     public String getLastModifier() {
-        if(lastModifier == null) {
+        if (lastModifier == null) {
             lastModifier = creator;
         }
         return lastModifier;
@@ -154,7 +159,7 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
      */
     public int compareTo(EntityObject thatEntity) {
         int comparePriority = new Integer(this.getPriority()).compareTo(thatEntity.getPriority());
-        if(comparePriority == 0) {
+        if (comparePriority == 0) {
             return new Long(this.getId()).compareTo(thatEntity.getId());
         }
         else {
@@ -168,12 +173,59 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
     public String getTableName() {
         Entity entity = this.getClass().getAnnotation(Entity.class);
         String tableName = entity.name();
-        if(tableName == null || tableName.trim().length() == 0) {
+        if (tableName == null || tableName.trim().length() == 0) {
             return "UNKNOWN";
         }
         else {
             return tableName;
         }
+    }
+
+    public Map<String, Object> convertToMap() {
+        Map<String, Object> valueMap = new HashMap<String, Object>();
+        Field[] fields = getAllColumnFields(this.getClass());
+        for (Field field : fields) {
+            try {
+                field.setAccessible(true);
+                valueMap.put(field.getName().toUpperCase(), field.get(this));
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return valueMap;
+    }
+
+    /**
+     * 取得clz 所有的 Field
+     *
+     * @param clazz class
+     */
+    protected static Field[] getAllColumnFields(Class clazz) {
+        List<Field> columnFields = new ArrayList<Field>();
+        Class[] superClasses = getAllSuperclasses(clazz);
+        for (Class superClass : superClasses) {
+            for (Field field : superClass.getDeclaredFields()) {
+                if (field.isAnnotationPresent(Column.class)) {
+                    columnFields.add(field);
+                }
+            }
+        }
+        return columnFields.toArray(new Field[columnFields.size()]);
+    }
+
+    protected static Class[] getAllSuperclasses(Class cls) {
+        if (cls == null) {
+            return new Class[0];
+        }
+        List<Class> classList = new ArrayList<Class>();
+        classList.add(cls);
+        Class superClass = cls.getSuperclass();
+        while (superClass != null && !superClass.equals(Object.class)) { // java.lang.Object 不算为超类
+            classList.add(superClass);
+            superClass = superClass.getSuperclass();
+        }
+        return classList.toArray(new Class[classList.size()]);
     }
 
 }
