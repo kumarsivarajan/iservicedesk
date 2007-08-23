@@ -226,7 +226,7 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
             classList.add(superClass);
             superClass = superClass.getSuperclass();
         }
-        Collections.reverse(classList);
+        Collections.reverse(classList); // reverse，以保证子类覆盖超类
         return classList.toArray(new Class[classList.size()]);
     }
 
