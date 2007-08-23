@@ -192,19 +192,25 @@
 
 </form>
 
-<link rel="stylesheet" type="text/css" href="include/javascript/yui/treeview/assets/css/default/tree.css" />
+<link rel="stylesheet" type="text/css" href="include/javascript/yui/treeview/assets/css/folders/tree.css"/>
 <script src="include/javascript/yui/treeview/treeview.js"></script>
+<script src="include/javascript/treeutils.js"></script>
 <style>
-#treeDiv1 {background: #fff; margin-top:1em; padding:1em; min-height:7em;}
+    #treeDiv1 {
+        background: #fff;
+        margin-top: 1em;
+        padding: 1em;
+        min-height: 7em;
+    }
 </style>
-        
+
 <div id="treeDiv1"></div>
 
 <script type="text/javascript">
 
 YAHOO.example.treeExample = function() {
 
-	var tree, currentIconMode;
+    var tree, currentIconMode;
 
     function changeIconMode() {
         var newVal = parseInt(this.value);
@@ -214,122 +220,161 @@ YAHOO.example.treeExample = function() {
         buildTree();
     }
 
-		function loadNodeData(node, fnLoadComplete)  {
+    function loadNodeData(node, fnLoadComplete) {
 
-			//We'll load node data based on what we get back when we
-			//use Connection Manager topass the text label of the
-			//expanding node to the Yahoo!
-			//Search "related suggestions" API.  Here, we're at the
-			//first part of the request -- we'll make the request to the
-			//server.  In our success handler, we'll build our new children
-			//and then return fnLoadComplete back to the tree.
+        //We'll load node data based on what we get back when we
+        //use Connection Manager topass the text label of the
+        //expanding node to the Yahoo!
+        //Search "related suggestions" API.  Here, we're at the
+        //first part of the request -- we'll make the request to the
+        //server.  In our success handler, we'll build our new children
+        //and then return fnLoadComplete back to the tree.
 
-			//Get the node's label and urlencode it; this is the word/s
-			//on which we'll search for related words:
-			var nodeLabel = encodeURI(node.label);
+        //Get the node's label and urlencode it; this is the word/s
+        //on which we'll search for related words:
+        var nodeLabel = encodeURI(node.label);
 
 			//prepare URL for XHR request:
-			var sUrl = "assets/ysuggest_proxy.php?query=" + nodeLabel;
+        var sUrl = "assets/ysuggest_proxy.php?query=" + nodeLabel;
 
 			//prepare our callback object
-			var callback = {
+        var callback = {
 
-				//if our XHR call is successful, we want to make use
-				//of the returned data and create child nodes.
-				success: function(oResponse) {
-					YAHOO.log("XHR transaction was successful.", "info", "example");
+        //if our XHR call is successful, we want to make use
+        //of the returned data and create child nodes.
+            success: function(oResponse) {
+                YAHOO.log("XHR transaction was successful.", "info", "example");
 					//YAHOO.log(oResponse.responseText);
-					var oResults = eval("(" + oResponse.responseText + ")");
-					if((oResults.ResultSet.Result) && (oResults.ResultSet.Result.length)) {
-						//Result is an array if more than one result, string otherwise
-						if(YAHOO.lang.isArray(oResults.ResultSet.Result)) {
-							for (var i=0, j=oResults.ResultSet.Result.length; i<j; i++) {
-								var tempNode = new YAHOO.widget.TextNode(oResults.ResultSet.Result[i], node, false);
-							}
-						} else {
-							//there is only one result; comes as string:
-							var tempNode = new YAHOO.widget.TextNode(oResults.ResultSet.Result, node, false)
-						}
-					}
+                var oResults = eval("(" + oResponse.responseText + ")");
+                if ((oResults.ResultSet.Result) && (oResults.ResultSet.Result.length)) {
+                    //Result is an array if more than one result, string otherwise
+                    if (YAHOO.lang.isArray(oResults.ResultSet.Result)) {
+                        for (var i = 0, j = oResults.ResultSet.Result.length; i < j; i++) {
+                            var tempNode = new YAHOO.widget.TextNode(oResults.ResultSet.Result[i], node, false);
+                        }
+                    }
+                    else {
+                        //there is only one result; comes as string:
+                        var tempNode = new YAHOO.widget.TextNode(oResults.ResultSet.Result, node, false)
+                    }
+                }
 
 					//When we're done creating child nodes, we execute the node's
-					//loadComplete callback method which comes in via the argument
-					//in the response object (we could also access it at node.loadComplete,
-					//if necessary):
-					oResponse.argument.fnLoadComplete();
-				},
+                //loadComplete callback method which comes in via the argument
+                //in the response object (we could also access it at node.loadComplete,
+                //if necessary):
+                oResponse.argument.fnLoadComplete();
+            },
 
-				//if our XHR call is not successful, we want to
-				//fire the TreeView callback and let the Tree
-				//proceed with its business.
-				failure: function(oResponse) {
-					YAHOO.log("Failed to process XHR transaction.", "info", "example");
-					oResponse.argument.fnLoadComplete();
-				},
+        //if our XHR call is not successful, we want to
+        //fire the TreeView callback and let the Tree
+        //proceed with its business.
+            failure: function(oResponse) {
+                YAHOO.log("Failed to process XHR transaction.", "info", "example");
+                oResponse.argument.fnLoadComplete();
+            },
 
-				//our handlers for the XHR response will need the same
-				//argument information we got to loadNodeData, so
-				//we'll pass those along:
-				argument: {
-					"node": node,
-					"fnLoadComplete": fnLoadComplete
-				},
+        //our handlers for the XHR response will need the same
+        //argument information we got to loadNodeData, so
+        //we'll pass those along:
+            argument: {
+                "node": node,
+                "fnLoadComplete": fnLoadComplete
+            },
 
-				//timeout -- if more than 7 seconds go by, we'll abort
-				//the transaction and assume there are no children:
-				timeout: 7000
-			};
+        //timeout -- if more than 7 seconds go by, we'll abort
+        //the transaction and assume there are no children:
+            timeout: 7000
+        };
 
 			//With our callback object ready, it's now time to
-			//make our XHR call using Connection Manager's
-			//asyncRequest method:
-			YAHOO.util.Connect.asyncRequest('GET', sUrl, callback);
-		}
+        //make our XHR call using Connection Manager's
+        //asyncRequest method:
+        YAHOO.util.Connect.asyncRequest('GET', sUrl, callback);
+    }
 
-        function buildTree() {
-		   //create a new tree:
-		   tree = new YAHOO.widget.TreeView("treeDiv1");
+    function buildTree() {
+        //create a new tree:
+        tree = new YAHOO.widget.TreeView("treeDiv1");
 
 		   //turn dynamic loading on for entire tree:
-		   tree.setDynamicLoad(loadNodeData, currentIconMode);
+        tree.setDynamicLoad(loadNodeData, currentIconMode);
 
 		   //get root node for tree:
-		   var root = tree.getRoot();
+        var root = tree.getRoot();
 
 		   //add child nodes for tree; our top level nodes are
-		   //all the states in India:
-		   var aStates = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka"/* we're only using the first half of this list, to keep the tree smaller,"Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar","Pradesh","West Bengal"*/];
+        //all the states in India:
+        var aStates = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka"/* we're only using the first half of this list, to keep the tree smaller,"Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar","Pradesh","West Bengal"*/];
 
-		   for (var i=0, j=aStates.length; i<j; i++) {
-		   		var tempNode = new YAHOO.widget.TextNode(aStates[i], root, false);
+        for (var i = 0, j = aStates.length; i < j; i++) {
+            var tempNode = new YAHOO.widget.TextNode(aStates[i], root, false);
 
-			}
+        }
 
 		   //render tree with these toplevel nodes; all descendants of these nodes
-		   //will be generated as needed by the dynamic loader.
-		   tree.draw();
-		}
+        //will be generated as needed by the dynamic loader.
+        tree.draw();
+    }
 
 
-	return {
-		init: function() {
+    return {
+        init: function() {
             YAHOO.util.Event.on(["mode0", "mode1"], "click", changeIconMode);
             var el = document.getElementById("mode1");
             if (el && el.checked) {
                 currentIconMode = parseInt(el.value);
-            } else {
+            }
+            else {
                 currentIconMode = 0;
             }
 
             buildTree();
         }
 
-	}
-} ();
+    }
+}();
 
+YAHOO.namespace("jfox");
+YAHOO.jfox.moduleTree = function() {
+    function buildTree() {
+        //create a new tree:
+        tree = new YAHOO.widget.TreeView("treeDiv1");
+
+		   //turn dynamic loading on for entire tree:
+        tree.setDynamicLoad(loadNodeData, currentIconMode);
+
+		   //get root node for tree:
+        var root = tree.getRoot();
+
+		   //add child nodes for tree; our top level nodes are
+        //all the states in India:
+        var aStates = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka"/* we're only using the first half of this list, to keep the tree smaller,"Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa","Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttaranchal","Uttar","Pradesh","West Bengal"*/];
+
+        for (var i = 0, j = aStates.length; i < j; i++) {
+            var tempNode = new YAHOO.widget.TextNode(aStates[i], root, false);
+
+        }
+
+		   //render tree with these toplevel nodes; all descendants of these nodes
+        //will be generated as needed by the dynamic loader.
+        tree.draw();
+    }
+
+
+    return {
+        init: function() {
+            var testData = '[{"ID":"1","PARENT_ID":"0","NAME":"中国"},{"ID":"2","PARENT_ID":"1","NAME":"北京"}]';
+            var treeview = new YAHOO.widget.TreeView("treeDiv1");
+            initYUITree(treeview, testData);
+        }
+
+    }
+}();
 //once the DOM has loaded, we can go ahead and set up our tree:
-YAHOO.util.Event.onDOMReady(YAHOO.example.treeExample.init, YAHOO.example.treeExample,true)
+//YAHOO.util.Event.onDOMReady(YAHOO.example.treeExample.init, YAHOO.example.treeExample,true)
 
+YAHOO.util.Event.onDOMReady(YAHOO.jfox.moduleTree.init, YAHOO.jfox.moduleTree, true)
 
-</script>        
+</script>
 #parse("../include/include_footer.vhtml")
