@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 
+import cn.iservicedesk.common.JSONUtils;
 import cn.iservicedesk.function.bo.ModuleBO;
 import cn.iservicedesk.function.bo.NodeBO;
 import cn.iservicedesk.function.entity.Module;
@@ -43,6 +44,11 @@ public abstract class SuperAction extends ActionSupport {
     protected void preAction(InvocationContext invocationContext) {
         logger.info("Request accepted, URI: " + invocationContext.getRequestURI());
         super.preAction(invocationContext);
+        
+        PageContext pageContext = invocationContext.getPageContext();
+        // set common attribute
+        pageContext.setAttribute("__JSONUTILS__", JSONUtils.getInstance());
+
         // init currentModule currentNode, 根据 node.BindAction 得到 node
         String actionMethodName = invocationContext.getFullActionMethodName();
         //TODO: uncomment
@@ -50,7 +56,6 @@ public abstract class SuperAction extends ActionSupport {
 //        currentModule = moduleBO.getModuleById(currentNode.getModuleId());
 
         List<Module> allModules = moduleBO.getAllModules();
-        PageContext pageContext = invocationContext.getPageContext();
         pageContext.setAttribute("__ALL_MODULES__", allModules);
     }
 
@@ -85,8 +90,6 @@ public abstract class SuperAction extends ActionSupport {
 //        buildContextNodes(invocationContext);
         logger.info("Request done, URI: " + invocationContext.getRequestURI());
 
-        // set common attribute
-//        pageContext.setAttribute("__JSONUTILS__", JSONUtils.getInstance());
     }
 
     /**
