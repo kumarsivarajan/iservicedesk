@@ -51,11 +51,12 @@ public abstract class SuperAction extends ActionSupport {
 
         List<Module> allModules = moduleBO.getAllModules();
         PageContext pageContext = invocationContext.getPageContext();
-        pageContext.setAttribute("_ALL_MODULES_", allModules);
+        pageContext.setAttribute("__ALL_MODULES__", allModules);
     }
 
     protected void postAction(InvocationContext invocationContext) {
         SessionContext sessionContext = invocationContext.getSessionContext();
+        PageContext pageContext = invocationContext.getPageContext();
         // TODO: set default session
 
         // 设置主题
@@ -66,12 +67,14 @@ public abstract class SuperAction extends ActionSupport {
         sessionContext.setAttribute(LANG_KEY,"en_US");
         // 设置多语言
         String lang = (String)sessionContext.getAttribute(LANG_KEY);
+
         if (lang != null) {
-            PageContext pageContext = invocationContext.getPageContext();
             pageContext.setTargetView(lang + "/" + pageContext.getTargeView());
         }
 
-        if(invocationContext.getPageContext().hasBusinessException() || invocationContext.getPageContext().hasValidateException()) {
+
+
+        if(pageContext.hasBusinessException() || invocationContext.getPageContext().hasValidateException()) {
             // log action failed 
         }
         else {
@@ -81,6 +84,9 @@ public abstract class SuperAction extends ActionSupport {
         //TODO: uncomment
 //        buildContextNodes(invocationContext);
         logger.info("Request done, URI: " + invocationContext.getRequestURI());
+
+        // set common attribute
+//        pageContext.setAttribute("__JSONUTILS__", JSONUtils.getInstance());
     }
 
     /**

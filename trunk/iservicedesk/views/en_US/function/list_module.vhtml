@@ -364,7 +364,12 @@ YAHOO.jfox.moduleTree = function() {
 
     return {
         init: function() {
-            var testData = '[{"ID":"1","PARENT_ID":"0","NAME":"中国"},{"ID":"2","PARENT_ID":"1","NAME":"北京"}]';
+            #set($jsonModules = "[")
+            #foreach($module in $__ALL_MODULES__)
+                #set($jsonModules = $jsonModules + $module.toJSONString());
+            #end
+            #set($jsonModules = $jsonModules + "]")
+            var testData = $jsonModules; // '[{"ID":"1","PARENT_ID":"0","NAME":"中国"},{"ID":"2","PARENT_ID":"1","NAME":"北京"}]';
             var treeview = new YAHOO.widget.TreeView("treeDiv1");
             initYUITree(treeview, testData);
         }

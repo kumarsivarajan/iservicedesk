@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.jfox.entity.dao.PKGenerator;
+import org.json.JSONObject;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
@@ -191,7 +192,8 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         for (Field field : fields) {
             try {
                 field.setAccessible(true);
-                valueMap.put(field.getName().toUpperCase(), field.get(this));
+                String columnName = field.getAnnotation(Column.class).name();
+                valueMap.put(columnName, field.get(this));
             }
             catch (Exception e) {
                 e.printStackTrace();
@@ -233,4 +235,28 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         return classList.toArray(new Class[classList.size()]);
     }
 
+    public String toJSONString(){
+        /*Map<String, Object> columnMap = convertToMap();
+        StringBuffer sb = new StringBuffer("{");
+        int i=0;
+        for(Map.Entry<String, Object> entry : columnMap.entrySet()){
+            if(i>0) {
+                sb.append(",");
+            }
+            String key = entry.getKey();
+            sb.append("\"").append(key).append("\":");
+            Object value = entry.getValue();
+            if(value instanceof Number) {
+                sb.append(value);
+            }
+            else {
+                sb.append("\"").append(value).append("\"");
+            }
+            i++;
+        }
+        sb.append("}");
+        return sb.toString();*/
+
+        return new JSONObject(convertToMap()).toString();
+    }
 }
