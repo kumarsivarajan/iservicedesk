@@ -182,6 +182,9 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         }
     }
 
+    /**
+     * 转成 Map，以便方便的生成 JSON 对象
+     */
     public Map<String, Object> convertToMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         Field[] fields = getAllColumnFields(this.getClass());
