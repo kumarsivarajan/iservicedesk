@@ -52,14 +52,21 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
     public final static String GET_NODE_BY_ID = "getNodeById";
     public final static String GET_ALL_NODES = "getAllNodes";
     public final static String GET_MENUS_BY_MODULE_ID = "getMenusByModuleId";
+    public final static String GET_NODES_BY_MODULE_ID = "getMenusByModuleId";
     public final static String GET_CHILD_NODES = "getChildNodes";
 
     public Node getNodeById(long id) {
         return (Node)getEntityObject(NodeDAOBean.GET_NODE_BY_ID, "ID", id);
     }
 
-    public List<Node> getAllFunctions() {
+    public List<Node> getAllNodes() {
         return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_ALL_NODES, Collections.EMPTY_MAP);
+    }
+
+    public List<Node> getNodesByModuleId(long moduleId) {
+        Map<String, Long> params = new HashMap<String, Long>(1);
+        params.put("MODULE_ID", moduleId);
+        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_NODES_BY_MODULE_ID, params);
     }
 
     public List<Node> getMenusByModuleId(long moduleId) {
@@ -68,7 +75,7 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
         return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENUS_BY_MODULE_ID, params);
     }
 
-    public List<Node> getChildNodes(long parentNodeId) {
+    public List<Node> getNodesByParentNodeId(long parentNodeId) {
         Map<String, Long> params = new HashMap<String, Long>(1);
         params.put("PARENT_NODE_ID", parentNodeId);
         return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENUS_BY_MODULE_ID, params);
