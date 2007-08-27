@@ -14,9 +14,6 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="BIND_ACTION")
     private String bindAction;
 
-    @Column(name="PARENT_BIT_CODE")
-    private int parentBitCode;
-
     @Column(name="MODULE_id")
     private long moduleId;
 
@@ -38,14 +35,6 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
 
     public void setBindAction(String bindAction) {
         this.bindAction = bindAction;
-    }
-
-    public int getParentBitCode() {
-        return parentBitCode;
-    }
-
-    public void setParentBitCode(int parentBitCode) {
-        this.parentBitCode = parentBitCode;
     }
 
     public long getModuleId() {
