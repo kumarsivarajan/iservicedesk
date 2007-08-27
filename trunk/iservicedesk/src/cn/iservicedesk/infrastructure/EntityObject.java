@@ -202,6 +202,31 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         return valueMap;
     }
 
+    public String toJSONString(){
+        /*Map<String, Object> columnMap = convertToMap();
+        StringBuffer sb = new StringBuffer("{");
+        int i=0;
+        for(Map.Entry<String, Object> entry : columnMap.entrySet()){
+            if(i>0) {
+                sb.append(",");
+            }
+            String key = entry.getKey();
+            sb.append("\"").append(key).append("\":");
+            Object value = entry.getValue();
+            if(value instanceof Number) {
+                sb.append(value);
+            }
+            else {
+                sb.append("\"").append(value).append("\"");
+            }
+            i++;
+        }
+        sb.append("}");
+        return sb.toString();*/
+
+        return new JSONObject(convertToMap()).toString();
+    }
+
     /**
      * 取得clz 所有的 Field
      *
@@ -233,30 +258,5 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         }
         Collections.reverse(classList); // reverse，以保证子类覆盖超类
         return classList.toArray(new Class[classList.size()]);
-    }
-
-    public String toJSONString(){
-        /*Map<String, Object> columnMap = convertToMap();
-        StringBuffer sb = new StringBuffer("{");
-        int i=0;
-        for(Map.Entry<String, Object> entry : columnMap.entrySet()){
-            if(i>0) {
-                sb.append(",");
-            }
-            String key = entry.getKey();
-            sb.append("\"").append(key).append("\":");
-            Object value = entry.getValue();
-            if(value instanceof Number) {
-                sb.append(value);
-            }
-            else {
-                sb.append("\"").append(value).append("\"");
-            }
-            i++;
-        }
-        sb.append("}");
-        return sb.toString();*/
-
-        return new JSONObject(convertToMap()).toString();
     }
 }
