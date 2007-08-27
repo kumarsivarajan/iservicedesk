@@ -28,8 +28,8 @@ public class ModuleBOBean extends SuperBO implements ModuleBO{
         return moduleDAO.getModuleById(moduleId);
     }
 
-    public void createModule(Module module) {
-        moduleDAO.createModule(module);
+    public void newModule(Module module) {
+        moduleDAO.insertModule(module);
     }
 
     public List<Module> getAllModules() {

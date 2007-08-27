@@ -71,7 +71,7 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
         return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
     }
 
-    public void createModule(Module module) {
+    public void insertModule(Module module) {
         Map<String, Object> params = new HashMap<String, Object>(1);
         params.put("module", module);
         executeNamedNativeUpdate(CREATE_MODULE, params);

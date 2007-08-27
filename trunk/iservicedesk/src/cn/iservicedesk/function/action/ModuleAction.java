@@ -67,7 +67,7 @@ public class ModuleAction extends SuperAction {
         module.setName(invocation.getName());
         module.setPriority(invocation.getPriority());
         module.setVstatus(invocation.getVstatus());
-        moduleBO.createModule(module);
+        moduleBO.newModule(module);
     }
 
     public static class EditModuleInvocation extends Invocation {

@@ -12,7 +12,7 @@ public interface ModuleDAO extends DataAccessObject {
 
     Module getModuleById(long id);
 
-    void createModule(Module module);
+    void insertModule(Module module);
 
     List<Module> getAllModules();
 }
