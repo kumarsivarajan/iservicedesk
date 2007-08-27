@@ -42,7 +42,7 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                 resultClass = Node.class
         ),
         @NamedNativeQuery(
-                name = NodeDAOBean.GET_CHILD_NODES,
+                name = NodeDAOBean.GET_NODES_BY_PARENT_NODE_ID,
                 query = "SELECT * FROM NODE WHERE PARENT_NODE_ID=$PARENT_NODE_ID AND IS_MENU=0",
                 resultClass = Node.class
         )
@@ -52,8 +52,8 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
     public final static String GET_NODE_BY_ID = "getNodeById";
     public final static String GET_ALL_NODES = "getAllNodes";
     public final static String GET_MENUS_BY_MODULE_ID = "getMenusByModuleId";
-    public final static String GET_NODES_BY_MODULE_ID = "getMenusByModuleId";
-    public final static String GET_CHILD_NODES = "getChildNodes";
+    public final static String GET_NODES_BY_MODULE_ID = "getNodesByModuleId";
+    public final static String GET_NODES_BY_PARENT_NODE_ID = "getChildNodes";
 
     public Node getNodeById(long id) {
         return (Node)getEntityObject(NodeDAOBean.GET_NODE_BY_ID, "ID", id);
@@ -78,7 +78,7 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
     public List<Node> getNodesByParentNodeId(long parentNodeId) {
         Map<String, Long> params = new HashMap<String, Long>(1);
         params.put("PARENT_NODE_ID", parentNodeId);
-        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENUS_BY_MODULE_ID, params);
+        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_NODES_BY_PARENT_NODE_ID, params);
     }
 
 }
