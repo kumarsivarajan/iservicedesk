@@ -37,6 +37,11 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                         }
         ),
         @NamedNativeQuery(
+                name = NodeDAOBean.GET_NODES_BY_MODULE_ID,
+                query = "SELECT * FROM NODE WHERE MODULE_ID=$MODULE_ID",
+                resultClass = Node.class
+        ),
+        @NamedNativeQuery(
                 name = NodeDAOBean.GET_MENUS_BY_MODULE_ID,
                 query = "SELECT * FROM NODE WHERE MODULE_ID=$MODULE_ID AND IS_MENU=1",
                 resultClass = Node.class
