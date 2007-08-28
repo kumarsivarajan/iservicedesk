@@ -17,8 +17,8 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="MODULE_id")
     private long moduleId;
 
-    @Column(name="IS_MENU")
-    private int isMenu;
+    @Column(name="MENU")
+    private int menu;
 
     @Column(name="NODE_GROUP")
     private String nodeGroup;
@@ -26,8 +26,8 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     @Column(name="ICON")
     private String icon;
 
-    @Column(name="SHORTCUT")
-    private int shortcut;
+    @Column(name="TYPE")
+    private char type;
 
     public String getBindAction() {
         return bindAction;
@@ -46,15 +46,15 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     }
 
     public int getMenu() {
-        return isMenu;
+        return menu;
     }
 
     public void setMenu(int menu) {
-        isMenu = menu;
+        this.menu = menu;
     }
 
     public boolean isMenu(){
-        return isMenu == 1;
+        return menu == 1;
     }
 
     public String getNodeGroup() {
@@ -73,15 +73,12 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
         this.icon = icon;
     }
 
-    public int getShortcut() {
-        return shortcut;
+    public char getType() {
+        return type;
     }
 
-    public void setShortcut(int shortcut) {
-        this.shortcut = shortcut;
+    public void setType(char type) {
+        this.type = type;
     }
 
-    public boolean isShortcut(){
-        return getShortcut() == 1;
-    }
 }

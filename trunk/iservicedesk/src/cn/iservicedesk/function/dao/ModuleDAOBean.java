@@ -29,7 +29,7 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                 resultClass = Module.class
         ),
         @NamedNativeQuery(
-                name = ModuleDAOBean.CREATE_MODULE,
+                name = ModuleDAOBean.INSERT_MODULE,
                 query = "INSERT INTO T_FUNC_MODULE(" +
                         "ID," +
                         "NAME, " +
@@ -45,19 +45,19 @@ import cn.iservicedesk.infrastructure.SuperDAO;
                         "BIND_ACTION, " +
                         "ICON) " +
                         "VALUES (" +
-                        "$module.getId()," +
-                        "$module.getName()," +
-                        "$module.getLocalName()," +
-                        "$module.getPriority()," +
-                        "$module.getCreateTime()," +
-                        "$module.getCreator()," +
-                        "$module.getLastModified()," +
-                        "$module.getLastModifier()," +
-                        "$module.getVstatus()," +
-                        "$module.getDescription()," +
-                        "$module.getRefs()," +
-                        "$module.getBindAction()," +
-                        "$module.getIcon())"
+                        "$MODULE.getId()," +
+                        "$MODULE.getName()," +
+                        "$MODULE.getLocalName()," +
+                        "$MODULE.getPriority()," +
+                        "$MODULE.getCreateTime()," +
+                        "$MODULE.getCreator()," +
+                        "$MODULE.getLastModified()," +
+                        "$MODULE.getLastModifier()," +
+                        "$MODULE.getVstatus()," +
+                        "$MODULE.getDescription()," +
+                        "$MODULE.getRefs()," +
+                        "$MODULE.getBindAction()," +
+                        "$MODULE.getIcon())"
         )
                 }
 )
@@ -65,7 +65,7 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
 
     public static final String GET_MODOULE_BY_ID = "getModuleById";
     public static final String GET_ALL_MODOULES = "getAllModules";
-    public final static String CREATE_MODULE = "createModule";
+    public final static String INSERT_MODULE = "createModule";
 
     public Module getModuleById(long id) {
         return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
@@ -73,8 +73,8 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
 
     public void insertModule(Module module) {
         Map<String, Object> params = new HashMap<String, Object>(1);
-        params.put("module", module);
-        executeNamedNativeUpdate(CREATE_MODULE, params);
+        params.put("MODULE", module);
+        executeNamedNativeUpdate(INSERT_MODULE, params);
     }
 
     public List<Module> getAllModules() {
