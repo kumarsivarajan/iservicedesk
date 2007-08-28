@@ -1,9 +1,9 @@
-package cn.iservicedesk.auth.bo;
+package cn.iservicedesk.aaa.entity;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public class UserBO {
+public class Role {
 
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package cn.iservicedesk.auth.action;
+package cn.iservicedesk.aaa.action;
 
 import cn.iservicedesk.infrastructure.SuperAction;
 import org.jfox.framework.annotation.Service;

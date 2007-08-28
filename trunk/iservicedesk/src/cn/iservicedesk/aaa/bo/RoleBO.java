@@ -1,11 +1,9 @@
-package cn.iservicedesk.auth.entity;
-
-import cn.iservicedesk.infrastructure.EntityObject;
+package cn.iservicedesk.aaa.bo;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-public class User extends EntityObject {
+public class RoleBO {
 
     public static void main(String[] args) {
 
