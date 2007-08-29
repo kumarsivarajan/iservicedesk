@@ -1973,8 +1973,8 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o16">
 <a:CreationDate>1188355525</a:CreationDate>
-<a:ModificationDate>1188376472</a:ModificationDate>
-<a:Rect>((-9900,-5119), (2250,8903))</a:Rect>
+<a:ModificationDate>1188376480</a:ModificationDate>
+<a:Rect>((-9675,-4969), (2475,9053))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>16711680</a:LineColor>
 <a:FillColor>12648384</a:FillColor>
@@ -2055,8 +2055,8 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o24">
 <a:CreationDate>1188355711</a:CreationDate>
-<a:ModificationDate>1188376473</a:ModificationDate>
-<a:Rect>((3564,4607), (10088,8606))</a:Rect>
+<a:ModificationDate>1188378895</a:ModificationDate>
+<a:Rect>((5439,5132), (11963,9131))</a:Rect>
 <a:LineColor>16711680</a:LineColor>
 <a:FillColor>12648384</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2075,8 +2075,8 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o26">
 <a:CreationDate>1188355736</a:CreationDate>
-<a:ModificationDate>1188376474</a:ModificationDate>
-<a:Rect>((13014,4683), (20888,8682))</a:Rect>
+<a:ModificationDate>1188378893</a:ModificationDate>
+<a:Rect>((15189,5208), (23063,9207))</a:Rect>
 <a:LineColor>16711680</a:LineColor>
 <a:FillColor>12648384</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3002,10 +3002,10 @@ TableComment 0 Arial Unicode MS,8,N</a:FontList>
 <a:Code>NODES</a:Code>
 <a:CreationDate>1188376372</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1188376372</a:ModificationDate>
+<a:ModificationDate>1188376506</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
-<a:DataType>varchar(4000)</a:DataType>
-<a:Length>4000</a:Length>
+<a:DataType>varchar(4096)</a:DataType>
+<a:Length>4096</a:Length>
 </o:Column>
 </c:Columns>
 </o:Table>
