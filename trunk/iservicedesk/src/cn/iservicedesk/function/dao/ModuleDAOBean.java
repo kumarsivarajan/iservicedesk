@@ -65,7 +65,7 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
 
     public static final String GET_MODOULE_BY_ID = "getModuleById";
     public static final String GET_ALL_MODOULES = "getAllModules";
-    public final static String INSERT_MODULE = "createModule";
+    public final static String INSERT_MODULE = "insertModule";
 
     public Module getModuleById(long id) {
         return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
