@@ -42,7 +42,6 @@ public abstract class SuperAction extends ActionSupport {
 
 
     protected void preAction(InvocationContext invocationContext) {
-        logger.info("Request accepted, URI: " + invocationContext.getRequestURI());
         super.preAction(invocationContext);
         
         PageContext pageContext = invocationContext.getPageContext();
@@ -88,7 +87,6 @@ public abstract class SuperAction extends ActionSupport {
 
         //TODO: uncomment
 //        buildContextNodes(invocationContext);
-        logger.info("Request done, URI: " + invocationContext.getRequestURI());
 
     }
 
