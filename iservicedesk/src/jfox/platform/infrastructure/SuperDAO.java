@@ -38,8 +38,8 @@ public abstract class SuperDAO extends DAOSupport implements DataAccessObject {
      * @param id id
      * @return entity instance
      */
-    public EntityObject getEntityObject(String namedQuery, String placeHolderName, long id) {
-        Map<String, Long> paramMap = new HashMap<String, Long>(1);
+    public EntityObject getEntityObjectByColumn(String namedQuery, String placeHolderName, Object id) {
+        Map<String, Object> paramMap = new HashMap<String, Object>(1);
         paramMap.put(placeHolderName,id);
         List<? extends EntityObject> entities = processNamedNativeQuery(namedQuery,paramMap);
         if(!entities.isEmpty()) {

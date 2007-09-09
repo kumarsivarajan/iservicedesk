@@ -23,13 +23,13 @@ public class JSONUtils {
         return me;
     }
 
-    public static String entityToJSONString(EntityObject entityObject){
+    public static String convertEntity(EntityObject entityObject){
         Map<String, Object> entityMap = entityObject.convertToMap();
         JSONObject jsonObject = new JSONObject(entityMap);
         return jsonObject.toString();
     }
 
-    public static String entitiesToJSONString(Collection<? extends EntityObject> entities) {
+    public static String convertEntities(Collection<? extends EntityObject> entities) {
         List<JSONObject> jsonObjects = new ArrayList<JSONObject>(entities.size());
         for(EntityObject entityObject : entities){
             JSONObject jsonObject = new JSONObject(entityObject.convertToMap());

@@ -14,4 +14,6 @@ public interface ModuleBO {
     void newModule(Module module);
 
     List<Module> getAllModules();
+
+    boolean deleteModule(long moduleId);
 }

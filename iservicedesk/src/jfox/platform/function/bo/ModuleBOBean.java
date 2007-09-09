@@ -35,4 +35,8 @@ public class ModuleBOBean extends SuperBO implements ModuleBO{
     public List<Module> getAllModules() {
         return moduleDAO.getAllModules();
     }
+
+    public boolean deleteModule(long moduleId) {
+        return moduleDAO.deleteModule(moduleId);
+    }
 }

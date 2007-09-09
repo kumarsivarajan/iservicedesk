@@ -2,23 +2,33 @@ package jfox.platform.function.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import jfox.platform.infrastructure.LocalNamingAndRefInspectableEntityObject;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
  */
-@Entity(name="T_FUNC_NODE")
+@Entity
+@Table(name="T_FUNC_NODE")
 public class Node extends LocalNamingAndRefInspectableEntityObject {
+
+    public static final int TYPE_MENU = 0;
+    public static final int TYPE_BUTTON = 1;
+
+    public static final int CRUD_C = 0;
+    public static final int CRUD_R = 1;
+    public static final int CRUD_U = 2;
+    public static final int CRUD_D = 3;
 
     @Column(name="BIND_ACTION")
     private String bindAction;
 
-    @Column(name="MODULE_id")
+    @Column(name="MODULE_ID")
     private long moduleId;
 
-    @Column(name="MENU")
-    private int menu;
+    @Column(name="PARENT_ID")
+    private long parentId;
 
     @Column(name="NODE_GROUP")
     private String nodeGroup;
@@ -27,7 +37,10 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
     private String icon;
 
     @Column(name="TYPE")
-    private char type;
+    private int type;
+
+    @Column(name="CRUD")
+    private int crud;
 
     public String getBindAction() {
         return bindAction;
@@ -45,16 +58,12 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
         this.moduleId = moduleId;
     }
 
-    public int getMenu() {
-        return menu;
+    public long getParentId() {
+        return parentId;
     }
 
-    public void setMenu(int menu) {
-        this.menu = menu;
-    }
-
-    public boolean isMenu(){
-        return menu == 1;
+    public void setParentId(long parentId) {
+        this.parentId = parentId;
     }
 
     public String getNodeGroup() {
@@ -73,12 +82,23 @@ public class Node extends LocalNamingAndRefInspectableEntityObject {
         this.icon = icon;
     }
 
-    public char getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(char type) {
+    public void setType(int type) {
         this.type = type;
     }
 
+    public boolean isMenu(){
+        return getType() == TYPE_MENU;
+    }
+
+    public int getCrud() {
+        return crud;
+    }
+
+    public void setCrud(int crud) {
+        this.crud = crud;
+    }
 }

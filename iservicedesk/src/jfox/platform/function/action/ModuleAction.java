@@ -70,6 +70,12 @@ public class ModuleAction extends SuperAction {
         moduleBO.newModule(module);
     }
 
+    @ActionMethod(name = "delete", successView = "function/new_module.vhtml", invocationClass = EditModuleInvocation.class)
+    public synchronized void deleteModule(InvocationContext invocationContext) throws Exception {
+        EditModuleInvocation invocation = (EditModuleInvocation)invocationContext.getInvocation();
+        moduleBO.deleteModule(invocation.getId());
+    }
+
     public static class EditModuleInvocation extends Invocation {
         private long id;
 
