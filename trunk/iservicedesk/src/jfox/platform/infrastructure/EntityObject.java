@@ -8,11 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.jfox.entity.dao.PKGenerator;
-import org.json.JSONObject;
 
 /**
  * @author <a href="mailto:jfox.young@gmail.com">Young Yang</a>
@@ -173,14 +172,14 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
      * 根据 @Entity 得到 Table Name
      */
     public String getTableName() {
-        Entity entity = this.getClass().getAnnotation(Entity.class);
-        String tableName = entity.name();
-        if (tableName == null || tableName.trim().length() == 0) {
-            return "UNKNOWN";
+        String tableName = this.getClass().getSimpleName();
+        if (this.getClass().isAnnotationPresent(Table.class)) {
+            Table table = this.getClass().getAnnotation(Table.class);
+            if(table.name().trim().length() > 0) {
+            tableName = table.name();
+            }
         }
-        else {
-            return tableName;
-        }
+        return tableName;
     }
 
     /**
@@ -200,31 +199,6 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
             }
         }
         return valueMap;
-    }
-
-    public String toJSONString(){
-        /*Map<String, Object> columnMap = convertToMap();
-        StringBuffer sb = new StringBuffer("{");
-        int i=0;
-        for(Map.Entry<String, Object> entry : columnMap.entrySet()){
-            if(i>0) {
-                sb.append(",");
-            }
-            String key = entry.getKey();
-            sb.append("\"").append(key).append("\":");
-            Object value = entry.getValue();
-            if(value instanceof Number) {
-                sb.append(value);
-            }
-            else {
-                sb.append("\"").append(value).append("\"");
-            }
-            i++;
-        }
-        sb.append("}");
-        return sb.toString();*/
-
-        return new JSONObject(convertToMap()).toString();
     }
 
     /**
@@ -258,5 +232,12 @@ public abstract class EntityObject implements Comparable<EntityObject>, Serializ
         }
         Collections.reverse(classList); // reverse，以保证子类覆盖超类
         return classList.toArray(new Class[classList.size()]);
+    }
+
+    public boolean equals(Object obj) {
+        if(obj == null || !(obj instanceof EntityObject)) {
+            return false;
+        }
+        return ((EntityObject)obj).getId() == this.getId();
     }
 }

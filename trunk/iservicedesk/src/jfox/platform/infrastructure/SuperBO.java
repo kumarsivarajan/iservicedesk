@@ -34,7 +34,7 @@ public abstract class SuperBO implements BusinessObject{
      */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public boolean isVersionValid(VersionableEntityObject entity, String namedQuery) {
-        VersionableEntityObject storedEntity = (VersionableEntityObject)getDataAccessObject().getEntityObject(namedQuery,"ID",entity.getId());
+        VersionableEntityObject storedEntity = (VersionableEntityObject)getDataAccessObject().getEntityObjectByColumn(namedQuery,"ID",entity.getId());
         return storedEntity.getVersion() < entity.getVersion();
     }
 

@@ -22,15 +22,24 @@ import jfox.platform.infrastructure.SuperDAO;
         {
         @NamedNativeQuery(
                 name = NodeDAOBean.GET_NODE_BY_ID,
-                query = "SELECT * FROM NODE WHERE ID=$ID",
+                query = "SELECT * FROM T_FUNC_NODE WHERE ID=$ID",
                 resultClass = Node.class,
                 hints = {
                 @QueryHint(name = "cache.partition", value = "function")
                         }
         ),
         @NamedNativeQuery(
+                name = NodeDAOBean.GET_NODE_BY_BIND_ACTION,
+                query = "SELECT * FROM T_FUNC_NODE WHERE BIND_ACTION=$BIND_ACTION",
+                resultClass = Node.class,
+                hints = {
+                @QueryHint(name = "cache.partition", value = "function")
+                        }
+        ),
+
+        @NamedNativeQuery(
                 name = NodeDAOBean.GET_ALL_NODES,
-                query = "SELECT * FROM NODE",
+                query = "SELECT * FROM T_FUNC_NODE",
                 resultClass = Node.class,
                 hints = {
                 @QueryHint(name = "cache.partition", value = "function")
@@ -38,17 +47,17 @@ import jfox.platform.infrastructure.SuperDAO;
         ),
         @NamedNativeQuery(
                 name = NodeDAOBean.GET_NODES_BY_MODULE_ID,
-                query = "SELECT * FROM NODE WHERE MODULE_ID=$MODULE_ID",
+                query = "SELECT * FROM T_FUNC_NODE WHERE MODULE_ID=$MODULE_ID ORDER BY ID",
                 resultClass = Node.class
         ),
         @NamedNativeQuery(
-                name = NodeDAOBean.GET_MENUS_BY_MODULE_ID,
-                query = "SELECT * FROM NODE WHERE MODULE_ID=$MODULE_ID AND IS_MENU=1",
+                name = NodeDAOBean.GET_MENU_NODES_BY_MODULE_ID,
+                query = "SELECT * FROM T_FUNC_NODE WHERE MODULE_ID=$MODULE_ID AND TYPE=0 ORDER BY ID",
                 resultClass = Node.class
         ),
         @NamedNativeQuery(
-                name = NodeDAOBean.GET_NODES_BY_PARENT_NODE_ID,
-                query = "SELECT * FROM NODE WHERE PARENT_NODE_ID=$PARENT_NODE_ID AND IS_MENU=0",
+                name = NodeDAOBean.GET_NODES_BY_PARENT_ID,
+                query = "SELECT * FROM T_FUNC_NODE WHERE PARENT_ID=$PARENT_ID AND TYPE=0 ORDER BY ID",
                 resultClass = Node.class
         ),
         @NamedNativeQuery(
@@ -97,14 +106,25 @@ import jfox.platform.infrastructure.SuperDAO;
 )
 public class NodeDAOBean extends SuperDAO implements NodeDAO {
     public final static String GET_NODE_BY_ID = "getNodeById";
+    public final static String GET_NODE_BY_BIND_ACTION = "getNodeByBindAction";
     public final static String GET_ALL_NODES = "getAllNodes";
-    public final static String GET_MENUS_BY_MODULE_ID = "getMenusByModuleId";
+    public final static String GET_MENU_NODES_BY_MODULE_ID = "getMenuNodesByModuleId";
     public final static String GET_NODES_BY_MODULE_ID = "getNodesByModuleId";
-    public final static String GET_NODES_BY_PARENT_NODE_ID = "getChildNodes";
+    public final static String GET_NODES_BY_PARENT_ID = "getChildNodes";
     public final static String INSERT_NODE = "insertNode";
 
     public Node getNodeById(long id) {
-        return (Node)getEntityObject(NodeDAOBean.GET_NODE_BY_ID, "ID", id);
+        return (Node)getEntityObjectByColumn(NodeDAOBean.GET_NODE_BY_ID, "ID", id);
+    }
+
+    public Node getNodeByBindAction(String bindAction) {
+        return (Node)getEntityObjectByColumn(NodeDAOBean.GET_NODE_BY_BIND_ACTION, "BIND_ACTION", bindAction);
+    }
+
+    public List<Node> getMenuNodesByModuleId(long moduleId) {
+        Map<String, Object> params = new HashMap<String, Object>(1);
+        params.put("MODULE_ID", moduleId);
+        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENU_NODES_BY_MODULE_ID, params);
     }
 
     public List<Node> getAllNodes() {
@@ -123,16 +143,11 @@ public class NodeDAOBean extends SuperDAO implements NodeDAO {
         return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_NODES_BY_MODULE_ID, params);
     }
 
-    public List<Node> getMenusByModuleId(long moduleId) {
-        Map<String, Long> params = new HashMap<String, Long>(1);
-        params.put("MODULE_ID", moduleId);
-        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_MENUS_BY_MODULE_ID, params);
-    }
 
     public List<Node> getNodesByParentNodeId(long parentNodeId) {
         Map<String, Long> params = new HashMap<String, Long>(1);
-        params.put("PARENT_NODE_ID", parentNodeId);
-        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_NODES_BY_PARENT_NODE_ID, params);
+        params.put("PARENT_ID", parentNodeId);
+        return (List<Node>)processNamedNativeQuery(NodeDAOBean.GET_NODES_BY_PARENT_ID, params);
     }
 
 }

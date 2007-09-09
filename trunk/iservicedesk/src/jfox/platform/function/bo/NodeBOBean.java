@@ -29,15 +29,15 @@ public class NodeBOBean extends SuperBO implements NodeBO {
     }
 
     public Node getNodeByBindAction(String bindAction) {
-        return null;
+        return nodeDAO.getNodeByBindAction(bindAction);
     }
 
     public List<Node> getChildrenNodes(long parentNodeId) {
-        return null;
+        return nodeDAO.getNodesByParentNodeId(parentNodeId);
     }
 
     public List<Node> getMenuNodesByModuleId(long moduleId){
-        return null;
+        return nodeDAO.getMenuNodesByModuleId(moduleId);
     }
 
     public void addFunction(){

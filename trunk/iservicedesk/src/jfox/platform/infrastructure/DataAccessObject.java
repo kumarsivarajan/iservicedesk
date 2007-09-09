@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public interface DataAccessObject extends org.jfox.entity.dao.DataAccessObject {
 
-    EntityObject getEntityObject(String namedQuery, String placeHolderName, long id);
+    EntityObject getEntityObjectByColumn(String namedQuery, String placeHolderName, Object id);
 
     int executeNamedNativeUpdate(String sql, Map<String, Object> paramMap);
 

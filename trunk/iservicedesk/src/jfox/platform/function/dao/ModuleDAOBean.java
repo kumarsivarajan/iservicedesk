@@ -58,6 +58,10 @@ import jfox.platform.infrastructure.SuperDAO;
                         "$MODULE.getRefs()," +
                         "$MODULE.getBindAction()," +
                         "$MODULE.getIcon())"
+        ),
+        @NamedNativeQuery(
+                name = ModuleDAOBean.DELETE_MODULE,
+                query = "DELETE FROM T_FUNC_MODULE WHERE ID=$ID"
         )
                 }
 )
@@ -66,9 +70,10 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
     public static final String GET_MODOULE_BY_ID = "getModuleById";
     public static final String GET_ALL_MODOULES = "getAllModules";
     public final static String INSERT_MODULE = "insertModule";
+    public final static String DELETE_MODULE = "deleteModule";
 
     public Module getModuleById(long id) {
-        return (Module)getEntityObject(GET_MODOULE_BY_ID, "ID", id);
+        return (Module)getEntityObjectByColumn(GET_MODOULE_BY_ID, "ID", id);
     }
 
     public void insertModule(Module module) {
@@ -80,4 +85,11 @@ public class ModuleDAOBean extends SuperDAO implements ModuleDAO {
     public List<Module> getAllModules() {
         return (List<Module>)processNamedNativeQuery(GET_ALL_MODOULES, null);
     }
+
+    public boolean deleteModule(long moduleId) {
+        Map<String, Object> params = new HashMap<String, Object>(1);
+        params.put("ID", moduleId);
+        return executeNamedNativeUpdate(DELETE_MODULE,params) == 1;
+    }
+
 }

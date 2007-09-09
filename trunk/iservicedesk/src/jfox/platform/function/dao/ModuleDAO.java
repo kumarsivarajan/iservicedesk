@@ -15,4 +15,6 @@ public interface ModuleDAO extends DataAccessObject {
     void insertModule(Module module);
 
     List<Module> getAllModules();
+
+    boolean deleteModule(long moduleId);
 }
